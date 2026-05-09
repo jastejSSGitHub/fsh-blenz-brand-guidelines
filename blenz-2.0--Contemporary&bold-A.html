@@ -3439,33 +3439,24 @@
       const v3 = "Images/Version A contemporary/Section9-img5-v1-chatgpt-2.mp4";
       let state = 1;
 
+      function switchTo(src, nextState) {
+        state = nextState;
+        heroVideo.src = src;
+        heroVideo.load();
+        heroVideo.play();
+      }
+
       heroVideo.addEventListener('timeupdate', () => {
-        // Optional: add clip duration limits if needed
-        if (state === 3 && heroVideo.currentTime >= 3) {
-          state = 1;
-          heroVideo.src = v1;
-          heroVideo.load();
-          heroVideo.play();
+        // v2 is cut at 4 s then hands off to v3
+        if (state === 2 && heroVideo.currentTime >= 4) {
+          switchTo(v3, 3);
         }
       });
 
       heroVideo.addEventListener('ended', () => {
-        if (state === 1) {
-          state = 2;
-          heroVideo.src = v2;
-          heroVideo.load();
-          heroVideo.play();
-        } else if (state === 2) {
-          state = 3;
-          heroVideo.src = v3;
-          heroVideo.load();
-          heroVideo.play();
-        } else if (state === 3) {
-          state = 1;
-          heroVideo.src = v1;
-          heroVideo.load();
-          heroVideo.play();
-        }
+        // v1 → v2, v3 → v1 (v2 is cut by timeupdate before it can end naturally)
+        if (state === 1) switchTo(v2, 2);
+        else if (state === 3) switchTo(v1, 1);
       });
     }
 
@@ -3512,7 +3503,7 @@
   <!-- ============ SPLASH SCREEN ============ -->
   <div id="splash" aria-hidden="true">
     <div id="splash-wordmark">blenz</div>
-    <span id="splash-tagline">smile after every sip.</span>
+    <span id="splash-tagline">Smile after every sip.</span>
   </div>
 
   <style>
@@ -3537,14 +3528,15 @@
       position: fixed;
       left: 50%;
       transform: translateX(-50%);
-      top: calc(50% + 11vw); /* Centers it beautifully below the 18vw wordmark */
+      top: calc(50% + 11vw);
       font-family: 'Hanken Grotesk', sans-serif;
       font-weight: 500;
       font-size: clamp(14px, 1.8vw, 20px);
       letter-spacing: 0.12em;
       color: #FFC107;
-      transition: color 0.3s ease, opacity 0.3s ease;
+      transition: color 0.3s ease, opacity 0.25s ease;
       opacity: 0;
+      clip-path: inset(0 100% 0 0);
       white-space: nowrap;
       z-index: 1002;
       pointer-events: none;
@@ -3623,7 +3615,7 @@
       // Calculate the scale factor to make it fill 18% of viewport width (18vw)
       const targetWidth = W * 0.18;
       const scaleStart = targetWidth / heroRect.width;
-      const scaleEnd = scaleStart * 1.18; // Slow zoom push-in of 18% over the cycle
+      const scaleEnd = scaleStart * 1.28; // 28% zoom so motion is clearly felt throughout
 
       /* --- Colour states --- */
       const states = [
@@ -3632,10 +3624,10 @@
         { bg: '#FFC107', text: '#1A0F08' }, // yellow → espresso
       ];
 
-      const HOLD_MS  = 550;   // hold each colour
-      const FADE_MS  = 300;   // cross-fade between colours
-      const STEP_MS  = HOLD_MS + FADE_MS; // ~850 ms per step
-      const TOTAL_MS = 2500;  // total cycle duration
+      const HOLD_MS  = 420;   // hold each colour
+      const FADE_MS  = 210;   // cross-fade between colours
+      const STEP_MS  = HOLD_MS + FADE_MS; // 630 ms per step
+      const TOTAL_MS = 2000;  // total cycle duration
 
       /* Apply colour state immediately (no transition) or smoothly */
       function applyState(i, instant) {
@@ -3643,11 +3635,12 @@
         if (instant) {
           splash.style.transition   = 'none';
           wordmark.style.transition = 'none';
-          tagline.style.transition  = 'color 0s';
+          tagline.style.transition  = 'none';
         } else {
           splash.style.transition   = `background-color ${FADE_MS}ms ease`;
           wordmark.style.transition = `color ${FADE_MS}ms ease`;
-          tagline.style.transition  = `color ${FADE_MS}ms ease, opacity 0.6s ease`;
+          tagline.style.transition  = `color ${FADE_MS}ms ease`;
+          // clip-path reveal uses a CSS animation so it is unaffected by transition changes
         }
         splash.style.backgroundColor = s.bg;
         wordmark.style.color         = s.text;
@@ -3661,21 +3654,31 @@
       /* Force layout reflow so the initial state is painted before transitions start */
       void wordmark.offsetHeight;
 
-      /* --- Wordmark zoom: use @keyframes so color-transition changes can't cancel the zoom --- */
-      const zoomKf = document.createElement('style');
-      zoomKf.id = 'splash-zoom-kf';
-      zoomKf.textContent = `@keyframes splash-zoom {
-        from { transform: translate(${translateX}px, ${translateY}px) scale(${scaleStart}); }
-        to   { transform: translate(${translateX}px, ${translateY}px) scale(${scaleEnd}); }
-      }`;
-      document.head.appendChild(zoomKf);
-      wordmark.style.animation = `splash-zoom ${TOTAL_MS}ms cubic-bezier(0.25, 0.1, 0.1, 1) forwards`;
+      /* --- Inject keyframes for zoom and tagline reveal (both are CSS animations so transition
+             changes on color states cannot interrupt them) --- */
+      const splashKf = document.createElement('style');
+      splashKf.id = 'splash-zoom-kf';
+      splashKf.textContent = `
+        @keyframes splash-zoom {
+          from { transform: translate(${translateX}px, ${translateY}px) scale(${scaleStart}); }
+          to   { transform: translate(${translateX}px, ${translateY}px) scale(${scaleEnd}); }
+        }
+        @keyframes tagline-reveal {
+          from { clip-path: inset(0 100% 0 0); }
+          to   { clip-path: inset(0 0%   0 0); }
+        }
+      `;
+      document.head.appendChild(splashKf);
 
-      /* --- Tagline fade-in at 0.8s --- */
+      /* cubic-bezier(0.3, 0, 0.5, 1): starts with clear momentum, eases out gently */
+      wordmark.style.animation = `splash-zoom ${TOTAL_MS}ms cubic-bezier(0.3, 0, 0.5, 1) forwards`;
+
+      /* --- Tagline: left-to-right clip-path reveal at 560ms --- */
       setTimeout(function () {
-        tagline.style.transition = 'color 0.3s ease, opacity 0.6s ease';
-        tagline.style.opacity = '1';
-      }, 800);
+        tagline.style.clipPath = 'inset(0 100% 0 0)'; // ensure hidden before opacity snap
+        tagline.style.opacity  = '1';
+        tagline.style.animation = 'tagline-reveal 680ms cubic-bezier(0.16, 1, 0.3, 1) forwards';
+      }, 560);
 
       /* --- Colour cycle: state 0 → 1 → 2 --- */
       setTimeout(function () { applyState(1, false); }, HOLD_MS);
@@ -3683,8 +3686,9 @@
 
       /* --- Morph-out at TOTAL_MS (2.5s) --- */
       setTimeout(function () {
-        /* Step A: Fade tagline out quickly and disable splash events */
-        tagline.style.transition = 'opacity 0.3s ease';
+        /* Step A: Fade tagline out and disable splash events */
+        tagline.style.animation  = 'none';
+        tagline.style.transition = 'opacity 0.2s ease';
         tagline.style.opacity    = '0';
         splash.style.pointerEvents = 'none';
 
