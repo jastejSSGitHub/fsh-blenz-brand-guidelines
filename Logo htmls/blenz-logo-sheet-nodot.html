@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>blenz 2.0 — Logo Sheet (No Dot)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============ BRAND TOKENS ============ */
+:root {
+  --blenz-yellow:    #FFC94B;
+  --blenz-yellow-pop:#FFD60A;
+  --blenz-navy:      #003F88;
+  --blenz-navy-deep: #002A5C;
+  --rust:            #C2410C;
+  --rust-deep:       #9A2D08;
+  --ice:             #B8DCEC;
+  --ice-deep:        #7AB8D4;
+  --cream:           #FFF8E7;
+  --butter:          #FFEDB5;
+  --espresso:        #1A0F08;
+  --espresso-soft:   #2A1A0F;
+  --paper:           #FBF7EE;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Geist', system-ui, sans-serif;
+  --font-mono:    'Geist Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  background: #F0EDE6;
+  color: var(--espresso);
+  -webkit-font-smoothing: antialiased;
+  padding: 60px 48px;
+}
+
+/* ============ PAGE HEADER ============ */
+.page-header {
+  margin-bottom: 64px;
+  padding-bottom: 32px;
+  border-bottom: 1.5px solid rgba(26,15,8,0.12);
+}
+
+.page-header__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 12px;
+}
+
+.page-header__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 48px;
+  letter-spacing: -0.04em;
+  color: var(--blenz-navy);
+  line-height: 0.95;
+  margin-bottom: 16px;
+}
+
+.page-header__meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--espresso-soft);
+  opacity: 0.6;
+}
+
+/* ============ SECTION TITLE ============ */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blenz-navy);
+  opacity: 0.5;
+  margin-bottom: 20px;
+  margin-top: 56px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(0,63,136,0.15);
+}
+
+/* ============ PRIMARY LOGO — HERO TILE ============ */
+.logo-hero {
+  background: var(--blenz-yellow);
+  border-radius: 20px;
+  width: 100%;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.3'/%3E%3C/svg%3E");
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -0.05em;
+  line-height: 0.85;
+  position: relative;
+}
+
+.wordmark--hero {
+  font-size: 160px;
+  color: var(--blenz-navy);
+}
+
+.wordmark--hero sup {
+  font-family: var(--font-mono);
+  font-size: 0.12em;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  vertical-align: super;
+  margin-left: 0.06em;
+  opacity: 0.5;
+  color: var(--blenz-navy);
+}
+
+/* ============ LOGO VARIANTS GRID ============ */
+.variants-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.variant-tile {
+  border-radius: 16px;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.variant-tile__label {
+  position: absolute;
+  bottom: 12px;
+  left: 16px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+/* Variant 01: Yellow bg / Navy text — PRIMARY */
+.v01 { background: var(--blenz-yellow); }
+.v01 .wordmark { color: var(--blenz-navy); font-size: 72px; }
+.v01 .variant-tile__label { color: var(--blenz-navy); }
+
+/* Variant 02: Navy bg / Yellow text */
+.v02 { background: var(--blenz-navy); }
+.v02 .wordmark { color: var(--blenz-yellow); font-size: 72px; }
+.v02 .variant-tile__label { color: var(--blenz-yellow); }
+
+/* Variant 03: Cream/Paper bg / Navy text */
+.v03 { background: var(--paper); border: 1.5px solid rgba(26,15,8,0.09); }
+.v03 .wordmark { color: var(--blenz-navy); font-size: 72px; }
+.v03 .variant-tile__label { color: var(--blenz-navy); }
+
+/* Variant 04: Rust bg / Cream text */
+.v04 { background: var(--rust); }
+.v04 .wordmark { color: var(--cream); font-size: 72px; }
+.v04 .variant-tile__label { color: var(--cream); }
+
+/* Variant 05: Ice bg / Navy text */
+.v05 { background: var(--ice); }
+.v05 .wordmark { color: var(--blenz-navy); font-size: 72px; }
+.v05 .variant-tile__label { color: var(--blenz-navy); }
+
+/* Variant 06: Espresso bg / Yellow text */
+.v06 { background: var(--espresso); }
+.v06 .wordmark { color: var(--blenz-yellow); font-size: 72px; }
+.v06 .variant-tile__label { color: var(--blenz-yellow); }
+
+/* ============ APP ICON / MONOGRAM GRID ============ */
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.icon-tile {
+  border-radius: 20px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.icon-tile__label {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0.5;
+}
+
+.mono {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -0.06em;
+  line-height: 0.85;
+  font-size: 64px;
+}
+
+/* Rounded app icon variants */
+.i01 { background: var(--blenz-yellow); }
+.i01 .mono { color: var(--blenz-navy); }
+.i01 .icon-tile__label { color: var(--blenz-navy); }
+
+.i02 { background: var(--blenz-navy); }
+.i02 .mono { color: var(--blenz-yellow); }
+.i02 .icon-tile__label { color: var(--blenz-yellow); }
+
+.i03 { background: var(--rust); }
+.i03 .mono { color: var(--cream); }
+.i03 .icon-tile__label { color: var(--cream); }
+
+.i04 { background: var(--espresso); }
+.i04 .mono { color: var(--blenz-yellow); }
+.i04 .icon-tile__label { color: var(--blenz-yellow); }
+
+.i05 { background: var(--ice); }
+.i05 .mono { color: var(--blenz-navy); }
+.i05 .icon-tile__label { color: var(--blenz-navy); }
+
+.i06 { background: var(--cream); border: 1.5px solid rgba(26,15,8,0.1); }
+.i06 .mono { color: var(--blenz-navy); }
+.i06 .icon-tile__label { color: var(--blenz-navy); }
+
+/* ============ WORDMARK + LOCKUP SIZES ============ */
+.sizes-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: var(--paper);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1.5px solid rgba(26,15,8,0.08);
+}
+
+.size-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 32px;
+  border-bottom: 1px solid rgba(26,15,8,0.06);
+}
+
+.size-row:last-child { border-bottom: none; }
+
+.size-row__label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blenz-navy);
+  opacity: 0.45;
+  min-width: 100px;
+}
+
+.size-row__spec {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--rust);
+  opacity: 0.7;
+  margin-left: auto;
+}
+
+.wm-xl  { font-family: var(--font-display); font-weight: 700; font-style: italic; letter-spacing: -0.05em; line-height: 0.85; color: var(--blenz-navy); font-size: 96px; }
+.wm-lg  { font-family: var(--font-display); font-weight: 700; font-style: italic; letter-spacing: -0.05em; line-height: 0.85; color: var(--blenz-navy); font-size: 64px; }
+.wm-md  { font-family: var(--font-display); font-weight: 700; font-style: italic; letter-spacing: -0.05em; line-height: 0.85; color: var(--blenz-navy); font-size: 40px; }
+.wm-sm  { font-family: var(--font-display); font-weight: 700; font-style: italic; letter-spacing: -0.05em; line-height: 0.85; color: var(--blenz-navy); font-size: 24px; }
+.wm-xs  { font-family: var(--font-display); font-weight: 700; font-style: italic; letter-spacing: -0.05em; line-height: 0.85; color: var(--blenz-navy); font-size: 16px; }
+
+/* ============ COLOR PALETTE ============ */
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 12px;
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1.5px solid rgba(26,15,8,0.07);
+}
+
+.swatch__color {
+  aspect-ratio: 1;
+  width: 100%;
+}
+
+.swatch__info {
+  background: var(--paper);
+  padding: 10px 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.swatch__name {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--espresso);
+  line-height: 1.2;
+}
+
+.swatch__hex {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  color: var(--blenz-navy);
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+.swatch__role {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rust);
+  opacity: 0.7;
+  margin-top: 2px;
+}
+
+/* ============ FOOTER ============ */
+.sheet-footer {
+  margin-top: 72px;
+  padding-top: 32px;
+  border-top: 1.5px solid rgba(26,15,8,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 28px;
+  letter-spacing: -0.04em;
+  color: var(--blenz-navy);
+}
+
+.footer-meta {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--espresso-soft);
+  opacity: 0.4;
+  text-align: right;
+  line-height: 1.7;
+}
+</style>
+</head>
+<body>
+
+<!-- ===== PAGE HEADER ===== -->
+<header class="page-header">
+  <div class="page-header__eyebrow">blenz 2.0 · Logo Asset Sheet · No-Dot Version</div>
+  <div class="page-header__title">blenz</div>
+  <div class="page-header__meta">Wordmark — Fraunces 700 Italic · Monogram — Single-letter 'b' · 6 Color Variants · For Figma Import</div>
+</header>
+
+<!-- ===== SECTION 01: PRIMARY LOGO HERO ===== -->
+<div class="section-label">01 — Primary Wordmark · Yellow / Hero</div>
+<div class="logo-hero">
+  <span class="wordmark wordmark--hero">blenz<sup>®</sup></span>
+</div>
+
+<!-- ===== SECTION 02: ALL COLOR VARIANTS ===== -->
+<div class="section-label">02 — Wordmark · All 6 Color Variants</div>
+<div class="variants-grid">
+
+  <div class="variant-tile v01">
+    <span class="wordmark">blenz</span>
+    <span class="variant-tile__label">Yellow / Navy — Primary</span>
+  </div>
+
+  <div class="variant-tile v02">
+    <span class="wordmark">blenz</span>
+    <span class="variant-tile__label">Navy / Yellow — Reversed</span>
+  </div>
+
+  <div class="variant-tile v03">
+    <span class="wordmark">blenz</span>
+    <span class="variant-tile__label">Paper / Navy — Neutral</span>
+  </div>
+
+  <div class="variant-tile v04">
+    <span class="wordmark">blenz</span>
+    <span class="variant-tile__label">Rust / Cream — Warm</span>
+  </div>
+
+  <div class="variant-tile v05">
+    <span class="wordmark">blenz</span>
+    <span class="variant-tile__label">Ice / Navy — Cool</span>
+  </div>
+
+  <div class="variant-tile v06">
+    <span class="wordmark">blenz</span>
+    <span class="variant-tile__label">Espresso / Yellow — Dark</span>
+  </div>
+
+</div>
+
+<!-- ===== SECTION 03: APP ICON / MONOGRAM ===== -->
+<div class="section-label">03 — App Icon · Single-Letter Monogram 'b' · All Variants</div>
+<div class="icon-grid">
+
+  <div class="icon-tile i01">
+    <span class="mono">b</span>
+    <span class="icon-tile__label">Yellow/Navy</span>
+  </div>
+
+  <div class="icon-tile i02">
+    <span class="mono">b</span>
+    <span class="icon-tile__label">Navy/Yellow</span>
+  </div>
+
+  <div class="icon-tile i03">
+    <span class="mono">b</span>
+    <span class="icon-tile__label">Rust/Cream</span>
+  </div>
+
+  <div class="icon-tile i04">
+    <span class="mono">b</span>
+    <span class="icon-tile__label">Espresso/Yellow</span>
+  </div>
+
+  <div class="icon-tile i05">
+    <span class="mono">b</span>
+    <span class="icon-tile__label">Ice/Navy</span>
+  </div>
+
+  <div class="icon-tile i06">
+    <span class="mono">b</span>
+    <span class="icon-tile__label">Cream/Navy</span>
+  </div>
+
+</div>
+
+<!-- ===== SECTION 04: WORDMARK SIZE SCALE ===== -->
+<div class="section-label">04 — Wordmark · Size Scale Reference</div>
+<div class="sizes-col">
+  <div class="size-row">
+    <span class="size-row__label">Display / Hero</span>
+    <span class="wm-xl">blenz</span>
+    <span class="size-row__spec">96px · opsz 144</span>
+  </div>
+  <div class="size-row">
+    <span class="size-row__label">Large</span>
+    <span class="wm-lg">blenz</span>
+    <span class="size-row__spec">64px</span>
+  </div>
+  <div class="size-row">
+    <span class="size-row__label">Medium</span>
+    <span class="wm-md">blenz</span>
+    <span class="size-row__spec">40px</span>
+  </div>
+  <div class="size-row">
+    <span class="size-row__label">Small</span>
+    <span class="wm-sm">blenz</span>
+    <span class="size-row__spec">24px</span>
+  </div>
+  <div class="size-row">
+    <span class="size-row__label">Minimum · Nav</span>
+    <span class="wm-xs">blenz</span>
+    <span class="size-row__spec">16px — min size</span>
+  </div>
+</div>
+
+<!-- ===== SECTION 05: COLOR PALETTE ===== -->
+<div class="section-label">05 — Brand Colour Palette · All 9 Tokens</div>
+<div class="palette-grid">
+
+  <div class="swatch">
+    <div class="swatch__color" style="background:#FFC94B;"></div>
+    <div class="swatch__info">
+      <div class="swatch__name">Blenz Yellow</div>
+      <div class="swatch__hex">#FFC94B</div>
+      <div class="swatch__role">Primary / Hero</div>
+    </div>
+  </div>
+
+  <div class="swatch">
+    <div class="swatch__color" style="background:#FFD60A;"></div>
+    <div class="swatch__info">
+      <div class="swatch__name">Pop Yellow</div>
+      <div class="swatch__hex">#FFD60A</div>
+      <div class="swatch__role">Accent</div>
+    </div>
+  </div>
+
+  <div class="swatch">
+    <div class="swatch__color" style="background:#003F88;"></div>
+    <div class="swatch__info">
+      <div class="swatch__name">Deep Navy</div>
+      <div class="swatch__hex">#003F88</div>
+      <div class="swatch__role">Primary Type</div>
+    </div>
+  </div>
+
+  <div class="swatch">
+    <div class="swatch__color" style="background:#C2410C;"></div>
+    <div class="swatch__info">
+      <div class="swatch__name">Rusty Orange</div>
+      <div class="swatch__hex">#C2410C</div>
+      <div class="swatch__role">Secondary Warm</div>
+    </div>
+  </div>
+
+  <div class="swatch">
+    <div class="swatch__color" style="background:#B8DCEC;"></div>
+    <div class="swatch__info">
+      <div class="swatch__name">Icy Blue</div>
+      <div class="swatch__hex">#B8DCEC</div>
+      <div class="swatch__role">Secondary Cool</div>
+    </div>
+  </div>
+
+  <div class="swatch">
+    <div class="swatch__color" style="background:#FFEDB5;"></div>
+    <div class="swatch__info">
+      <div class="swatch__name">Butter</div>
+      <div class="swatch__hex">#FFEDB5</div>
+      <div class="swatch__role">Support Soft</div>
+    </div>
+  </div>
+
+  <div class="swatch">
+    <div class="swatch__color" style="background:#FFF8E7; border: 1px solid rgba(0,0,0,0.06);"></div>
+    <div class="swatch__info">
+      <div class="swatch__name">Cream</div>
+      <div class="swatch__hex">#FFF8E7</div>
+      <div class="swatch__role">Neutral Bg</div>
+    </div>
+  </div>
+
+  <div class="swatch">
+    <div class="swatch__color" style="background:#1A0F08;"></div>
+    <div class="swatch__info">
+      <div class="swatch__name">Espresso</div>
+      <div class="swatch__hex">#1A0F08</div>
+      <div class="swatch__role">Dark Anchor</div>
+    </div>
+  </div>
+
+  <div class="swatch">
+    <div class="swatch__color" style="background:#FBF7EE; border: 1px solid rgba(0,0,0,0.06);"></div>
+    <div class="swatch__info">
+      <div class="swatch__name">Paper</div>
+      <div class="swatch__hex">#FBF7EE</div>
+      <div class="swatch__role">Page Bg</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="sheet-footer">
+  <div class="footer-brand">blenz</div>
+  <div class="footer-meta">
+    blenz 2.0 · No-Dot Version<br>
+    Logo Asset Sheet · For Figma / Gemini Reference<br>
+    Prepared by FSH Design × LoopSuit AI · May 2026
+  </div>
+</footer>
+
+</body>
+</html>
