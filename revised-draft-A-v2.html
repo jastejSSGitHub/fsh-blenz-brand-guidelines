@@ -1349,8 +1349,8 @@
       left: 50%;
       transform: translateX(-50%);
       width: auto;
-      height: 78%;
-      max-width: 110%;
+      height: 131%;
+      max-width: 156%;
       z-index: 1;
       pointer-events: none;
       transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1);
@@ -1361,44 +1361,6 @@
 
     .cup-card:hover .cup-card__bg {
       transform: translateX(-50%) scale(1.05);
-      transform-origin: bottom center;
-    }
-
-    /* All cup card images anchored flush to card bottom — translateY(0) so bottom
-   of image = bottom of card. overflow:hidden clips any top overshoot. */
-    .cup-card--yellow .cup-card__bg {
-      transform: translateX(-50%) translateY(0%);
-    }
-
-    .cup-card--yellow:hover .cup-card__bg {
-      transform: translateX(-50%) translateY(0%) scale(1.05);
-      transform-origin: bottom center;
-    }
-
-    .cup-card--matcha .cup-card__bg {
-      transform: translateX(-50%) translateY(22%);
-    }
-
-    .cup-card--matcha:hover .cup-card__bg {
-      transform: translateX(-50%) translateY(22%) scale(1.05);
-      transform-origin: bottom center;
-    }
-
-    .cup-card--ice .cup-card__bg {
-      transform: translateX(-50%) translateY(28%);
-    }
-
-    .cup-card--ice:hover .cup-card__bg {
-      transform: translateX(-50%) translateY(28%) scale(1.05);
-      transform-origin: bottom center;
-    }
-
-    .cup-card--berry .cup-card__bg {
-      transform: translateX(-50%) translateY(0%);
-    }
-
-    .cup-card--berry:hover .cup-card__bg {
-      transform: translateX(-50%) translateY(0%) scale(1.05);
       transform-origin: bottom center;
     }
 
@@ -2266,6 +2228,20 @@
       font-weight: 500;
     }
 
+    @keyframes logo-colour-cycle {
+      0%    { filter: brightness(0) invert(1) sepia(1) saturate(4) hue-rotate(10deg);                              animation-timing-function: steps(1, end); } /* yellow */
+      16.7% { filter: brightness(0) invert(1) sepia(1) saturate(10) hue-rotate(200deg);                            animation-timing-function: steps(1, end); } /* blue */
+      33.3% { filter: brightness(0) invert(1) sepia(1) saturate(10) hue-rotate(335deg) brightness(0.8);            animation-timing-function: steps(1, end); } /* rust */
+      50%   { filter: brightness(0) invert(1);                                                                     animation-timing-function: steps(1, end); } /* white */
+      66.7% { filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(170deg) brightness(1.3);            animation-timing-function: steps(1, end); } /* light blue */
+      83.3% { filter: brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(90deg) brightness(1.2);             animation-timing-function: steps(1, end); } /* light green */
+      100%  { filter: brightness(0) invert(1) sepia(1) saturate(4) hue-rotate(10deg); }
+    }
+
+    .logo-colour-cycle {
+      animation: logo-colour-cycle 6s linear infinite;
+    }
+
     @media (max-width: 800px) {
       .digital-grid {
         grid-template-columns: 1fr 1fr;
@@ -2512,7 +2488,7 @@
   <!-- ============ 00 · COVER ============ -->
   <section id="cover" class="hero" data-title="Cover">
     <div class="hero__video-bg">
-      <video id="heroVideo" src="Images/Version A contemporary/Images updated 2.0/[IMG-N02] — Summer refresher moment.mp4" autoplay muted playsinline
+      <video id="heroVideo" src="Images/Version A contemporary/Images updated 2.0/splashbeverage.mp4" autoplay muted playsinline
         style="width:100%; height:100%; object-fit:cover; display:block; transform: scale(1.1);"></video>
     </div>
     <div class="hero__overlay"></div>
@@ -2831,7 +2807,7 @@
             <h3 class="cup-card__title">Lattes &amp; Espresso</h3>
           </div>
           <div class="cup-card__contrast-rect" style="background: #F0B400;"></div>
-          <img class="cup-card__bg" src="Images/Version A contemporary/yellow-cup.png" alt="Yellow Cup">
+          <img class="cup-card__bg" src="Images/Version A contemporary/Images updated 2.0/Yellowcoffee.png" alt="Yellow Coffee Cup">
         </article>
 
         <article class="cup-card cup-card--matcha">
@@ -2840,7 +2816,7 @@
             <h3 class="cup-card__title">Matcha &amp; Tea</h3>
           </div>
           <div class="cup-card__contrast-rect" style="background: #BBD49B;"></div>
-          <img class="cup-card__bg" src="Images/Version A contemporary/tea-matchaa.png" alt="Tea & Matcha">
+          <img class="cup-card__bg" src="Images/Version A contemporary/Images updated 2.0/Green matcha.png" alt="Green Matcha">
         </article>
 
         <article class="cup-card cup-card--ice">
@@ -2849,7 +2825,7 @@
             <h3 class="cup-card__title">Cold Brew &amp; Refreshers</h3>
           </div>
           <div class="cup-card__contrast-rect" style="background: #97D1E5;"></div>
-          <img class="cup-card__bg" src="Images/Version A contemporary/Cold-iced.png" alt="Cold & Iced">
+          <img class="cup-card__bg" src="Images/Version A contemporary/Images updated 2.0/bluedrink.png" alt="Blue Drink">
         </article>
 
         <article class="cup-card cup-card--berry">
@@ -2858,7 +2834,7 @@
             <h3 class="cup-card__title">Blue Latte &amp; Limited Drops</h3>
           </div>
           <div class="cup-card__contrast-rect" style="background: #D04C72;"></div>
-          <img class="cup-card__bg" src="Images/Version A contemporary/berry.png" alt="Berry Cup">
+          <img class="cup-card__bg" src="Images/Version A contemporary/Images updated 2.0/Berry.png" alt="Berry Cup">
         </article>
       </div>
     </div>
@@ -2934,12 +2910,12 @@
           </video>
         </div>
 
-        <!-- BEV-PHOTO-06: All 3 cups — wide video -->
-        <div class="bev-tile bev-tile--wide" style="padding: 0; border: none;">
+        <!-- BEV-PHOTO-06: Splash beverage — full aspect ratio -->
+        <div class="bev-tile bev-tile--wide" style="padding: 0; border: none; height: auto; min-height: unset; position: relative;">
           <video
-            src="Images/Version A contemporary/Images updated 2.0/all3cups.mp4"
+            src="Images/Version A contemporary/Images updated 2.0/splashbeverage.mp4"
             autoplay loop muted playsinline
-            style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; border-radius: var(--radius);">
+            style="position: relative; width: 100%; height: auto; display: block; border-radius: var(--radius);">
           </video>
         </div>
 
@@ -2953,29 +2929,9 @@
             style="width:100%;height:100%;object-fit:cover;display:block;" />
         </div>
         <div class="photo-tile photo-tile--02" style="padding: 0; overflow: hidden; position: relative;">
-          <div class="image-carousel" style="width: 100%; height: 100%; border: none; border-radius: 0;">
-            <div class="image-carousel__track">
-              <div class="image-carousel__slide">
-                <video src="Images/Version A contemporary/Section9-img2-v1-chatgpt.mp4" autoplay loop muted playsinline
-                  style="width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.1);transform-origin:top left;"></video>
-              </div>
-              <div class="image-carousel__slide">
-                <img src="Images/Version A contemporary/Section9-img2-v1-grok.png"
-                  alt="Iced specialty drink with croissant"
-                  style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);" />
-              </div>
-              <div class="image-carousel__slide">
-                <img src="Images/Version A contemporary/Section9-img2-v1-grok-2.png"
-                  alt="Iced specialty drink held in hand"
-                  style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);" />
-              </div>
-            </div>
-            <div class="image-carousel__dots" style="bottom: 16px;">
-              <div class="image-carousel__dot is-active" data-index="0"></div>
-              <div class="image-carousel__dot" data-index="1"></div>
-              <div class="image-carousel__dot" data-index="2"></div>
-            </div>
-          </div>
+          <img src="Images/Version A contemporary/Images updated 2.0/season cups 0.png"
+            alt="blenz seasonal cups — limited edition drop"
+            style="width:100%;height:100%;object-fit:cover;display:block;" />
         </div>
         <div class="photo-tile photo-tile--05" style="padding: 0; overflow: hidden; position: relative;">
           <video src="Images/Version A contemporary/Images updated 2.0/kids.mp4"
@@ -3137,7 +3093,16 @@
       <div class="image-carousel">
         <div class="image-carousel__track">
           <div class="image-carousel__slide">
-            <img src="Images/Version A contemporary/section10-img1-v1-chatgpt-2-seasonal.png"
+            <img src="Images/Version A contemporary/Images updated 2.0/season cups 0.png"
+              alt="blenz seasonal cups — limited edition drop zero"
+              style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);" />
+            <div class="image-carousel__caption">
+              <span class="image-carousel__caption-tag">Drop 00 · Fall</span>
+              <span class="image-carousel__caption-text">BC wildlife on every cup.<br>Collect them all.</span>
+            </div>
+          </div>
+          <div class="image-carousel__slide">
+            <img src="Images/Version A contemporary/Images updated 2.0/season cups 1.png"
               alt="blenz seasonal cups — BC character illustration, limited edition"
               style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);" />
             <div class="image-carousel__caption">
@@ -3146,7 +3111,7 @@
             </div>
           </div>
           <div class="image-carousel__slide">
-            <img src="Images/Version A contemporary/section10-img1-v1-chatgpt.png"
+            <img src="Images/Version A contemporary/Images updated 2.0/season cups.png"
               alt="blenz seasonal cups — editorial lifestyle, yellow cups"
               style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);" />
             <div class="image-carousel__caption">
@@ -3158,6 +3123,7 @@
         <div class="image-carousel__dots">
           <div class="image-carousel__dot is-active" data-index="0"></div>
           <div class="image-carousel__dot" data-index="1"></div>
+          <div class="image-carousel__dot" data-index="2"></div>
         </div>
       </div>
     </div>
@@ -3378,16 +3344,25 @@
 
       <div class="digital-grid">
         <div class="digital-card">
-          <div class="digital-card__device">b</div>
+          <div class="digital-card__device">
+            <img src="../Fonts/Rounded stylish/Seperate characters/b.svg" alt="b"
+              style="height: 58%; width: auto; filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(10deg);">
+          </div>
           <span class="digital-card__caption">App icon · iOS, Android</span>
         </div>
         <div class="digital-card">
-          <div class="digital-card__device" style="font-size: 32px;"><img src="Images/blenz_logo.svg" alt="blenz" class="wordmark-svg wordmark-svg--digital"></div>
+          <div class="digital-card__device">
+            <img src="Images/blenz_logo.svg" alt="blenz" class="logo-colour-cycle"
+              style="height: auto; width: 72%;">
+          </div>
           <span class="digital-card__caption">Web hero · Desktop &amp; mobile</span>
         </div>
         <div class="digital-card">
-          <div class="digital-card__device" style="background: var(--rust); color: var(--cream); font-size: 28px;">
-            @blenz</div>
+          <div class="digital-card__device" style="background: var(--rust); flex-direction: column; gap: 10px;">
+            <span style="font-family: var(--font-display); font-weight: 800; font-size: clamp(13px, 1.4vw, 18px); color: var(--cream); letter-spacing: -0.02em;">@</span>
+            <img src="Images/blenz_logo.svg" alt="blenz"
+              style="height: auto; width: 72%; filter: brightness(0) invert(1);">
+          </div>
           <span class="digital-card__caption">Social profile · Instagram, TikTok</span>
         </div>
       </div>
@@ -3698,33 +3673,23 @@
       startAuto();
     });
     // ============================================
-    // Hero Video Sequence: 3 Videos Loop
+    // Hero Video Sequence: 4 Videos Loop
     // ============================================
     const heroVideo = document.getElementById('heroVideo');
     if (heroVideo) {
-      const v1 = "Images/Version A contemporary/Images updated 2.0/[IMG-N02] — Summer refresher moment.mp4";
-      const v2 = "Images/Version A contemporary/Images updated 2.0/storefront-video.mp4";
-      const v3 = "Images/Version A contemporary/Images updated 2.0/bluecoffee.mp4";
-      let state = 1;
-
-      function switchTo(src, nextState) {
-        state = nextState;
-        heroVideo.src = src;
-        heroVideo.load();
-        heroVideo.play();
-      }
-
-      heroVideo.addEventListener('timeupdate', () => {
-        // v2 is cut at 4 s then hands off to v3
-        if (state === 2 && heroVideo.currentTime >= 4) {
-          switchTo(v3, 3);
-        }
-      });
+      const videos = [
+        "Images/Version A contemporary/Images updated 2.0/splashbeverage.mp4",
+        "Images/Version A contemporary/Images updated 2.0/[IMG-N02] — Summer refresher moment.mp4",
+        "Images/Version A contemporary/Images updated 2.0/storefront-video.mp4",
+        "Images/Version A contemporary/Images updated 2.0/bluecoffee.mp4",
+      ];
+      let idx = 0;
 
       heroVideo.addEventListener('ended', () => {
-        // v1 → v2, v3 → v1 (v2 is cut by timeupdate before it can end naturally)
-        if (state === 1) switchTo(v2, 2);
-        else if (state === 3) switchTo(v1, 1);
+        idx = (idx + 1) % videos.length;
+        heroVideo.src = videos[idx];
+        heroVideo.load();
+        heroVideo.play();
       });
     }
 

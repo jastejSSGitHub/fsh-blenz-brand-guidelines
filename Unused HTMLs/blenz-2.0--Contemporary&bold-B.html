@@ -1,0 +1,2735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>blenz 2.0 — Brand Guidelines · Direction B</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* ============ COLOUR SYSTEM v2-B — refined, more disciplined ============ */
+  /* Different shades of the same family. Yellow stays hero, but the supports shift. */
+  --blenz-yellow: #FFB800;          /* slightly more amber/golden than v1, more Italian, more Napoli */
+  --blenz-yellow-pop: #FFCE00;      /* hi-vis accent */
+  --blenz-yellow-soft: #FFE89A;
+
+  --midnight: #0B1220;              /* near-black navy — even deeper than A, more LoopSuit */
+  --midnight-soft: #1A2238;
+
+  --crimson: #B91C1C;               /* second-cup colourway — Napoli red signal */
+  --crimson-deep: #8B1414;
+
+  --bone: #EDE7D6;                  /* warm off-white, primary background */
+  --bone-deep: #DDD3BC;
+  --paper: #F5EDD8;                 /* page warm tone — slightly warmer than v1 */
+  --linen: #E5DBC2;
+  --espresso: #1A0F08;
+  --espresso-soft: #3A2418;
+  --rust: #C2410C;                  /* still the accent · ® mark, hover, micro-details */
+
+  /* Type */
+  --font-display: 'Archivo', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Layout */
+  --maxw: 1280px;
+  --gutter: clamp(20px, 4vw, 56px);
+  --section-pad: clamp(80px, 12vw, 160px);
+  --radius: 20px;
+  --radius-sm: 10px;
+  --radius-pill: 999px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  background: var(--paper);
+  color: var(--espresso);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--midnight);
+  color: var(--blenz-yellow);
+}
+
+img { max-width: 100%; display: block; }
+
+/* ============ TYPOGRAPHY SYSTEM — clean grotesque, weight as voice ============ */
+/* Archivo is mixed-case-friendly grotesque, very Napoli, very contemporary, reads at every scale */
+.display-xl {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(45px, 10.4vw, 176px);
+  line-height: 0.86;
+  letter-spacing: -0.038em;
+}
+
+.display-l {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(32px, 6vw, 83px);
+  line-height: 0.92;
+  letter-spacing: -0.028em;
+}
+
+.display-m {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(22px, 3.4vw, 48px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.display-s {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(16px, 1.9vw, 26px);
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.lead {
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.55;
+  font-weight: 400;
+  max-width: 60ch;
+}
+
+p { max-width: 68ch; }
+
+.bracket {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* The signature parenthetical copy device — the Napoli move */
+.bracket-copy {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bracket-copy::before { content: '('; opacity: 0.6; margin-right: 2px; }
+.bracket-copy::after { content: ')'; opacity: 0.6; margin-left: 2px; }
+
+/* ============ THE BLENZ WORDMARK ============ */
+/* Lowercase b. Clean grotesque. Tight tracking. The whole brand pivots on this. */
+/* Different from Direction A: less rounded, more architectural, mixed-case-friendly. */
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-style: normal;
+  letter-spacing: -0.04em;
+  line-height: 0.85;
+  display: inline-block;
+}
+
+.wordmark--inline { letter-spacing: -0.035em; }
+
+/* ============ STICKY TOP NAV ============ */
+.topnav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 16px var(--gutter);
+  background: rgba(255, 242, 204, 0.85);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  backdrop-filter: blur(20px) saturate(1.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s ease;
+  flex-wrap: nowrap;
+  gap: 12px;
+}
+
+.topnav__brand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(18px, 4vw, 20px);
+  letter-spacing: -0.04em;
+  color: var(--espresso);
+  text-decoration: none;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.topnav__brand sup {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--rust);
+  margin-left: 2px;
+  transform: translateY(-6px);
+}
+
+.topnav__current {
+  display: none !important;
+}
+
+.topnav__menu-btn {
+  background: var(--midnight);
+  color: var(--bone);
+  border: none;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  flex-shrink: 1;
+  min-width: 0;
+  max-width: 160px;
+}
+
+#menuLabel {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.topnav__menu-btn:hover { background: var(--crimson); }
+
+.topnav__menu-btn .chev {
+  width: 9px;
+  height: 9px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  margin-top: -2px;
+}
+
+.topnav__menu-btn[aria-expanded="true"] .chev { transform: rotate(-135deg); margin-top: 2px; }
+
+/* ============ MOBILE GLASS DROPDOWN ============ */
+.mobile-menu {
+  position: fixed;
+  top: 64px;
+  left: var(--gutter);
+  right: var(--gutter);
+  z-index: 99;
+  background: rgba(255, 248, 220, 0.7);
+  -webkit-backdrop-filter: blur(40px) saturate(1.8);
+  backdrop-filter: blur(40px) saturate(1.8);
+  border-radius: var(--radius);
+  box-shadow:
+    0 24px 60px rgba(11, 18, 32, 0.16),
+    0 8px 24px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  padding: 12px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-12px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.mobile-menu__list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+
+.mobile-menu__link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--espresso);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.mobile-menu__link:hover { background: rgba(255, 184, 0, 0.34); }
+
+.mobile-menu__link.is-active {
+  background: var(--midnight);
+  color: var(--bone);
+}
+
+.mobile-menu__link.is-active .num { color: var(--blenz-yellow-pop); }
+
+.mobile-menu__link .num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--midnight);
+  letter-spacing: 0.1em;
+  min-width: 26px;
+}
+
+/* ============ DESKTOP SIDE TOC ============ */
+.sidetoc {
+  display: none !important;
+}
+
+.sidetoc__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sidetoc__link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--espresso-soft);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  transition: all 0.3s ease;
+  padding: 4px 0;
+}
+
+.sidetoc__link::before {
+  content: '';
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.sidetoc__link:hover {
+  opacity: 0.85;
+  color: var(--midnight);
+}
+
+.sidetoc__link:hover::before { width: 28px; }
+
+.sidetoc__link.is-active {
+  opacity: 1;
+  color: var(--midnight);
+  font-weight: 600;
+}
+
+.sidetoc__link.is-active::before {
+  width: 38px;
+  height: 2px;
+  background: var(--crimson);
+}
+
+.sidetoc__link .label {
+  transition: opacity 0.3s ease;
+}
+
+/* ============ LAYOUT PRIMITIVES ============ */
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  width: 100%;
+}
+
+section {
+  padding: var(--section-pad) 0;
+  position: relative;
+}
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: clamp(48px, 8vw, 96px);
+}
+
+.section-head__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.section-head__num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  font-weight: 600;
+}
+
+/* ============ COVER / HERO — Napoli-style: type is the entire hero ============ */
+.hero {
+  color: var(--espresso);
+  min-height: 100vh;
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero__video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero__video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__card {
+  margin-top: 48px;
+  padding: 12px 32px;
+  background: #FFFFFF;
+  border-radius: 100px;
+  text-align: center;
+  width: fit-content;
+}
+
+.hero__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--midnight);
+}
+
+.hero__top span { display: flex; align-items: center; gap: 10px; }
+
+.hero__top .dot-mark {
+  width: 8px;
+  height: 8px;
+  background: var(--crimson);
+  border-radius: 50%;
+}
+
+.hero__tagline {
+  font-family: var(--font-mono);
+  font-size: clamp(12px, 1.4vw, 16px);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--midnight);
+  margin-top: clamp(16px, 2vw, 24px);
+  opacity: 0.75;
+}
+
+.hero__center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 0;
+  position: relative;
+}
+
+.hero__wordmark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(112px, 25.6vw, 432px);
+  line-height: 0.82;
+  letter-spacing: -0.055em;
+  color: var(--midnight);
+  position: relative;
+  display: inline-block;
+}
+
+.hero__wordmark sup {
+  font-family: var(--font-mono);
+  font-size: 0.05em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--crimson);
+  vertical-align: super;
+  margin-left: 0.04em;
+  position: relative;
+  top: 0.18em;
+}
+
+.hero__sub {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(14.4px, 1.76vw, 22.4px);
+  letter-spacing: -0.018em;
+  margin-top: clamp(20px, 3vw, 36px);
+  max-width: 28ch;
+  color: var(--midnight);
+  line-height: 1.2;
+}
+
+.hero__bottom {
+  display: block;
+  padding-top: 32px;
+}
+
+.hero__meta-block h4 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--midnight-soft);
+  margin-bottom: 10px;
+}
+
+.hero__meta-block p {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.35;
+  color: var(--midnight);
+}
+
+@media (max-width: 800px) {
+  .hero__bottom { grid-template-columns: 1fr; gap: 20px; }
+}
+
+/* ============ STORY / SHIFT ============ */
+.story { background: var(--paper); }
+
+.story__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: stretch;
+}
+
+.shift-card {
+  border-radius: var(--radius);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.shift-card--from {
+  background: var(--bone);
+}
+
+.shift-card--to {
+  background: var(--midnight);
+  color: var(--bone);
+}
+
+.shift-card__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.shift-card--from .shift-card__label { color: var(--crimson); }
+.shift-card--to .shift-card__label { color: var(--blenz-yellow); }
+
+.shift-card h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(22px, 3.2vw, 35px);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+}
+
+.shift-card p {
+  line-height: 1.55;
+}
+
+.shift-card--to p { color: var(--bone); opacity: 0.85; }
+
+.shift-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 18px;
+  opacity: 0.85;
+}
+
+.shift-card li {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.shift-card li::before {
+  content: '/';
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.shift-card--from li::before { color: var(--crimson); }
+.shift-card--to li::before { color: var(--blenz-yellow); }
+
+@media (max-width: 800px) {
+  .story__grid { grid-template-columns: 1fr; }
+}
+
+/* ============ PERSONALITY ============ */
+.personality { background: var(--bone); }
+
+.personality__principles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--midnight);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 64px;
+}
+
+.principle {
+  background: var(--paper);
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 280px;
+  border: 2px solid var(--espresso);
+  transition: background 0.3s ease;
+}
+
+.principle:hover { background: var(--blenz-yellow-soft); }
+
+.principle__num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--crimson);
+  font-weight: 600;
+}
+
+.principle__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(18px, 1.9vw, 22px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--midnight);
+}
+
+.principle__body {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--espresso-soft);
+  margin-top: auto;
+}
+
+@media (max-width: 900px) {
+  .personality__principles { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 500px) {
+  .personality__principles { grid-template-columns: 1fr; }
+}
+
+/* ============ LOGO SECTION ============ */
+.logo-section { background: var(--paper); }
+
+.logo-stage {
+  background: var(--bone);
+  border-radius: var(--radius);
+  padding: clamp(60px, 10vw, 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  position: relative;
+  min-height: 380px;
+  overflow: hidden;
+  border: 2px solid var(--espresso);
+}
+
+.logo-stage__bracket {
+  position: absolute;
+  top: 28px;
+  left: 32px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--midnight-soft);
+  font-weight: 500;
+}
+
+.logo-stage__bracket .paren { opacity: 0.5; }
+
+.logo-stage__mark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(88px, 19.2vw, 256px);
+  line-height: 0.85;
+  letter-spacing: -0.055em;
+  color: var(--midnight);
+  position: relative;
+  display: inline-block;
+}
+
+.logo-stage__mark sup {
+  font-family: var(--font-mono);
+  font-size: 0.06em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--crimson);
+  vertical-align: super;
+  position: relative;
+  top: 0.18em;
+}
+
+.logo-stage__sub {
+  position: absolute;
+  bottom: 28px;
+  right: 32px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--midnight-soft);
+  font-weight: 500;
+}
+
+.logo-construction {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.construct-card {
+  background: var(--bone);
+  border-radius: var(--radius-sm);
+  padding: 28px;
+  aspect-ratio: 4/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--espresso);
+}
+
+.construct-card__demo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  color: var(--midnight);
+}
+
+.construct-card__demo--xl { font-size: 100px; }
+.construct-card__demo--m { font-size: 56px; }
+
+.construct-card__demo--lockup {
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 20px;
+}
+
+.construct-card__demo--lockup .word {
+  font-size: 60px;
+  line-height: 0.85;
+}
+
+.construct-card__demo--lockup .desc {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.005em;
+  color: var(--midnight-soft);
+  line-height: 1.1;
+}
+
+.construct-card__caption {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--espresso-soft);
+}
+
+@media (max-width: 800px) {
+  .logo-construction { grid-template-columns: 1fr 1fr; }
+  .construct-card__demo--xl { font-size: 64px; }
+  .construct-card__demo--m { font-size: 40px; }
+}
+
+@media (max-width: 500px) {
+  .logo-construction { grid-template-columns: 1fr; }
+  .construct-card { aspect-ratio: auto; min-height: 200px; }
+}
+
+/* ============ LOGO USAGE ============ */
+.logo-usage { background: var(--bone); }
+
+.dos-donts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.usage-tile {
+  border-radius: var(--radius);
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid var(--espresso);
+}
+
+.usage-tile--do { background: var(--midnight); color: var(--bone); }
+.usage-tile--dont { background: var(--paper); }
+
+.usage-tile__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.usage-tile--do .usage-tile__label { color: var(--blenz-yellow); }
+.usage-tile--dont .usage-tile__label { color: var(--crimson); }
+
+.usage-tile__demo {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 80px;
+  letter-spacing: -0.05em;
+  line-height: 0.85;
+  align-self: center;
+}
+
+.usage-tile--do .usage-tile__demo { color: var(--blenz-yellow); }
+.usage-tile--dont .usage-tile__demo { color: var(--midnight); opacity: 0.5; }
+
+.usage-tile--dont .usage-tile__demo {
+  position: relative;
+}
+
+.usage-tile--dont .usage-tile__demo::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  right: -10%;
+  height: 2.5px;
+  background: var(--crimson);
+  transform: rotate(-6deg);
+}
+
+.usage-tile__caption {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.usage-tile--do .usage-tile__caption { color: var(--bone); opacity: 0.85; }
+.usage-tile--dont .usage-tile__caption { color: var(--midnight-soft); }
+
+@media (max-width: 700px) {
+  .dos-donts { grid-template-columns: 1fr; }
+  .usage-tile__demo { font-size: 56px; }
+}
+
+/* ============ COLOUR SECTION ============ */
+.color-section { background: var(--paper); }
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+}
+
+.swatch {
+  border-radius: var(--radius-sm);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+
+.swatch--xl { grid-column: span 7; min-height: 380px; }
+.swatch--lg { grid-column: span 5; min-height: 380px; }
+.swatch--md { grid-column: span 4; min-height: 240px; }
+.swatch--sm { grid-column: span 3; min-height: 200px; }
+
+.swatch__name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(28px, 3vw, 44px);
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+}
+
+.swatch__role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 6px;
+  opacity: 0.75;
+}
+
+.swatch__values {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* swatch fills — Direction B palette */
+.s-yellow { background: var(--blenz-yellow); color: var(--midnight); }
+.s-yellow-pop { background: var(--blenz-yellow-pop); color: var(--midnight); }
+.s-midnight { background: var(--midnight); color: var(--blenz-yellow); }
+.s-crimson { background: var(--crimson); color: var(--bone); }
+.s-bone { background: var(--bone); color: var(--midnight); }
+.s-paper { background: var(--paper); color: var(--midnight); }
+.s-rust { background: var(--rust); color: var(--bone); }
+.s-espresso { background: var(--espresso); color: var(--blenz-yellow); }
+
+@media (max-width: 900px) {
+  .color-grid { grid-template-columns: repeat(6, 1fr); }
+  .swatch--xl, .swatch--lg { grid-column: span 6; }
+  .swatch--md { grid-column: span 3; }
+  .swatch--sm { grid-column: span 3; }
+}
+
+@media (max-width: 500px) {
+  .color-grid { grid-template-columns: 1fr; }
+  .swatch--xl, .swatch--lg, .swatch--md, .swatch--sm { grid-column: span 1; }
+}
+
+/* ============ TWO-CUP COLOURWAY (replaces "Cup System" — different concept) ============ */
+.cup-system { background: var(--bone); }
+
+.cup-system__intro {
+  margin-bottom: 64px;
+}
+
+.cup-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.cup-mock {
+  border-radius: var(--radius);
+  padding: 64px 48px;
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.cup-mock--yellow { background: var(--blenz-yellow); color: var(--midnight); }
+.cup-mock--crimson { background: var(--crimson); color: var(--bone); }
+
+.cup-mock__bracket {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-align: center;
+  align-self: center;
+  max-width: 22ch;
+  line-height: 1.5;
+  position: relative;
+  padding: 0 16px;
+}
+
+.cup-mock__bracket .paren { opacity: 0.5; }
+
+.cup-mock__wordmark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(80px, 12vw, 168px);
+  letter-spacing: -0.055em;
+  line-height: 0.85;
+  text-align: center;
+  align-self: center;
+}
+
+.cup-mock__wordmark sup {
+  font-family: var(--font-mono);
+  font-size: 0.08em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  vertical-align: super;
+}
+
+.cup-mock--yellow .cup-mock__wordmark sup { color: var(--crimson); }
+.cup-mock--crimson .cup-mock__wordmark sup { color: var(--blenz-yellow); }
+
+.cup-mock__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cup-mock--yellow .cup-mock__label { opacity: 0.75; }
+.cup-mock--crimson .cup-mock__label { opacity: 0.85; }
+
+@media (max-width: 700px) {
+  .cup-pair { grid-template-columns: 1fr; }
+}
+
+/* ============ TYPOGRAPHY SECTION ============ */
+.typography-section { background: var(--paper); }
+
+.type-spec {
+  background: var(--bone);
+  border-radius: var(--radius);
+  padding: clamp(32px, 5vw, 56px);
+  margin-bottom: 16px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+  align-items: center;
+  border: 2px solid var(--espresso);
+}
+
+.type-spec__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.type-spec__role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  font-weight: 600;
+}
+
+.type-spec__name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 32px;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+
+.type-spec__details {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--espresso-soft);
+}
+
+.type-spec__demo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.type-spec__demo--display {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(56px, 8vw, 120px);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: var(--midnight);
+}
+
+.type-spec__demo--body {
+  font-family: var(--font-body);
+  font-size: clamp(20px, 2.4vw, 30px);
+  line-height: 1.4;
+  font-weight: 500;
+  color: var(--midnight);
+  text-align: left;
+  max-width: 38ch;
+}
+
+.type-spec__demo--mono {
+  font-family: var(--font-mono);
+  font-size: clamp(13px, 1.4vw, 18px);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  font-weight: 500;
+}
+
+@media (max-width: 800px) {
+  .type-spec { grid-template-columns: 1fr; gap: 24px; }
+  .type-spec__demo { justify-content: flex-start; text-align: left; }
+}
+
+/* ============ GRAPHIC SYSTEM (BRACKETS, NOT STRIPES) ============ */
+.graphic-section {
+  background: var(--midnight);
+  color: var(--bone);
+}
+
+.graphic-section .section-head__num { color: var(--blenz-yellow); }
+
+.graphic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.graphic-tile {
+  border-radius: var(--radius);
+  min-height: 320px;
+  position: relative;
+  overflow: hidden;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.graphic-tile__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.graphic-tile__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(24px, 3vw, 36px);
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+}
+
+.tile--bracket-large {
+  background: var(--blenz-yellow);
+  color: var(--midnight);
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 280px;
+}
+
+.tile--bracket-large .bracket-display {
+  font-family: var(--font-mono);
+  font-size: clamp(18px, 2.6vw, 32px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--midnight);
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.tile--bracket-large .bracket-display .paren { color: var(--crimson); font-weight: 700; }
+
+.tile--badge {
+  background: var(--crimson);
+  color: var(--bone);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 12px;
+}
+
+.tile--badge .badge-mark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 110px;
+  letter-spacing: -0.045em;
+  line-height: 0.85;
+}
+
+.tile--badge .badge-mark sup {
+  font-family: var(--font-mono);
+  font-size: 0.16em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--blenz-yellow);
+  vertical-align: super;
+}
+
+.tile--type-stack {
+  background: var(--midnight-soft);
+  color: var(--bone);
+}
+
+.tile--type-stack .stack-text {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(28px, 4vw, 56px);
+  line-height: 0.85;
+  letter-spacing: -0.035em;
+  color: var(--blenz-yellow);
+}
+
+@media (max-width: 800px) {
+  .graphic-grid { grid-template-columns: 1fr; }
+  .tile--bracket-large { grid-column: span 1; }
+  .tile--badge .badge-mark { font-size: 80px; }
+}
+
+/* ============ PHOTOGRAPHY ============ */
+.photo-section { background: var(--paper); }
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+  margin-top: 48px;
+}
+
+.photo-tile {
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  min-height: 320px;
+}
+
+.photo-tile--01 { grid-column: span 7; min-height: 480px; }
+.photo-tile--02 { grid-column: span 5; min-height: 480px; }
+.photo-tile--03 { grid-column: span 4; min-height: 360px; }
+.photo-tile--04 { grid-column: span 4; min-height: 360px; }
+.photo-tile--05 { grid-column: span 4; min-height: 360px; }
+
+.photo-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 32px;
+  text-align: center;
+}
+
+.tile-bg-01 { background: var(--blenz-yellow); }
+.tile-bg-02 { background: var(--crimson); color: var(--bone); }
+.tile-bg-03 { background: var(--bone); }
+.tile-bg-04 { background: var(--midnight); color: var(--bone); }
+.tile-bg-05 { background: var(--blenz-yellow-soft); }
+
+.photo-placeholder__id {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--crimson);
+  background: var(--paper);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+}
+
+.tile-bg-02 .photo-placeholder__id,
+.tile-bg-04 .photo-placeholder__id { background: var(--bone); }
+
+.photo-placeholder__caption {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+  max-width: 32ch;
+}
+
+@media (max-width: 900px) {
+  .photo-grid { grid-template-columns: 1fr 1fr; }
+  .photo-tile--01, .photo-tile--02 { grid-column: span 2; }
+  .photo-tile--03, .photo-tile--04, .photo-tile--05 { grid-column: span 1; }
+}
+
+@media (max-width: 600px) {
+  .photo-grid { grid-template-columns: 1fr; }
+  .photo-tile { grid-column: span 1 !important; }
+}
+
+/* ============ CUPPY 2.0 — present but de-emphasised in B ============ */
+/* Kept in the system for sticker/loyalty use, NOT for the primary lockup. */
+.cuppy-section { background: var(--bone); }
+
+.cuppy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: clamp(32px, 6vw, 80px);
+  align-items: start;
+}
+
+.cuppy-stage {
+  background: var(--paper);
+  border-radius: var(--radius);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 40px;
+}
+
+.cuppy-stage .photo-placeholder {
+  position: static;
+  display: flex;
+}
+
+.cuppy-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cuppy-rule {
+  background: var(--paper);
+  border-radius: var(--radius-sm);
+  padding: 22px 26px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.cuppy-rule__num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--crimson);
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.cuppy-rule__content h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.018em;
+  margin-bottom: 4px;
+}
+
+.cuppy-rule__content p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--espresso-soft);
+}
+
+@media (max-width: 800px) {
+  .cuppy-grid { grid-template-columns: 1fr; }
+}
+
+/* ============ VOICE ============ */
+.voice-section { background: var(--paper); }
+
+.voice-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.voice-card {
+  border-radius: var(--radius);
+  padding: 32px;
+  border: 2px solid var(--espresso);
+}
+
+.voice-card--this { background: var(--midnight); color: var(--bone); }
+.voice-card--not { background: var(--bone); color: var(--midnight); }
+
+.voice-card__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.voice-card--this .voice-card__label { color: var(--blenz-yellow); }
+.voice-card--not .voice-card__label {
+  color: var(--crimson);
+  text-decoration: line-through;
+  text-decoration-color: var(--crimson);
+  text-decoration-thickness: 2px;
+}
+
+.voice-card__quote {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.voice-card--not .voice-card__quote {
+  opacity: 0.55;
+}
+
+@media (max-width: 700px) {
+  .voice-pair { grid-template-columns: 1fr; }
+}
+
+/* ============ APPLICATIONS ============ */
+.apps-section { background: var(--bone); }
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+}
+
+.app-tile {
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  min-height: 320px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.app-tile--cup { grid-column: span 7; min-height: 480px; background: var(--blenz-yellow); }
+.app-tile--bag { grid-column: span 5; min-height: 480px; background: var(--midnight); color: var(--bone); }
+.app-tile--storefront { grid-column: span 8; height: 540px; background: var(--crimson); color: var(--bone); }
+.app-tile--menu { grid-column: span 4; height: 540px; background: var(--paper); }
+
+.app-tile__caption {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.app-tile__demo-word {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(64px, 9vw, 140px);
+  letter-spacing: -0.05em;
+  line-height: 0.85;
+  align-self: center;
+}
+
+.app-tile__demo-word sup {
+  font-family: var(--font-mono);
+  font-size: 0.1em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  vertical-align: super;
+}
+
+@media (max-width: 800px) {
+  .apps-grid { grid-template-columns: 1fr; }
+  .app-tile--cup, .app-tile--bag, .app-tile--storefront, .app-tile--menu { grid-column: span 1; }
+}
+
+/* ============ MERCH ============ */
+.merch-section { background: var(--midnight); color: var(--bone); }
+
+.merch-section .section-head__num { color: var(--blenz-yellow); }
+
+.merch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.merch-card {
+  background: var(--midnight-soft);
+  border-radius: var(--radius);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.merch-card__visual {
+  background: var(--paper);
+  border-radius: var(--radius-sm);
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+.merch-card__visual .photo-placeholder { position: static; }
+.merch-card__visual .photo-placeholder__caption { color: var(--midnight); }
+
+.merch-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.merch-card__num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blenz-yellow);
+  font-weight: 600;
+}
+
+.merch-card__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(24px, 3vw, 36px);
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+  color: var(--bone);
+}
+
+.merch-card__details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  border-top: 1.5px dashed rgba(237, 231, 214, 0.2);
+  padding-top: 18px;
+}
+
+.merch-detail__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blenz-yellow);
+  font-weight: 500;
+  margin-bottom: 4px;
+  opacity: 0.85;
+}
+
+.merch-detail__value {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--bone);
+}
+
+@media (max-width: 800px) {
+  .merch-grid { grid-template-columns: 1fr; }
+}
+
+/* ============ DIGITAL ============ */
+.digital-section { background: var(--paper); }
+
+.digital-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 48px;
+}
+
+.digital-card {
+  background: var(--bone);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 320px;
+}
+
+.digital-card__device {
+  background: var(--midnight);
+  border-radius: 14px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blenz-yellow);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 64px;
+  letter-spacing: -0.045em;
+}
+
+.digital-card__caption {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  font-weight: 500;
+}
+
+@media (max-width: 800px) {
+  .digital-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 500px) {
+  .digital-grid { grid-template-columns: 1fr; }
+}
+
+/* ============ MOTION ============ */
+.motion-section { background: var(--bone); }
+
+.motion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 48px;
+}
+
+.motion-rule {
+  background: var(--paper);
+  border-radius: var(--radius-sm);
+  padding: 24px 28px;
+  display: grid;
+  grid-template-columns: 60px 200px 1fr;
+  gap: 28px;
+  align-items: center;
+  border: 1.5px solid var(--linen);
+}
+
+.motion-rule__num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  color: var(--crimson);
+}
+
+.motion-rule__name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: -0.018em;
+}
+
+.motion-rule__detail {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--espresso-soft);
+}
+
+@media (max-width: 700px) {
+  .motion-rule { grid-template-columns: 1fr; gap: 8px; }
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  background: var(--midnight);
+  color: var(--bone);
+  padding: 80px 0 32px;
+}
+
+.footer__main {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(237, 231, 214, 0.15);
+}
+
+.footer__wordmark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(80px, 12vw, 160px);
+  letter-spacing: -0.05em;
+  line-height: 0.85;
+  color: var(--blenz-yellow);
+}
+
+.footer__wordmark sup {
+  font-family: var(--font-mono);
+  font-size: 0.07em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--crimson);
+  vertical-align: super;
+}
+
+.footer__col h5 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--blenz-yellow);
+  margin-bottom: 14px;
+}
+
+.footer__col p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--bone);
+  opacity: 0.8;
+}
+
+.footer__bottom {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 800px) {
+  .footer__main { grid-template-columns: 1fr; }
+}
+
+/* ============ RESPONSIVE BREAKPOINTS ============ */
+@media (min-width: 1280px) {
+  .sidetoc { display: none; }
+}
+
+@media (max-width: 900px) {
+  .topnav__menu-btn { display: flex; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============ TOP NAV ============ -->
+<nav class="topnav">
+  <a href="#cover" class="topnav__brand">Branding guidelines</a>
+  <span class="topnav__current" id="topnavCurrent">— Cover</span>
+  <button class="topnav__menu-btn" id="menuBtn" aria-expanded="false">
+    <span id="menuLabel">Menu</span>
+    <span class="chev"></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="mobile-menu__list" id="mobileMenuList"></ul>
+</div>
+
+<!-- Desktop sidetoc -->
+<aside class="sidetoc">
+  <ul class="sidetoc__list" id="sidetocList"></ul>
+</aside>
+
+<!-- ============ 00 · COVER ============ -->
+<section id="cover" class="hero" data-title="Cover">
+  <div class="hero__video-bg">
+    <video id="heroVideo" src="Images/Version A contemporary/Section9-img2-v1-chatgpt.mp4" autoplay muted playsinline style="width:100%; height:100%; object-fit:cover; display:block; transform: scale(1.1);"></video>
+  </div>
+  <div class="hero__overlay"></div>
+  
+  <div class="container">
+    <div class="hero__center">
+      <div class="hero__wordmark">blenz</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01 · STORY / SHIFT ============ -->
+<section id="story" data-title="The Shift" class="story">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__row">
+        <span class="section-head__num">01 — The Shift</span>
+        <span class="eyebrow">From quiet to confident · Type-first</span>
+      </div>
+      <h2 class="display-l">Coffee is the heritage. <br>The wordmark is the future.</h2>
+      <p class="lead">For thirty years Blenz spoke softly. The new identity speaks plainly. One wordmark. Two cup colourways. A copy device borrowed from Italian café culture. Less to maintain, more to remember.</p>
+    </div>
+
+    <div class="story__grid">
+      <article class="shift-card shift-card--from">
+        <div class="shift-card__label">/ Was — 1992 to 2026</div>
+        <h3>Polite. Quiet. A little beige.</h3>
+        <p>Honey-yellow honesty. Frutiger uppercase. Rose-windmill icon. A brand that whispered "established" instead of saying anything memorable.</p>
+        <ul>
+          <li>BLENZ COFFEE — formal caps</li>
+          <li>Pantone 1215 honey</li>
+          <li>Watercolour mascot, used rarely</li>
+          <li>Coffee-only positioning</li>
+        </ul>
+      </article>
+      <article class="shift-card shift-card--to">
+        <div class="shift-card__label">/ Is — 2026 onward</div>
+        <h3>Bold. Disciplined. Yours.</h3>
+        <p>Lowercase wordmark in a contemporary grotesque. Two cup colourways — yellow for everyday, crimson for cold. Bracket copy as brand punctuation. Built to scale to a hundred locations.</p>
+        <ul>
+          <li>blenz — lowercase, bold grotesque</li>
+          <li>#FFB800 amber-yellow + #B91C1C crimson</li>
+          <li>( bracket-copy ) — the signature device</li>
+          <li>Coffee · Cold · Beverages</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 · PERSONALITY ============ -->
+<section id="personality" data-title="Personality" class="personality">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__row">
+        <span class="section-head__num">02 — Personality</span>
+        <span class="eyebrow">Four principles · One signature</span>
+      </div>
+      <h2 class="display-l">Confident, never loud. <br>Warm, never soft.</h2>
+      <p class="lead">Blenz holds its space with type and colour, not noise. The four principles below define what the brand is — and just as importantly, what it refuses to be.</p>
+    </div>
+
+    <div class="personality__principles">
+      <article class="principle">
+        <div class="principle__num">01</div>
+        <h3 class="principle__title">Disciplined</h3>
+        <p class="principle__body">Two colours do most of the work. One wordmark fits every surface. Restraint is the brand.</p>
+      </article>
+      <article class="principle">
+        <div class="principle__num">02</div>
+        <h3 class="principle__title">Warm</h3>
+        <p class="principle__body">A regular's "good morning," not a server's script. The type is sharp; the people behind it are not.</p>
+      </article>
+      <article class="principle">
+        <div class="principle__num">03</div>
+        <h3 class="principle__title">Local</h3>
+        <p class="principle__body">Vancouver-built. BC-rooted. Made for Canadian morning light, exported with that origin intact.</p>
+      </article>
+      <article class="principle">
+        <div class="principle__num">04</div>
+        <h3 class="principle__title">Made</h3>
+        <p class="principle__body">Real ingredients. Real latte art. Real hands. The drink is the proof; the brand sets the table.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 · LOGO ============ -->
+<section id="logo" data-title="Logo" class="logo-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__row">
+        <span class="section-head__num">03 — Logo</span>
+        <span class="eyebrow">Lowercase · Architectural · Distinctive</span>
+      </div>
+      <h2 class="display-l">One wordmark. <br>Built like furniture.</h2>
+      <p class="lead">A confident lowercase <em>blenz</em> set in Archivo Black. Tight tracking, sharp terminals, no italic, no decoration. Reads at billboard scale and at favicon scale with zero compromise.</p>
+    </div>
+
+    <div class="logo-stage">
+      <div class="logo-stage__bracket">
+        <span class="paren">(</span> primary lockup <span class="paren">)</span>
+      </div>
+      <div class="logo-stage__mark">blenz<sup>®</sup></div>
+      <span class="logo-stage__sub">Midnight on Bone · Master mark</span>
+    </div>
+
+    <div class="logo-construction">
+      <div class="construct-card">
+        <div class="construct-card__demo construct-card__demo--xl">b</div>
+        <div class="construct-card__caption">/ Single-letter mark — Favicon · App icon · Pin · Sticker</div>
+      </div>
+      <div class="construct-card">
+        <div class="construct-card__demo construct-card__demo--m">blenz</div>
+        <div class="construct-card__caption">/ Wordmark only — Cup wraps · Packaging · Headers</div>
+      </div>
+      <div class="construct-card">
+        <div class="construct-card__demo construct-card__demo--lockup">
+          <span class="word">blenz</span>
+          <span class="desc">Coffee<br>&amp; Beverages</span>
+        </div>
+        <div class="construct-card__caption">/ Descriptor lockup — Storefront · Document covers · Formal</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 · LOGO USAGE ============ -->
+<section id="logo-usage" data-title="Logo Usage" class="logo-usage">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__row">
+        <span class="section-head__num">04 — Logo Usage</span>
+        <span class="eyebrow">Do · Don't · No exceptions</span>
+      </div>
+      <h2 class="display-m">Treat the wordmark like a signature. Don't trace it twice.</h2>
+    </div>
+
+    <div class="dos-donts">
+      <div class="usage-tile usage-tile--do">
+        <span class="usage-tile__label">/ Do</span>
+        <div class="usage-tile__demo">blenz</div>
+        <div class="usage-tile__caption">Set big. Tight tracking. Always upright.</div>
+      </div>
+      <div class="usage-tile usage-tile--dont">
+        <span class="usage-tile__label">/ Don't</span>
+        <div class="usage-tile__demo" style="font-style: italic;">blenz</div>
+        <div class="usage-tile__caption">Never italic. Wordmark is upright always.</div>
+      </div>
+      <div class="usage-tile usage-tile--do">
+        <span class="usage-tile__label">/ Do</span>
+        <div class="usage-tile__demo">blenz<sup style="font-size: 0.18em; vertical-align: super; font-family: var(--font-mono); color: var(--crimson);">®</sup></div>
+        <div class="usage-tile__caption">Crimson ® is part of the personality. Use at hero scale.</div>
+      </div>
+      <div class="usage-tile usage-tile--dont">
+        <span class="usage-tile__label">/ Don't</span>
+        <div class="usage-tile__demo" style="text-transform: uppercase;">BLENZ</div>
+        <div class="usage-tile__caption">Never uppercase. Lowercase is the brand.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 · COLOUR ============ -->
+<section id="color" data-title="Colour" class="color-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__row">
+        <span class="section-head__num">05 — Colour</span>
+        <span class="eyebrow">Three colours do the work · The rest support</span>
+      </div>
+      <h2 class="display-l">Yellow, Crimson, Midnight. <br>Everything else stays out.</h2>
+      <p class="lead">A tighter palette than Direction A — three primaries that carry the entire brand. Yellow hero, crimson signal, midnight anchor. Bone and paper handle the backgrounds. Rust stays as a micro-detail.</p>
+    </div>
+
+    <div class="color-grid">
+      <div class="swatch swatch--xl s-yellow">
+        <div>
+          <div class="swatch__name">blenz Yellow</div>
+          <div class="swatch__role">/ Hero · Primary · The brand</div>
+        </div>
+        <div class="swatch__values">
+          <span>HEX · #FFB800</span>
+          <span>RGB · 255 184 0</span>
+          <span>CMYK · 0 28 100 0</span>
+          <span>Pantone · 137 C</span>
+        </div>
+      </div>
+      <div class="swatch swatch--lg s-midnight">
+        <div>
+          <div class="swatch__name">Midnight</div>
+          <div class="swatch__role">/ Anchor · Type · Backdrop</div>
+        </div>
+        <div class="swatch__values">
+          <span>HEX · #0B1220</span>
+          <span>RGB · 11 18 32</span>
+          <span>CMYK · 89 75 50 90</span>
+        </div>
+      </div>
+      <div class="swatch swatch--md s-crimson">
+        <div>
+          <div class="swatch__name">Crimson</div>
+          <div class="swatch__role">/ Signal · Cold cup · Bracket accent</div>
+        </div>
+        <div class="swatch__values">
+          <span>HEX · #B91C1C</span>
+          <span>RGB · 185 28 28</span>
+        </div>
+      </div>
+      <div class="swatch swatch--md s-bone">
+        <div>
+          <div class="swatch__name">Bone</div>
+          <div class="swatch__role">/ Primary background · Cup base</div>
+        </div>
+        <div class="swatch__values">
+          <span>HEX · #EDE7D6</span>
+          <span>RGB · 237 231 214</span>
+        </div>
+      </div>
+      <div class="swatch swatch--md s-paper">
+        <div>
+          <div class="swatch__name">Paper</div>
+          <div class="swatch__role">/ Document background</div>
+        </div>
+        <div class="swatch__values">
+          <span>HEX · #F5EDD8</span>
+          <span>RGB · 245 237 216</span>
+        </div>
+      </div>
+      <div class="swatch swatch--sm s-yellow-pop">
+        <div>
+          <div class="swatch__name">Pop Yellow</div>
+          <div class="swatch__role">/ Hi-vis · UI</div>
+        </div>
+        <div class="swatch__values">
+          <span>#FFCE00</span>
+        </div>
+      </div>
+      <div class="swatch swatch--sm s-rust">
+        <div>
+          <div class="swatch__name">Rust</div>
+          <div class="swatch__role">/ Micro · ® mark</div>
+        </div>
+        <div class="swatch__values">
+          <span>#C2410C</span>
+        </div>
+      </div>
+      <div class="swatch swatch--sm s-espresso">
+        <div>
+          <div class="swatch__name">Espresso</div>
+          <div class="swatch__role">/ Body type</div>
+        </div>
+        <div class="swatch__values">
+          <span>#1A0F08</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 · TWO-CUP COLOURWAY ============ -->
+<section id="cup-system" data-title="Cup System" class="cup-system">
+  <div class="container">
+    <div class="section-head cup-system__intro">
+      <div class="section-head__row">
+        <span class="section-head__num">06 — Cup Colourway</span>
+        <span class="eyebrow">Two cups · Same wordmark · One brand</span>
+      </div>
+      <h2 class="display-l">Yellow for the morning. <br>Crimson for the afternoon.</h2>
+      <p class="lead">A simpler cup logic than the four-colour system in Direction A. Two cups carry the entire menu — yellow for hot drinks, crimson for cold and limited drops. Same wordmark, same scale, opposite energy.</p>
+    </div>
+
+    <div class="cup-pair">
+      <article class="cup-mock cup-mock--yellow">
+        <div class="cup-mock__bracket">
+          <span class="paren">(</span> the daily cup <span class="paren">)</span>
+        </div>
+        <div class="cup-mock__wordmark">blenz<sup>®</sup></div>
+        <div class="cup-mock__label">
+          <span>Cup · 01 · Hot &amp; Espresso</span>
+          <span>Latte · Drip · Matcha · Tea</span>
+        </div>
+      </article>
+      <article class="cup-mock cup-mock--crimson">
+        <div class="cup-mock__bracket">
+          <span class="paren">(</span> the cold cup <span class="paren">)</span>
+        </div>
+        <div class="cup-mock__wordmark">blenz<sup>®</sup></div>
+        <div class="cup-mock__label">
+          <span>Cup · 02 · Cold &amp; Limited</span>
+          <span>Cold brew · Iced · Specials</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 · TYPOGRAPHY ============ -->
+<section id="typography" data-title="Typography" class="typography-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__row">
+        <span class="section-head__num">07 — Typography</span>
+        <span class="eyebrow">Archivo · Inter · JetBrains Mono</span>
+      </div>
+      <h2 class="display-l">Three voices. <br>One family.</h2>
+      <p class="lead">All sans, all clean, all upright. Display does the talking — never italic, always bold. Body keeps things grounded. Mono signals "this is a label, not a sentence" and powers the bracket-copy device.</p>
+    </div>
+
+    <div class="type-spec">
+      <div class="type-spec__meta">
+        <span class="type-spec__role">/ Display · Headlines</span>
+        <h3 class="type-spec__name">Archivo</h3>
+        <p class="type-spec__details">
+          Weights · 700 / 800 / 900<br>
+          Tracking · −0.04em hero<br>
+          Always upright · Never italic<br>
+          Mixed-case friendly
+        </p>
+      </div>
+      <div class="type-spec__demo">
+        <div class="type-spec__demo--display">smile<br>after<br>every sip.</div>
+      </div>
+    </div>
+
+    <div class="type-spec">
+      <div class="type-spec__meta">
+        <span class="type-spec__role">/ Body · Interface</span>
+        <h3 class="type-spec__name">Inter</h3>
+        <p class="type-spec__details">
+          Weights · 400 / 500 / 600 / 700<br>
+          Tracking · 0<br>
+          Line-height · 1.5 body, 1.4 lead<br>
+          For paragraphs, captions, all UI
+        </p>
+      </div>
+      <div class="type-spec__demo">
+        <div class="type-spec__demo--body">Made by hand. Made in BC. Made for the morning that doesn't ask for permission.</div>
+      </div>
+    </div>
+
+    <div class="type-spec">
+      <div class="type-spec__meta">
+        <span class="type-spec__role">/ Mono · Brackets &amp; Labels</span>
+        <h3 class="type-spec__name">JetBrains Mono</h3>
+        <p class="type-spec__details">
+          Weight · 500<br>
+          Tracking · 0.14em — 0.18em<br>
+          Always uppercase · Powers bracket-copy<br>
+          Three words max
+        </p>
+      </div>
+      <div class="type-spec__demo">
+        <div class="type-spec__demo--mono">( vancouver · since '92 )</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 · GRAPHIC SYSTEM ============ -->
+<section id="graphic" data-title="Graphic System" class="graphic-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__row">
+        <span class="section-head__num">08 — Graphic System</span>
+        <span class="eyebrow">Brackets · Badges · Stacks</span>
+      </div>
+      <h2 class="display-l" style="color: var(--bone);">Three moves. <br>Used everywhere.</h2>
+      <p class="lead" style="color: var(--bone); opacity: 0.85;">The graphic system is intentionally small. Brackets for copy. Badge for sticker scale. Stacked type for posters and cup walls. No mascot in the primary system. No illustrations doing brand work.</p>
+    </div>
+
+    <div class="graphic-grid">
+      <div class="graphic-tile tile--bracket-large">
+        <div>
+          <span class="graphic-tile__label">01 · The Bracket</span>
+          <h3 class="graphic-tile__title" style="margin-top: 16px;">A copy device borrowed from Italian café culture.</h3>
+        </div>
+        <div class="bracket-display">
+          <span class="paren">(</span> where coffee<br>is the culture <span class="paren">)</span>
+        </div>
+      </div>
+      <div class="graphic-tile tile--badge">
+        <span class="graphic-tile__label" style="color: var(--blenz-yellow);">02 · The Badge</span>
+        <div class="badge-mark">b<sup>®</sup></div>
+        <span class="graphic-tile__label" style="color: var(--blenz-yellow);">Sticker · App icon · Pin</span>
+      </div>
+      <div class="graphic-tile tile--type-stack">
+        <span class="graphic-tile__label" style="color: var(--blenz-yellow);">03 · The Stack</span>
+        <div class="stack-text">smile<br>after<br>every<br>sip.</div>
+        <span class="graphic-tile__label" style="color: var(--blenz-yellow);">Poster · Cup wall · OOH</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 09 · PHOTOGRAPHY ============ -->
+<section id="photography" data-title="Photography" class="photo-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__row">
+        <span class="section-head__num">09 — Photography</span>
+        <span class="eyebrow">Editorial · High-contrast · Confident</span>
+      </div>
+      <h2 class="display-l">The cup is the <br>only character.</h2>
+      <p class="lead">Photography in Direction B is editorial — closer to a fashion brand than a coffee shop. Hard light, single subject, deep shadows. The cup is the hero of every frame. No mascot, no playfulness — just confidence.</p>
+    </div>
+
+    <div class="photo-grid">
+      <div class="photo-tile photo-tile--01 tile-bg-01">
+        <div class="photo-placeholder">
+          <span class="photo-placeholder__id">[ IMG-01 ]</span>
+          <p class="photo-placeholder__caption">Hero — Yellow cup centred against deep midnight backdrop, dramatic side-lit, the wordmark in sharp focus, condensation visible. Editorial, high-contrast, single hero object.</p>
+        </div>
+      </div>
+      <div class="photo-tile photo-tile--02 tile-bg-02">
+        <div class="photo-placeholder">
+          <span class="photo-placeholder__id">[ IMG-02 ]</span>
+          <p class="photo-placeholder__caption">Crimson cup mid-pour — espresso streaming in from above, hard rim-light, near-black background. Cinematic. Looks shot for a magazine cover.</p>
+        </div>
+      </div>
+      <div class="photo-tile photo-tile--03 tile-bg-03">
+        <div class="photo-placeholder">
+          <span class="photo-placeholder__id">[ IMG-03 ]</span>
+          <p class="photo-placeholder__caption">Storefront night exterior — yellow neon "blenz" sign on a midnight-blue tiled facade, slight rain on pavement, cinematic blade-runner-meets-Vancouver vibe.</p>
+        </div>
+      </div>
+      <div class="photo-tile photo-tile--04 tile-bg-04">
+        <div class="photo-placeholder">
+          <span class="photo-placeholder__id">[ IMG-04 ]</span>
+          <p class="photo-placeholder__caption">Two cups side-by-side on a polished concrete counter — one yellow, one crimson, identical wordmarks, dramatic top-light. The whole brand in one shot.</p>
+        </div>
+      </div>
+      <div class="photo-tile photo-tile--05 tile-bg-05" style="padding:0; overflow:hidden;">
+        <video src="Images/Version A contemporary/Section9-img5-v1-chatgpt-2.mp4" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);"></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10 · CUPPY 2.0 — DE-EMPHASISED IN B ============ -->
+<section id="seasonal" data-title="Seasonal Cups" class="cuppy-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__row">
+        <span class="section-head__num">10 — Seasonal Cups</span>
+        <span class="eyebrow">Limited drops · Type stays · Characters rotate</span>
+      </div>
+      <h2 class="display-l">The cup changes. <br>The wordmark doesn't.</h2>
+      <p class="lead">Blenz has an existing seasonal cup tradition — illustrated characters at the holidays, collectible and shareable. In Direction B this system is kept deliberately quiet. The wordmark holds its position. A single character illustration occupies the lower cup wall. The cup colourway switches to crimson for the seasonal drop. One image prompt covers this section.</p>
+    </div>
+
+    <div class="cuppy-grid">
+      <div class="cuppy-stage">
+        <div class="photo-placeholder">
+          <span class="photo-placeholder__id">[ IMG-SEASONAL ]</span>
+          <p class="photo-placeholder__caption">Two blenz cups side by side — one yellow (everyday), one crimson (seasonal limited). The crimson cup has a bold flat-vector BC moose illustration in bone and yellow below the wordmark. Editorial top-lit studio shot, both cups casting soft shadows on a bone surface. The wordmark reads clearly on both.</p>
+        </div>
+      </div>
+      <div class="cuppy-rules">
+        <article class="cuppy-rule">
+          <span class="cuppy-rule__num">01</span>
+          <div class="cuppy-rule__content">
+            <h4>Seasonal = crimson cup</h4>
+            <p>All limited and seasonal drops use the crimson cup. Yellow stays for the everyday menu. The colour swap signals it's special without any copy.</p>
+          </div>
+        </article>
+        <article class="cuppy-rule">
+          <span class="cuppy-rule__num">02</span>
+          <div class="cuppy-rule__content">
+            <h4>Wordmark position never moves</h4>
+            <p>The blenz wordmark sits in the same fixed position on every cup — seasonal or not. The character lives in the lower 40% only.</p>
+          </div>
+        </article>
+        <article class="cuppy-rule">
+          <span class="cuppy-rule__num">03</span>
+          <div class="cuppy-rule__content">
+            <h4>BC-rooted characters, two colours only</h4>
+            <p>Bone and yellow on crimson. Characters are from BC's natural world — orca, moose, grizzly, heron. Flat vector, no outlines, shapes only.</p>
+          </div>
+        </article>
+        <article class="cuppy-rule">
+          <span class="cuppy-rule__num">04</span>
+          <div class="cuppy-rule__content">
+            <h4>Four drops per year</h4>
+            <p>Holiday, Spring, Summer, Autumn. Each cup is a limited collectible. The limited colourway and character make it worth keeping.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11 · VOICE ============ -->
+<section id="voice" data-title="Voice" class="voice-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__row">
+        <span class="section-head__num">11 — Voice</span>
+        <span class="eyebrow">Specific · Brief · Bracketed</span>
+      </div>
+      <h2 class="display-l">Specific. Brief. Local. <br>In brackets when it counts.</h2>
+      <p class="lead">Blenz writes the way a regular speaks. Short sentences. Strong verbs. Real ingredients. Real places. The bracket-copy device — borrowed from Italian café culture — is reserved for taglines and signage moments.</p>
+    </div>
+
+    <div class="voice-pair">
+      <div class="voice-card voice-card--this">
+        <span class="voice-card__label">/ This</span>
+        <p class="voice-card__quote">( where coffee is the culture )</p>
+      </div>
+      <div class="voice-card voice-card--not">
+        <span class="voice-card__label">/ Not this</span>
+        <p class="voice-card__quote">"A premium artisanal coffee experience for the modern lifestyle."</p>
+      </div>
+    </div>
+
+    <div class="voice-pair">
+      <div class="voice-card voice-card--this">
+        <span class="voice-card__label">/ This</span>
+        <p class="voice-card__quote">"Cold brew, slow brewed. Twelve hours. No shortcuts."</p>
+      </div>
+      <div class="voice-card voice-card--not">
+        <span class="voice-card__label">/ Not this</span>
+        <p class="voice-card__quote">"Discover our artisanal cold brew journey, where time meets craft."</p>
+      </div>
+    </div>
+
+    <div class="voice-pair">
+      <div class="voice-card voice-card--this">
+        <span class="voice-card__label">/ This</span>
+        <p class="voice-card__quote">"Smile after every sip."</p>
+      </div>
+      <div class="voice-card voice-card--not">
+        <span class="voice-card__label">/ Not this</span>
+        <p class="voice-card__quote">"Where flavour meets joy in every meaningful moment."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 12 · APPLICATIONS ============ -->
+<section id="applications" data-title="Applications" class="apps-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__row">
+        <span class="section-head__num">12 — Applications</span>
+        <span class="eyebrow">Cup · Bag · Storefront · Menu</span>
+      </div>
+      <h2 class="display-l">The brand <br>at every scale.</h2>
+      <p class="lead">Yellow cup. Midnight bag. Crimson storefront. Paper menu. Each touchpoint chooses a single ground colour and lets the wordmark hold the centre. No clutter, no extra graphics — type and colour, that's it.</p>
+    </div>
+
+    <div class="apps-grid">
+      <div class="app-tile app-tile--cup">
+        <span class="app-tile__caption">12.1 — Hot cup, primary colourway</span>
+        <div class="app-tile__demo-word">blenz<sup style="color: var(--crimson);">®</sup></div>
+        <span class="app-tile__caption">[ IMG-07 ] Yellow paper cup, midnight wordmark, crimson ®</span>
+      </div>
+      <div class="app-tile app-tile--bag">
+        <span class="app-tile__caption" style="color: var(--bone);">12.2 — Takeaway bag</span>
+        <div class="app-tile__demo-word" style="color: var(--blenz-yellow);">b</div>
+        <span class="app-tile__caption" style="color: var(--bone);">[ IMG-08 ] Midnight bag, big yellow b mark, bracket-copy on side panel</span>
+      </div>
+      <div class="app-tile app-tile--storefront" style="padding: 0; overflow: hidden; position: relative;">
+        <video 
+          src="Images/Version A contemporary/storefront.mp4" 
+          autoplay muted loop playsinline 
+          style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);" 
+          onmouseover="this.pause()" 
+          onmouseout="this.play()">
+        </video>
+        <span class="app-tile__caption" style="position:absolute;bottom:16px;left:16px;background:rgba(26,15,8,0.7);color:var(--cream);padding:6px 12px;border-radius:var(--radius-pill);z-index:20;">12.3 — Storefront signage</span>
+      </div>
+      <div class="app-tile app-tile--menu" style="padding: 0; overflow: hidden; position: relative;">
+        <video 
+          src="Images/Version A contemporary/Sectio12-img10-v2-chatgpt-menu.mp4" 
+          autoplay muted loop playsinline 
+          style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);" 
+          onmouseover="this.pause()" 
+          onmouseout="this.play()">
+        </video>
+        <span class="app-tile__caption" style="position:absolute;bottom:16px;left:16px;background:rgba(26,15,8,0.7);color:var(--cream);padding:6px 12px;border-radius:var(--radius-pill);z-index:20;">12.4 — Menu board</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 13 · MERCH ============ -->
+<section id="merch" data-title="Merch" class="merch-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__row">
+        <span class="section-head__num">13 — Merch</span>
+        <span class="eyebrow">Two starter items · Built to be loved</span>
+      </div>
+      <h2 class="display-l" style="color: var(--bone);">The brand <br>you wear quietly.</h2>
+      <p class="lead" style="color: var(--bone); opacity: 0.85;">Direction B's merch follows the same logic as the system — restraint over volume. A heavy tote with a single bracket-copy line on the bottom hem. A loyalty card with the wordmark in foil. No mascot, no patterns, just the type doing the work.</p>
+    </div>
+
+    <div class="merch-grid">
+      <article class="merch-card">
+        <div class="merch-card__visual" style="padding:0; overflow:hidden;">
+          <video src="Images/Version A contemporary/Section13-img-11-v2.mp4" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);"></video>
+        </div>
+        <div class="merch-card__meta">
+          <span class="merch-card__num">/ Item 01</span>
+          <h3 class="merch-card__title">The Everyday Tote</h3>
+          <p style="font-size: 14px; color: rgba(237, 231, 214, 0.85);">Heavy 12oz natural canvas. Single-colour screen print. Reinforced 38cm straps. Bracket-copy line on bottom hem.</p>
+        </div>
+        <div class="merch-card__details">
+          <div>
+            <div class="merch-detail__label">Material</div>
+            <div class="merch-detail__value">12oz natural cotton</div>
+          </div>
+          <div>
+            <div class="merch-detail__label">Print</div>
+            <div class="merch-detail__value">Midnight, 1-colour</div>
+          </div>
+          <div>
+            <div class="merch-detail__label">Size</div>
+            <div class="merch-detail__value">38 × 42 cm</div>
+          </div>
+          <div>
+            <div class="merch-detail__label">Retail</div>
+            <div class="merch-detail__value">$24 CAD</div>
+          </div>
+        </div>
+      </article>
+      <article class="merch-card">
+        <div class="merch-card__visual" style="padding:0; overflow:hidden;">
+          <img src="Images/Version A contemporary/stickers.png" alt="Blenz Sticker Card" style="width:100%; height:100%; object-fit:cover; display:block; transform: scale(1.1);">
+        </div>
+        <div class="merch-card__meta">
+          <span class="merch-card__num">/ Item 02</span>
+          <h3 class="merch-card__title">The Sticker Card</h3>
+          <p style="font-size: 14px; color: rgba(237, 231, 214, 0.85);">Replaces the punch card. New collectible sticker drops every month. Seven stickers earn the eighth drink free. The card itself is the keepsake.</p>
+        </div>
+        <div class="merch-card__details">
+          <div>
+            <div class="merch-detail__label">Format</div>
+            <div class="merch-detail__value">85 × 54 mm</div>
+          </div>
+          <div>
+            <div class="merch-detail__label">Stock</div>
+            <div class="merch-detail__value">350gsm uncoated midnight</div>
+          </div>
+          <div>
+            <div class="merch-detail__label">Foil</div>
+            <div class="merch-detail__value">Yellow foil block · wordmark</div>
+          </div>
+          <div>
+            <div class="merch-detail__label">Reward</div>
+            <div class="merch-detail__value">Collect 7 → 8th free</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 14 · DIGITAL ============ -->
+<section id="digital" data-title="Digital" class="digital-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__row">
+        <span class="section-head__num">14 — Digital</span>
+        <span class="eyebrow">App · Web · Social</span>
+      </div>
+      <h2 class="display-l">Built for the <br>phone-first world.</h2>
+      <p class="lead">Digital is where the brand meets a thumb first. The app icon is just the b. The web hero is the wordmark and a single drink. Social posts use the bracket device as the hook — never an exclamation mark.</p>
+    </div>
+
+    <div class="digital-grid">
+      <div class="digital-card">
+        <div class="digital-card__device">b</div>
+        <span class="digital-card__caption">/ App icon · iOS, Android</span>
+      </div>
+      <div class="digital-card">
+        <div class="digital-card__device" style="font-size: 32px;">blenz</div>
+        <span class="digital-card__caption">/ Web hero · Desktop &amp; mobile</span>
+      </div>
+      <div class="digital-card">
+        <div class="digital-card__device" style="background: var(--crimson); color: var(--bone); font-size: 26px;">@blenz</div>
+        <span class="digital-card__caption">/ Social profile · Instagram, TikTok</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 15 · MOTION ============ -->
+<section id="motion" data-title="Motion" class="motion-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__row">
+        <span class="section-head__num">15 — Motion</span>
+        <span class="eyebrow">Disciplined · Confident · Unhurried</span>
+      </div>
+      <h2 class="display-l">Movement that feels <br>composed, never frantic.</h2>
+      <p class="lead">Motion follows the same logic as the type — confident, unhurried, never showy. The wordmark settles, never bounces. Brackets snap into place. Five rules, applied everywhere.</p>
+    </div>
+
+    <div class="motion-list">
+      <div class="motion-rule">
+        <span class="motion-rule__num">M·01</span>
+        <span class="motion-rule__name">Composed Ease</span>
+        <span class="motion-rule__detail">cubic-bezier(0.32, 0.72, 0, 1) — primary easing curve. Used for nav, hover, page transitions.</span>
+      </div>
+      <div class="motion-rule">
+        <span class="motion-rule__num">M·02</span>
+        <span class="motion-rule__name">Wordmark Settle</span>
+        <span class="motion-rule__detail">Opacity 0 → 1 with 6px upward drift. 480ms. The wordmark settles, never bounces.</span>
+      </div>
+      <div class="motion-rule">
+        <span class="motion-rule__num">M·03</span>
+        <span class="motion-rule__name">Bracket Snap</span>
+        <span class="motion-rule__detail">Parens slide in from outside, copy fades in centre. 320ms total. Used for tagline reveals.</span>
+      </div>
+      <div class="motion-rule">
+        <span class="motion-rule__num">M·04</span>
+        <span class="motion-rule__name">Pour Animation</span>
+        <span class="motion-rule__detail">For drink visualisations only. Liquid fills cup vertically, 600ms ease-in-out, single overshoot.</span>
+      </div>
+      <div class="motion-rule">
+        <span class="motion-rule__num">M·05</span>
+        <span class="motion-rule__name">Sticker Pop</span>
+        <span class="motion-rule__detail">Scale 0.85 → 1.0 with subtle rotation jitter ±2°. Used only on loyalty stamp moments.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__wordmark">blenz<sup>®</sup></div>
+      <div class="footer__col">
+        <h5>/ Direction B</h5>
+        <p>Bold grotesque<br>Lowercase wordmark<br>Two-cup colourway<br>Bracket-copy device</p>
+      </div>
+      <div class="footer__col">
+        <h5>/ Built for</h5>
+        <p>Sandeep Alexander<br>FSH Design<br>Blenz Coffee · v0.2 draft<br>May 2026</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>( © Blenz Coffee · 1992 — 2026 )</span>
+      <span>( Vancouver · BC )</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ============================================
+// Build navigation from sections with [data-title]
+// ============================================
+const sections = Array.from(document.querySelectorAll('section[data-title]'));
+const mobileMenuList = document.getElementById('mobileMenuList');
+const sidetocList = document.getElementById('sidetocList');
+const topnavCurrent = document.getElementById('topnavCurrent');
+const menuBtn = document.getElementById('menuBtn');
+const menuLabel = document.getElementById('menuLabel');
+const mobileMenu = document.getElementById('mobileMenu');
+
+sections.forEach((s, i) => {
+  const id = s.id;
+  const title = s.dataset.title;
+  const num = String(i).padStart(2, '0');
+
+  // Mobile menu item
+  const li = document.createElement('li');
+  const a = document.createElement('a');
+  a.href = '#' + id;
+  a.className = 'mobile-menu__link';
+  a.dataset.target = id;
+  a.innerHTML = `<span class="num">${num}</span><span>${title}</span>`;
+  li.appendChild(a);
+  mobileMenuList.appendChild(li);
+
+  // Side TOC item
+  const tli = document.createElement('li');
+  const ta = document.createElement('a');
+  ta.href = '#' + id;
+  ta.className = 'sidetoc__link';
+  ta.dataset.target = id;
+  ta.innerHTML = `<span class="label">${title}</span>`;
+  tli.appendChild(ta);
+  sidetocList.appendChild(tli);
+});
+
+// ============================================
+// Mobile menu toggle
+// ============================================
+menuBtn.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('is-open');
+  menuBtn.setAttribute('aria-expanded', String(open));
+  menuLabel.textContent = open ? 'Close' : 'Menu';
+});
+
+mobileMenuList.addEventListener('click', (e) => {
+  if (e.target.closest('a')) {
+    mobileMenu.classList.remove('is-open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuLabel.textContent = 'Menu';
+  }
+});
+
+// ============================================
+// Active section tracking
+// ============================================
+const setActive = (id) => {
+  const section = sections.find(s => s.id === id);
+  if (!section) return;
+  const title = section.dataset.title;
+  topnavCurrent.textContent = '— ' + title;
+  menuLabel.textContent = mobileMenu.classList.contains('is-open') ? 'Close' : title;
+
+  document.querySelectorAll('.mobile-menu__link, .sidetoc__link').forEach(el => {
+    el.classList.toggle('is-active', el.dataset.target === id);
+  });
+};
+
+const observer = new IntersectionObserver((entries) => {
+  let best = null;
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      if (!best || entry.intersectionRatio > best.intersectionRatio) {
+        best = entry;
+      }
+    }
+  });
+  if (best) setActive(best.target.id);
+}, {
+  rootMargin: '-20% 0px -60% 0px',
+  threshold: [0, 0.1, 0.25, 0.5, 0.75, 1]
+});
+
+sections.forEach(s => observer.observe(s));
+
+// ============================================
+// Sidetoc labels: show on scroll, hide on idle
+// ============================================
+const sidetoc = document.querySelector('.sidetoc');
+let scrollTimeout;
+
+window.addEventListener('scroll', () => {
+  if (sidetoc) {
+    sidetoc.classList.add('is-scrolling');
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      sidetoc.classList.remove('is-scrolling');
+    }, 1500);
+  }
+}, { passive: true });
+
+const style = document.createElement('style');
+style.textContent = `
+  .sidetoc:not(.is-scrolling) .sidetoc__link .label {
+    opacity: 0 !important;
+    pointer-events: none;
+  }
+  .topnav { background: transparent; }
+  .topnav__logo { text-transform: uppercase; }
+`;
+document.head.appendChild(style);
+
+setActive(sections[0].id);
+// ============================================
+// Hero Video Sequence: 3s Clip A -> Full Clip B -> Loop
+// ============================================
+const heroVideo = document.getElementById('heroVideo');
+if (heroVideo) {
+  const v1 = "Images/Version A contemporary/Section9-img2-v1-chatgpt.mp4";
+  const v2 = "Images/Version A contemporary/storefront.mp4";
+  const v3 = "Images/Version A contemporary/Section9-img5-v1-chatgpt-2.mp4";
+  let state = 1; // 1: v1 (3s), 2: v2 (full), 3: v3 (3s)
+
+  heroVideo.addEventListener('timeupdate', () => {
+    if (state === 3 && heroVideo.currentTime >= 3) {
+      state = 1;
+      heroVideo.src = v1;
+      heroVideo.load();
+      heroVideo.play();
+    }
+  });
+
+  heroVideo.addEventListener('ended', () => {
+    if (state === 1) {
+      state = 2;
+      heroVideo.src = v2;
+      heroVideo.load();
+      heroVideo.play();
+    } else if (state === 2) {
+      state = 3;
+      heroVideo.src = v3;
+      heroVideo.load();
+      heroVideo.play();
+    } else if (state === 3) {
+      state = 1;
+      heroVideo.src = v1;
+      heroVideo.load();
+      heroVideo.play();
+    }
+  });
+}
+</script>
+
+</body>
+</html>
