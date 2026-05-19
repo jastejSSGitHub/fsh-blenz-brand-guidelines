@@ -1,0 +1,3951 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>blenz 2.0 — Brand Guidelines · Direction A</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,400;10..48,500;10..48,600;10..48,700;10..48,800&family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      /* ============ COLOUR SYSTEM v2 — bolder, warmer, more pop ============ */
+      --blenz-yellow: #FFC107;
+      /* shifted warmer + more saturated than v1 */
+      --blenz-yellow-pop: #FFD60A;
+      /* hi-vis accent */
+      --blenz-yellow-soft: #FFE89A;
+      /* soft tint for backgrounds */
+
+      --navy: #0A2540;
+      /* deeper than v1 — more authority */
+      --navy-deep: #051529;
+
+      --rust: #C2410C;
+      /* accent only */
+      --rust-bright: #EA580C;
+      /* slightly punchier alt */
+
+      --matcha: #6B8E4E;
+      /* tea-drink cup colourway */
+      --matcha-soft: #C9D8B6;
+      --ice: #A8D5E5;
+      /* cold-drink cup colourway */
+      --ice-deep: #6BA8C0;
+      --berry: #C44569;
+      /* fruit/blue-latte cup colourway accent */
+
+      --cream: #FFF6E0;
+      /* warmer cream */
+      --paper: #FBF5E5;
+      /* page background */
+      --bone: #F2EAD3;
+      /* divider tone */
+      --espresso: #1A0F08;
+      --espresso-soft: #3A2418;
+
+      /* Type */
+      --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+      --font-body: 'Hanken Grotesk', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+      /* Layout */
+      --maxw: 1280px;
+      --gutter: clamp(20px, 4vw, 56px);
+      --section-pad: clamp(80px, 12vw, 160px);
+      --radius: 24px;
+      --radius-sm: 14px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-weight: 400;
+      background: var(--paper);
+      color: var(--espresso);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: var(--navy);
+      color: var(--blenz-yellow);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ============ TYPOGRAPHY SYSTEM — bold contemporary, no italics, no serifs ============ */
+    .display-xl {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(45px, 10.4vw, 176px);
+      line-height: 0.88;
+      letter-spacing: -0.045em;
+      font-variation-settings: "opsz" 48;
+    }
+
+    .display-l {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(32px, 6vw, 83px);
+      line-height: 0.92;
+      letter-spacing: -0.035em;
+      font-variation-settings: "opsz" 48;
+    }
+
+    .display-m {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(22px, 3.4vw, 48px);
+      line-height: 0.98;
+      letter-spacing: -0.025em;
+      font-variation-settings: "opsz" 36;
+    }
+
+    .display-s {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(16px, 1.9vw, 26px);
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow--lg {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .lead {
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.5;
+      font-weight: 400;
+      max-width: 60ch;
+    }
+
+    p {
+      max-width: 68ch;
+    }
+
+    .bracket-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--espresso-soft);
+    }
+
+    /* ============ THE BLENZ WORDMARK ============ */
+    /* Lowercase b. Bold rounded grotesque. Tight tracking. The whole brand pivots on this. */
+    .wordmark {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-style: normal;
+      letter-spacing: -0.055em;
+      line-height: 0.85;
+      font-variation-settings: "opsz" 48;
+      display: inline-block;
+    }
+
+    .wordmark--inline {
+      letter-spacing: -0.05em;
+    }
+
+    .wordmark__sub {
+      font-family: var(--font-mono);
+      font-size: 0.16em;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      display: block;
+      margin-top: 0.5em;
+      opacity: 0.8;
+    }
+
+    /* ============ STICKY TOP NAV ============ */
+    .topnav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 16px var(--gutter);
+      background: rgba(255, 242, 204, 0.85);
+      -webkit-backdrop-filter: blur(20px) saturate(1.4);
+      backdrop-filter: blur(20px) saturate(1.4);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.3s ease;
+      flex-wrap: nowrap;
+      gap: 12px;
+    }
+
+    .topnav__brand {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(18px, 4vw, 20px);
+      letter-spacing: -0.05em;
+      color: var(--espresso);
+      text-decoration: none;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .topnav__brand sup {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--rust);
+      margin-left: 2px;
+      transform: translateY(-6px);
+    }
+
+    .topnav__current {
+      display: none !important;
+    }
+
+    .topnav__menu-btn {
+      background: var(--espresso);
+      color: var(--paper);
+      border: none;
+      padding: 10px 18px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      flex-shrink: 1;
+      min-width: 0;
+      max-width: 160px;
+    }
+
+    #menuLabel {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .topnav__menu-btn:hover {
+      background: var(--navy);
+    }
+
+    .topnav__menu-btn .chev {
+      width: 9px;
+      height: 9px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease;
+      margin-top: -2px;
+    }
+
+    .topnav__menu-btn[aria-expanded="true"] .chev {
+      transform: rotate(-135deg);
+      margin-top: 2px;
+    }
+
+    /* ============ MOBILE GLASS DROPDOWN ============ */
+    .mobile-menu {
+      position: fixed;
+      top: 64px;
+      left: var(--gutter);
+      right: var(--gutter);
+      z-index: 99;
+      background: rgba(255, 248, 220, 0.65);
+      -webkit-backdrop-filter: blur(40px) saturate(1.8);
+      backdrop-filter: blur(40px) saturate(1.8);
+      border-radius: var(--radius);
+      box-shadow:
+        0 24px 60px rgba(10, 37, 64, 0.14),
+        0 8px 24px rgba(0, 0, 0, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      padding: 12px;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-12px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .mobile-menu.is-open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .mobile-menu__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .mobile-menu__link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--espresso);
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .mobile-menu__link:hover {
+      background: rgba(255, 193, 7, 0.32);
+    }
+
+    .mobile-menu__link.is-active {
+      background: var(--espresso);
+      color: var(--paper);
+    }
+
+    .mobile-menu__link.is-active .num {
+      color: var(--blenz-yellow-pop);
+    }
+
+    .mobile-menu__link .num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--navy);
+      letter-spacing: 0.1em;
+      min-width: 26px;
+    }
+
+    /* ============ DESKTOP SIDE TOC ============ */
+    .sidetoc {
+      display: none !important;
+    }
+
+    .sidetoc__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .sidetoc__link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--espresso-soft);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.45;
+      transition: all 0.3s ease;
+      padding: 4px 0;
+    }
+
+    .sidetoc__link::before {
+      content: '';
+      width: 18px;
+      height: 1px;
+      background: currentColor;
+      transition: width 0.3s ease;
+    }
+
+    .sidetoc__link:hover {
+      opacity: 0.85;
+      color: var(--navy);
+    }
+
+    .sidetoc__link:hover::before {
+      width: 28px;
+    }
+
+    .sidetoc__link.is-active {
+      opacity: 1;
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .sidetoc__link.is-active::before {
+      width: 38px;
+      height: 2px;
+      background: var(--blenz-yellow-pop);
+    }
+
+    .sidetoc__link .label {
+      transition: opacity 0.3s ease;
+    }
+
+    /* ============ LAYOUT PRIMITIVES ============ */
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+      width: 100%;
+    }
+
+    section {
+      padding: var(--section-pad) 0;
+      position: relative;
+    }
+
+    .section-head {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: clamp(48px, 8vw, 96px);
+    }
+
+    .section-head__row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .section-head__num {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--rust);
+      font-weight: 500;
+    }
+
+    /* ============ COVER / HERO ============ */
+    .hero {
+      color: var(--espresso);
+      min-height: 100vh;
+      padding: 80px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .hero__video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .hero__video-bg video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(4px);
+      z-index: 2;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero__card {
+      margin-top: 48px;
+      padding: 12px 32px;
+      background: #FFFFFF;
+      border-radius: 100px;
+      text-align: center;
+      width: fit-content;
+    }
+
+    .hero__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .hero__top span {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero__top .dot-mark {
+      width: 8px;
+      height: 8px;
+      background: var(--rust);
+      border-radius: 50%;
+    }
+
+    .hero__center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 80px 0 60px;
+      position: relative;
+    }
+
+    .hero__wordmark {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(96px, 22.4vw, 368px);
+      line-height: 0.82;
+      letter-spacing: -0.07em;
+      color: var(--espresso);
+      font-variation-settings: "opsz" 48;
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero__wordmark sup {
+      font-family: var(--font-mono);
+      font-size: 0.06em;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--rust);
+      vertical-align: super;
+      margin-left: 0.05em;
+      font-variation-settings: normal;
+    }
+
+    .hero__sub {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(14px, 1.9vw, 26px);
+      letter-spacing: -0.02em;
+      margin-top: clamp(20px, 3vw, 36px);
+      max-width: 26ch;
+      color: var(--espresso);
+      line-height: 1.15;
+    }
+
+    .hero__bottom {
+      display: block;
+      padding-top: 32px;
+    }
+
+    .hero__meta-block h4 {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--espresso-soft);
+      margin-bottom: 10px;
+    }
+
+    .hero__meta-block p {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(15px, 1.4vw, 18px);
+      line-height: 1.3;
+      color: var(--espresso);
+    }
+
+    @media (max-width: 800px) {
+      .hero__bottom {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    /* ============ STORY / SHIFT SECTION ============ */
+    .story {
+      background: var(--paper);
+    }
+
+    .story__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(32px, 6vw, 96px);
+      align-items: start;
+    }
+
+    .shift-card {
+      border-radius: var(--radius);
+      padding: 32px;
+      background: var(--cream);
+    }
+
+    .shift-card--from {
+      background: var(--bone);
+      transform: rotate(-1.5deg);
+    }
+
+    .shift-card--to {
+      background: var(--blenz-yellow);
+      transform: rotate(1deg);
+    }
+
+    .shift-card__label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--rust);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .shift-card h3 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(22px, 3.2vw, 35px);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+      color: var(--espresso);
+    }
+
+    .shift-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 18px;
+      padding-top: 18px;
+    }
+
+    .shift-card li {
+      font-size: 14px;
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+    }
+
+    .shift-card li::before {
+      content: '→';
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--rust);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 800px) {
+      .story__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .shift-card {
+        transform: none !important;
+      }
+    }
+
+    /* ============ PERSONALITY ============ */
+    .personality {
+      background: var(--ice);
+    }
+
+    .personality__principles {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 64px;
+    }
+
+    .principle {
+      background: var(--cream);
+      border-radius: var(--radius-sm);
+      padding: 28px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      border: 2px solid var(--espresso);
+      transition: transform 0.3s ease;
+    }
+
+    .principle:hover {
+      transform: translateY(-6px);
+    }
+
+    .principle__num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: var(--rust);
+      font-weight: 500;
+    }
+
+    .principle__title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 19px;
+      line-height: 1;
+      letter-spacing: -0.025em;
+      color: var(--espresso);
+    }
+
+    .principle__body {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--espresso-soft);
+    }
+
+    @media (max-width: 900px) {
+      .personality__principles {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .personality__principles {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ============ LOGO SECTION ============ */
+    .logo-section {
+      background: var(--cream);
+    }
+
+    .logo-stage {
+      background: var(--paper);
+      border-radius: var(--radius);
+      padding: clamp(60px, 10vw, 120px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 32px;
+      position: relative;
+      min-height: 360px;
+      border: 2px solid var(--espresso);
+    }
+
+    .logo-stage__mark {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(100px, 22vw, 280px);
+      line-height: 0.85;
+      letter-spacing: -0.065em;
+      color: var(--espresso);
+      font-variation-settings: "opsz" 48;
+      position: relative;
+      display: inline-block;
+    }
+
+    .logo-stage__mark sup {
+      font-family: var(--font-mono);
+      font-size: 0.07em;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--rust);
+      vertical-align: super;
+      margin-left: 0.04em;
+      font-variation-settings: normal;
+    }
+
+    .logo-stage__sub {
+      position: absolute;
+      bottom: 28px;
+      right: 32px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--rust);
+      font-weight: 500;
+    }
+
+    .logo-construction {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .construct-card {
+      background: var(--paper);
+      border-radius: var(--radius-sm);
+      padding: 28px;
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      border: 2px solid var(--espresso);
+    }
+
+    .construct-card__demo {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      color: var(--espresso);
+    }
+
+    .construct-card__demo--xl {
+      font-size: 96px;
+    }
+
+    .construct-card__demo--m {
+      font-size: 56px;
+    }
+
+    .construct-card__demo--s {
+      font-size: 32px;
+    }
+
+    .construct-card__demo--lockup {
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .construct-card__demo--lockup .word {
+      font-size: 60px;
+      line-height: 0.85;
+    }
+
+    .construct-card__demo--lockup .desc {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rust);
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .construct-card__caption {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--espresso-soft);
+    }
+
+    /* ---- Liquid-glass image preview overlay ---- */
+    .img-hover-trigger {
+      display: inline;
+      cursor: default;
+      border-bottom: 1px dashed currentColor;
+    }
+
+    #img-preview-overlay {
+      position: fixed;
+      z-index: 9999;
+      width: 320px;
+      max-width: calc(100vw - 32px);
+      border-radius: 20px;
+      overflow: hidden;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(8px) scale(0.94);
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      background: rgba(255, 255, 255, 0.28);
+      backdrop-filter: blur(22px) saturate(1.9) brightness(1.06);
+      -webkit-backdrop-filter: blur(22px) saturate(1.9) brightness(1.06);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow:
+        0 16px 48px rgba(0, 0, 0, 0.24),
+        0 2px 8px rgba(0, 0, 0, 0.14),
+        inset 0 1.5px 0 rgba(255, 255, 255, 0.75);
+      padding: 10px;
+    }
+
+    #img-preview-overlay.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    #img-preview-overlay img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+
+    #img-preview-overlay .overlay-placeholder {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 12px;
+      background: var(--bone, #F2EAD3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    #img-preview-overlay .overlay-placeholder svg {
+      width: 40px;
+      height: 40px;
+      opacity: 0.4;
+    }
+
+    #img-preview-overlay .overlay-placeholder span {
+      font-family: var(--font-mono, monospace);
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--espresso-soft, #3A2418);
+      opacity: 0.5;
+    }
+
+    @media (max-width: 800px) {
+      .logo-construction {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .construct-card__demo--xl {
+        font-size: 64px;
+      }
+
+      .construct-card__demo--m {
+        font-size: 40px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .logo-construction {
+        grid-template-columns: 1fr;
+      }
+
+      .construct-card {
+        aspect-ratio: auto;
+        min-height: 200px;
+      }
+    }
+
+    /* ============ LOGO USAGE ============ */
+    .logo-usage {
+      background: var(--paper);
+    }
+
+    .dos-donts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .usage-tile {
+      border-radius: var(--radius);
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 2px solid var(--espresso);
+    }
+
+    .usage-tile--do {
+      background: var(--blenz-yellow);
+    }
+
+    .usage-tile--dont {
+      background: var(--cream);
+    }
+
+    .usage-tile__label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .usage-tile--do .usage-tile__label {
+      color: var(--rust);
+    }
+
+    .usage-tile--dont .usage-tile__label {
+      color: var(--espresso-soft);
+    }
+
+    .usage-tile__demo {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 84px;
+      letter-spacing: -0.06em;
+      line-height: 0.85;
+      color: var(--espresso);
+      align-self: center;
+    }
+
+    .usage-tile--dont .usage-tile__demo {
+      position: relative;
+      opacity: 0.55;
+    }
+
+    .usage-tile--dont .usage-tile__demo::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -10%;
+      right: -10%;
+      height: 3px;
+      background: var(--rust);
+      transform: rotate(-8deg);
+    }
+
+    .usage-tile__caption {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--espresso);
+    }
+
+    @media (max-width: 700px) {
+      .dos-donts {
+        grid-template-columns: 1fr;
+      }
+
+      .usage-tile__demo {
+        font-size: 56px;
+      }
+    }
+
+    /* ============ COLOUR SECTION ============ */
+    .color-section {
+      background: #FFF2CC;
+    }
+
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+
+    .swatch {
+      border-radius: var(--radius-sm);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .swatch--xl {
+      grid-column: span 7;
+      min-height: 380px;
+    }
+
+    .swatch--lg {
+      grid-column: span 5;
+      min-height: 380px;
+    }
+
+    .swatch--md {
+      grid-column: span 4;
+      min-height: 240px;
+    }
+
+    .swatch--sm {
+      grid-column: span 3;
+      min-height: 200px;
+    }
+
+    .swatch__name {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(28px, 3vw, 44px);
+      letter-spacing: -0.03em;
+      line-height: 0.95;
+    }
+
+    .swatch__role {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-top: 6px;
+      opacity: 0.75;
+    }
+
+    .swatch__values {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .swatch__values span {
+      letter-spacing: 0.04em;
+    }
+
+    /* swatch colour fills */
+    .s-yellow {
+      background: var(--blenz-yellow);
+      color: var(--espresso);
+    }
+
+    .s-yellow-pop {
+      background: var(--blenz-yellow-pop);
+      color: var(--espresso);
+    }
+
+    .s-navy {
+      background: var(--navy);
+      color: var(--blenz-yellow);
+    }
+
+    .s-rust {
+      background: var(--rust);
+      color: var(--cream);
+    }
+
+    .s-matcha {
+      background: var(--matcha);
+      color: var(--cream);
+    }
+
+    .s-ice {
+      background: var(--ice);
+      color: var(--navy);
+    }
+
+    .s-berry {
+      background: var(--berry);
+      color: var(--cream);
+    }
+
+    .s-cream {
+      background: var(--cream);
+      color: var(--espresso);
+    }
+
+    .s-espresso {
+      background: var(--espresso);
+      color: var(--blenz-yellow);
+    }
+
+    @media (max-width: 900px) {
+      .color-grid {
+        grid-template-columns: repeat(6, 1fr);
+      }
+
+      .swatch--xl,
+      .swatch--lg {
+        grid-column: span 6;
+      }
+
+      .swatch--md {
+        grid-column: span 3;
+      }
+
+      .swatch--sm {
+        grid-column: span 3;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .color-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .swatch--xl,
+      .swatch--lg,
+      .swatch--md,
+      .swatch--sm {
+        grid-column: span 1;
+      }
+    }
+
+    /* ============ CUP CATEGORY SYSTEM (NEW) ============ */
+    .cup-system {
+      background: var(--paper);
+    }
+
+    .cup-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 48px;
+    }
+
+    .cup-card {
+      border-radius: var(--radius);
+      padding: 28px 24px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      min-height: 360px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cup-card--yellow {
+      background: var(--blenz-yellow);
+    }
+
+    .cup-card--ice {
+      background: var(--ice);
+    }
+
+    .cup-card--matcha {
+      background: var(--matcha-soft);
+    }
+
+    .cup-card--berry {
+      background: var(--berry);
+      color: var(--cream);
+    }
+
+    .cup-card__category {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+
+    .cup-card__title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 36px;
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+    }
+
+    .cup-card>*:not(.cup-card__contrast-rect) {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cup-card__contrast-rect {
+      position: absolute;
+      top: 42%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    .cup-card__bg {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: auto;
+      height: 101%;
+      max-width: 143%;
+      z-index: 1;
+      pointer-events: none;
+      transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1);
+      display: block;
+      object-fit: contain;
+      object-position: bottom center;
+    }
+
+    .cup-card:hover .cup-card__bg {
+      transform: translateX(-50%) scale(1.05);
+      transform-origin: bottom center;
+    }
+
+    /* All cup card images anchored flush to card bottom — translateY(0) so bottom
+   of image = bottom of card. overflow:hidden clips any top overshoot. */
+    .cup-card--yellow .cup-card__bg {
+      transform: translateX(-50%) translateY(0%);
+    }
+
+    .cup-card--yellow:hover .cup-card__bg {
+      transform: translateX(-50%) translateY(0%) scale(1.05);
+      transform-origin: bottom center;
+    }
+
+    .cup-card--matcha .cup-card__bg {
+      transform: translateX(-50%) translateY(10%);
+    }
+
+    .cup-card--matcha:hover .cup-card__bg {
+      transform: translateX(-50%) translateY(10%) scale(1.05);
+      transform-origin: bottom center;
+    }
+
+    .cup-card--ice .cup-card__bg {
+      transform: translateX(-50%) translateY(10%);
+    }
+
+    .cup-card--ice:hover .cup-card__bg {
+      transform: translateX(-50%) translateY(10%) scale(1.05);
+      transform-origin: bottom center;
+    }
+
+    .cup-card--berry .cup-card__bg {
+      transform: translateX(-50%) translateY(0%);
+    }
+
+    .cup-card--berry:hover .cup-card__bg {
+      transform: translateX(-50%) translateY(0%) scale(1.05);
+      transform-origin: bottom center;
+    }
+
+    .cup-card__example {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      line-height: 1.5;
+      opacity: 0.8;
+      margin-top: 14px;
+    }
+
+    /* .cup-card__cup-illo removed as per request */
+
+    @media (max-width: 900px) {
+      .cup-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .cup-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ============ TYPOGRAPHY SECTION ============ */
+    .typography-section {
+      background: var(--paper);
+    }
+
+    .type-spec {
+      background: var(--cream);
+      border-radius: var(--radius);
+      margin-bottom: 18px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 0;
+      align-items: stretch;
+      border: 2px solid var(--espresso);
+      overflow: hidden;
+    }
+
+    .type-spec__meta {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      background: #F8EDD4;
+      padding: clamp(32px, 4vw, 48px) clamp(24px, 3.5vw, 40px);
+      align-self: stretch;
+    }
+
+    .type-spec__role {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--rust);
+      font-weight: 500;
+    }
+
+    .type-spec__name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 32px;
+      letter-spacing: -0.025em;
+      line-height: 1;
+    }
+
+    .type-spec__details {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      line-height: 1.7;
+      color: var(--espresso-soft);
+    }
+
+    .type-spec__demo {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      text-align: right;
+      padding: clamp(32px, 4vw, 48px) clamp(24px, 3.5vw, 40px);
+    }
+
+    .type-spec__demo--display {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(56px, 8vw, 120px);
+      line-height: 0.85;
+      letter-spacing: -0.045em;
+      color: var(--espresso);
+    }
+
+    .type-spec__demo--body {
+      font-family: var(--font-body);
+      font-size: clamp(20px, 2.4vw, 30px);
+      line-height: 1.4;
+      font-weight: 500;
+      color: var(--espresso);
+      text-align: left;
+      max-width: 38ch;
+    }
+
+    .type-spec__demo--mono {
+      font-family: var(--font-mono);
+      font-size: clamp(13px, 1.4vw, 18px);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--rust);
+      font-weight: 500;
+    }
+
+    @media (max-width: 800px) {
+      .type-spec {
+        grid-template-columns: 1fr;
+      }
+
+      .type-spec__demo {
+        justify-content: flex-start;
+        text-align: left;
+      }
+    }
+
+    /* ============ GRAPHIC SYSTEM (STRIPE PATTERN) ============ */
+    .graphic-section {
+      background: var(--navy);
+      color: var(--cream);
+    }
+
+    .graphic-section .section-head__num {
+      color: var(--blenz-yellow-pop);
+    }
+
+    .graphic-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 18px;
+      margin-top: 48px;
+    }
+
+    .graphic-tile {
+      border-radius: var(--radius);
+      min-height: 320px;
+      position: relative;
+      overflow: hidden;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .graphic-tile__label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      z-index: 2;
+      position: relative;
+    }
+
+    .graphic-tile__title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(24px, 3vw, 38px);
+      letter-spacing: -0.028em;
+      line-height: 0.95;
+      z-index: 2;
+      position: relative;
+    }
+
+    /* Stripe pattern */
+    .tile--stripes {
+      background:
+        repeating-linear-gradient(90deg,
+          var(--blenz-yellow) 0,
+          var(--blenz-yellow) 28px,
+          var(--navy) 28px,
+          var(--navy) 56px);
+      color: var(--cream);
+      grid-column: span 2;
+      min-height: 280px;
+    }
+
+    .tile--stripes .graphic-tile__title,
+    .tile--stripes .graphic-tile__label {
+      background: var(--navy);
+      display: inline-block;
+      padding: 6px 12px;
+      width: fit-content;
+    }
+
+    .tile--badge {
+      background: var(--rust);
+      color: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      gap: 12px;
+    }
+
+    .tile--badge .badge-mark {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 96px;
+      letter-spacing: -0.05em;
+      line-height: 0.85;
+      text-transform: lowercase;
+    }
+
+    .tile--badge .badge-mark sup {
+      font-family: var(--font-mono);
+      font-size: 0.16em;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--blenz-yellow);
+      vertical-align: super;
+    }
+
+    .tile--bracket {
+      background: var(--blenz-yellow);
+      color: var(--espresso);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: clamp(14px, 1.8vw, 22px);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+
+
+    @media (max-width: 800px) {
+      .graphic-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tile--stripes {
+        grid-column: span 1;
+      }
+
+      .tile--badge .badge-mark {
+        font-size: 72px;
+      }
+    }
+
+    /* ============ PHOTOGRAPHY ============ */
+    .photo-section {
+      background: var(--cream);
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    .photo-tile {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      min-height: 320px;
+    }
+
+    .photo-tile--01 {
+      grid-column: span 5;
+      height: 400px;
+    }
+
+    .photo-tile--02 {
+      grid-column: span 7;
+      height: 400px;
+    }
+
+    .photo-tile--05 {
+      grid-column: span 7;
+      height: 320px;
+    }
+
+    .photo-tile--04 {
+      grid-column: span 5;
+      height: 320px;
+    }
+
+    .photo-tile--dummy {
+      grid-column: span 5;
+      height: 400px;
+    }
+
+    .photo-tile--03 {
+      grid-column: span 7;
+      height: 400px;
+    }
+
+    .photo-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .tile-bg-01 {
+      background: var(--blenz-yellow);
+    }
+
+    .tile-bg-02 {
+      background: var(--ice);
+    }
+
+    .tile-bg-03 {
+      background: var(--cream);
+    }
+
+    .tile-bg-04 {
+      background: var(--matcha-soft);
+    }
+
+    .tile-bg-05 {
+      background: var(--rust);
+      color: var(--cream);
+    }
+
+    .photo-placeholder__id {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--rust);
+      background: var(--cream);
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+    }
+
+    .tile-bg-05 .photo-placeholder__id {
+      color: var(--cream);
+      background: var(--rust);
+    }
+
+    .tile-bg-04 .photo-placeholder__id {
+      background: var(--cream);
+      color: var(--matcha);
+    }
+
+    .photo-placeholder__caption {
+      font-family: var(--font-body);
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 500;
+      max-width: 30ch;
+    }
+
+    @media (max-width: 900px) {
+      .photo-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .photo-tile--01,
+      .photo-tile--02 {
+        grid-column: span 2;
+      }
+
+      .photo-tile--03,
+      .photo-tile--04,
+      .photo-tile--05 {
+        grid-column: span 1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-tile {
+        grid-column: span 1 !important;
+      }
+    }
+
+    /* ============ IMAGE CAROUSEL ============ */
+    .image-carousel {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: grab;
+      user-select: none;
+    }
+
+    .seasonal-section {
+      background: var(--blenz-yellow);
+    }
+
+    .seasonal-section .image-carousel {
+      aspect-ratio: 16/9;
+      max-height: 620px;
+    }
+
+    .image-carousel:active {
+      cursor: grabbing;
+    }
+
+    .image-carousel__track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.55s cubic-bezier(0.32, 0.72, 0, 1);
+    }
+
+    .image-carousel__slide {
+      height: 100%;
+      width: 100%;
+      flex: 0 0 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .image-carousel__slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+    }
+
+    .image-carousel__dots {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .image-carousel__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      border: 1.5px solid rgba(255, 255, 255, 0.8);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .image-carousel__dot.is-active {
+      background: var(--espresso);
+      border-color: var(--espresso);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    .image-carousel__caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 48px 32px 52px;
+      background: linear-gradient(to top, rgba(26, 15, 8, 0.65) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .image-carousel__caption-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--blenz-yellow);
+      font-weight: 500;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .image-carousel__caption-text {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(18px, 2.4vw, 28px);
+      letter-spacing: -0.025em;
+      color: var(--cream);
+      line-height: 1.1;
+    }
+
+    @media (max-width: 700px) {
+      .seasonal-section .image-carousel {
+        aspect-ratio: 4/5;
+        max-height: 520px;
+      }
+    }
+
+    /* ============ VOICE ============ */
+    .voice-section {
+      background: var(--paper);
+    }
+
+    .voice-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .voice-card {
+      border-radius: var(--radius-sm);
+      padding: 28px;
+      border: 2px solid var(--espresso);
+    }
+
+    .voice-card--this {
+      background: var(--blenz-yellow);
+    }
+
+    .voice-card--not {
+      background: var(--cream);
+    }
+
+    .voice-card__label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .voice-card--this .voice-card__label {
+      color: var(--rust);
+    }
+
+    .voice-card--not .voice-card__label {
+      color: var(--espresso-soft);
+      text-decoration: line-through;
+      text-decoration-color: var(--rust);
+      text-decoration-thickness: 2px;
+    }
+
+    .voice-card__quote {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: var(--espresso);
+    }
+
+    .voice-card--not .voice-card__quote {
+      opacity: 0.55;
+    }
+
+    @media (max-width: 700px) {
+      .voice-pair {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ============ APPLICATIONS ============ */
+    .apps-section {
+      background: var(--cream);
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+
+    .app-tile {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      min-height: 320px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .app-tile--cup {
+      grid-column: span 7;
+      min-height: 480px;
+      background: var(--blenz-yellow);
+    }
+
+    .app-tile--bag {
+      grid-column: span 5;
+      min-height: 480px;
+      background: var(--rust);
+      color: var(--cream);
+    }
+
+    .app-tile--storefront {
+      grid-column: span 8;
+      height: 540px;
+      background: var(--navy);
+      color: var(--cream);
+    }
+
+    .app-tile--menu {
+      grid-column: span 4;
+      height: 540px;
+      background: var(--ice);
+    }
+
+    .app-tile__caption {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .app-tile__demo-word {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(64px, 9vw, 140px);
+      letter-spacing: -0.06em;
+      line-height: 0.85;
+      align-self: center;
+    }
+
+    .app-tile__demo-word sup {
+      font-family: var(--font-mono);
+      font-size: 0.1em;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      vertical-align: super;
+    }
+
+    @media (max-width: 800px) {
+      .apps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .app-tile--cup,
+      .app-tile--bag,
+      .app-tile--storefront,
+      .app-tile--menu {
+        grid-column: span 1;
+      }
+    }
+
+    /* ============ MERCH ============ */
+    .merch-section {
+      background: var(--blenz-yellow);
+    }
+
+    .merch-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .merch-card {
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .merch-card__visual {
+      background: var(--paper);
+      border-radius: var(--radius-sm);
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
+
+    .merch-card__visual .photo-placeholder {
+      position: static;
+    }
+
+    .tote-carousel {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .tote-carousel__slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    .tote-carousel__slide.active {
+      opacity: 1;
+    }
+
+    .tote-carousel__slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .tote-carousel__dots {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 2;
+    }
+
+    .tote-carousel__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      transition: background 0.3s;
+    }
+
+    .tote-carousel__dot.active {
+      background: #fff;
+    }
+
+    .merch-card__meta {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .merch-card__num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--rust);
+      font-weight: 600;
+    }
+
+    .merch-card__title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(24px, 3vw, 36px);
+      letter-spacing: -0.028em;
+      line-height: 0.95;
+    }
+
+    .merch-card__details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      padding-top: 18px;
+    }
+
+    .merch-detail__label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--espresso-soft);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .merch-detail__value {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--espresso);
+    }
+
+    @media (max-width: 800px) {
+      .merch-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ============ DIGITAL ============ */
+    .digital-section {
+      background: var(--ice);
+    }
+
+    .digital-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    .digital-card {
+      background: var(--cream);
+      border: 2px solid var(--espresso);
+      border-radius: var(--radius);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      min-height: 320px;
+    }
+
+    .digital-card__device {
+      background: var(--espresso);
+      border-radius: 14px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blenz-yellow);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 64px;
+      letter-spacing: -0.06em;
+    }
+
+    .digital-card__caption {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--rust);
+      font-weight: 500;
+    }
+
+    @media (max-width: 800px) {
+      .digital-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .digital-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ============ MOTION ============ */
+    .motion-section {
+      background: var(--paper);
+    }
+
+    .motion-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 48px;
+    }
+
+    .motion-rule {
+      background: var(--cream);
+      border: 2px solid var(--espresso);
+      border-radius: var(--radius-sm);
+      padding: 24px 28px;
+      display: grid;
+      grid-template-columns: 60px 200px 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .motion-rule__num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      font-weight: 600;
+      color: var(--rust);
+    }
+
+    .motion-rule__name {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .motion-rule__detail {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--espresso-soft);
+    }
+
+    @media (max-width: 700px) {
+      .motion-rule {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+
+    /* ============ FOOTER ============ */
+    .footer {
+      background: var(--espresso);
+      color: var(--cream);
+      padding: 80px 0 32px;
+    }
+
+    .footer__main {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(255, 246, 224, 0.15);
+    }
+
+    .footer__wordmark {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(80px, 12vw, 160px);
+      letter-spacing: -0.06em;
+      line-height: 0.85;
+      color: var(--blenz-yellow);
+    }
+
+    .footer__wordmark sup {
+      font-family: var(--font-mono);
+      font-size: 0.08em;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--rust);
+      vertical-align: super;
+    }
+
+    .footer__col h5 {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--blenz-yellow);
+      margin-bottom: 14px;
+    }
+
+    .footer__col p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--cream);
+      opacity: 0.8;
+    }
+
+    .footer__bottom {
+      margin-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.65;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    @media (max-width: 800px) {
+      .footer__main {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ============ RESPONSIVE BREAKPOINTS ============ */
+    @media (min-width: 1280px) {
+      .sidetoc {
+        display: none;
+      }
+    }
+
+    @media (max-width: 900px) {}
+
+    /* ============ SCROLL TO TOP ============ */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 200;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--espresso);
+      color: var(--blenz-yellow);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(26, 15, 8, 0.22), 0 1px 4px rgba(0, 0, 0, 0.10);
+      opacity: 0;
+      transform: translateY(16px) scale(0.85);
+      pointer-events: none;
+      transition:
+        opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+        background 0.2s ease;
+    }
+
+    #scrollTopBtn.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    #scrollTopBtn:hover {
+      background: var(--blenz-navy);
+      color: var(--blenz-yellow);
+      transform: translateY(-3px) scale(1.08);
+      box-shadow: 0 8px 28px rgba(26, 15, 8, 0.28);
+    }
+
+    #scrollTopBtn.is-launching {
+      animation: launchUp 0.55s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    @keyframes launchUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+
+      40% {
+        transform: translateY(-18px) scale(1.12);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-120px) scale(0.6);
+        opacity: 0;
+      }
+    }
+
+    #scrollTopBtn svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.2s ease;
+    }
+
+    #scrollTopBtn:hover svg {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============ TOP NAV ============ -->
+  <nav class="topnav">
+    <a href="#cover" class="topnav__brand">Branding guidelines</a>
+    <span class="topnav__current" id="topnavCurrent">— Cover</span>
+    <button class="topnav__menu-btn" id="menuBtn" aria-expanded="false">
+      <span id="menuLabel">Menu</span>
+      <span class="chev"></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-menu__list" id="mobileMenuList"></ul>
+  </div>
+
+  <!-- Desktop sidetoc -->
+  <aside class="sidetoc">
+    <ul class="sidetoc__list" id="sidetocList"></ul>
+  </aside>
+
+
+  <!-- ============ 00 · COVER ============ -->
+  <section id="cover" class="hero" data-title="Cover">
+    <div class="hero__video-bg">
+      <video id="heroVideo" src="../Images/assets/Section9-img2-v1-chatgpt.mp4" autoplay muted playsinline
+        style="width:100%; height:100%; object-fit:cover; display:block; transform: scale(1.1);"></video>
+    </div>
+    <div class="hero__overlay"></div>
+
+    <div class="container">
+      <div class="hero__center">
+        <div class="hero__wordmark">blenz</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 01 · STORY / SHIFT ============ -->
+  <section id="story" data-title="The Shift" class="story">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__row">
+          <span class="section-head__num">01 — The Shift</span>
+          <span class="eyebrow">From quiet to confident · Beverage-first</span>
+        </div>
+        <h2 class="display-l">Coffee is the heritage. <br>Beverages are the future.</h2>
+        <p class="lead">Blenz started with coffee. Thirty years later, we're showing up for every drink — matcha, cold brew, blue lattes, brizas, chillos, and whatever comes next. Same roots. New visual energy. No longer simply "coffee-first" this brand refresh reflects our bold direction. We are old friends with a new style. A flexible store that shifts throughout the day. Coffee in the morning, variety at night. Be yourself at Blenz.</p>
+        <p class="lead">We are breaking with formality. BLENZ is now blenz. Scaled back, down to earth. We are a handshake and a hug, not a contract and a signature. More "come hang with us", less "come do your homework here". Less "grab and go coffee" and more "what are you doing after work?" vibe.</p>
+        <p class="lead">Built to be held. Crafted to be photographed. Designed to feed your soul. Equipped to hit what you crave. Wake up with a latte. Energize mid-day with a chillo. Hang out late at night with a briza. Every craving, designed and crafted for you. By you. Be you.</p>
+      </div>
+
+      <div class="story__grid">
+        <article class="shift-card shift-card--from">
+          <div class="shift-card__label">Was — 1992 to 2026</div>
+          <h3>Polite. Quiet. A little beige.</h3>
+          <p>Honey-yellow honesty. Frutiger uppercase. Rose-windmill icon. Read as warm but a little tired. Built to
+            whisper "established," not to make anyone smile.</p>
+          <ul>
+            <li>BLENZ COFFEE in formal caps</li>
+            <li>Muted Pantone 1215 honey</li>
+            <li>Watercolour mascot, used rarely</li>
+            <li>"Coffee" as the only category</li>
+          </ul>
+        </article>
+        <article class="shift-card shift-card--to">
+          <div class="shift-card__label">Is — 2026 onward</div>
+          <h3>Loud. Lowercase. Yours.</h3>
+          <p>A bolder yellow that pops on a phone screen. A lowercase wordmark that feels like a friend, not a sign. A
+            flexible cup colour system. A mascot you actually want on your jacket.</p>
+          <ul>
+            <li>blenz lowercase, bold rounded sans</li>
+            <li>Vibrant Yellow #FFC107 + supporting category colours</li>
+            <li>Sticker-ready seasonal character drops</li>
+            <li>Coffee · Matcha · Cold Brew · Refreshers · Blue Latte · Specials</li>
+            <li>Lattes · Matcha · Cold Brew · Brizas · Shaken · Specials</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 · PERSONALITY ============ -->
+  <section id="personality" data-title="Personality" class="personality">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__row">
+          <span class="section-head__num">02 — Personality</span>
+          <span class="eyebrow">Four principles · One voice</span>
+        </div>
+        <h2 class="display-l">A friend you trust to <br>hit that craving you need.</h2>
+        <p class="lead">Blenz isn't trying to be cool. It's trying to be the spot you actually go to. The four
+          principles below are how we behave on a cup, in a caption, on a sign, and at the till.</p>
+      </div>
+
+      <div class="personality__principles">
+        <article class="principle">
+          <div class="principle__num">01</div>
+          <h3 class="principle__title">Warm, not cold</h3>
+          <p class="principle__body">A regular's "good morning/good afternoon/good evening," not a server's script. We use names. We ask the small question.</p>
+        </article>
+        <article class="principle">
+          <div class="principle__num">02</div>
+          <h3 class="principle__title">Bold, not loud</h3>
+          <p class="principle__body">Confident colour and type. No exclamation marks. The drink is the headline; the welcome is the wow.</p>
+        </article>
+        <article class="principle">
+          <div class="principle__num">03</div>
+          <h3 class="principle__title">Local, not regional</h3>
+          <p class="principle__body">Vancouver-made. BC-grown. Rooted in a real place, even when the brand travels to
+            Toronto, Singapore, Dubai.</p>
+        </article>
+        <article class="principle">
+          <div class="principle__num">04</div>
+          <h3 class="principle__title">Made, not manufactured</h3>
+          <p class="principle__body">Real ingredients. Real latte art. Real people behind the bar. Visibly human,
+            deliberately handmade.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 · LOGO ============ -->
+  <section id="logo" data-title="Logo" class="logo-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__row">
+          <span class="section-head__num">03 — Logo</span>
+          <span class="eyebrow">Lowercase · Bold · Distinctive</span>
+        </div>
+        <h2 class="display-l">One wordmark. <br>Built to be seen.</h2>
+        <p class="lead">A confident lowercase <em>blenz</em> set in a contemporary rounded grotesque. Tight tracking,
+          soft terminals, no italic. Reads warm at billboard scale and at app-icon size.</p>
+      </div>
+
+      <div class="logo-stage">
+        <div class="logo-stage__mark">blenz</div>
+        <span class="logo-stage__sub">Primary lockup · Espresso on Paper</span>
+      </div>
+
+      <div class="logo-construction">
+        <div class="construct-card">
+          <div class="construct-card__demo construct-card__demo--xl"><img src="../Images/B-dot logos/b-dotlogo-black-transparent.png" alt="b. mark" style="height:120px;width:auto;display:block;margin:auto;"></div>
+          <div class="construct-card__caption">Single-letter mark · <span class="img-hover-trigger" data-preview-src="../Images/assets/favicon.png" data-preview-alt="Favicon" data-preview-width="480">Favicon</span>, <span class="img-hover-trigger" data-preview-src="../Images/assets/Appicon.png" data-preview-alt="App Icon" data-preview-width="320">app icon</span>, <span class="img-hover-trigger" data-preview-srcs="../Images/assets/totebag & merchandise/totebag1.png,../Images/assets/totebag & merchandise/totebag2.png" data-preview-alt="Merchandise" data-preview-width="380">merchandise</span>, sticker, badge</div>
+        </div>
+        <div class="construct-card">
+          <div class="construct-card__demo construct-card__demo--m"><img src="../Images/blenz-logo-v2-rounded.svg" alt="blenz rounded wordmark" style="height:135px;width:auto;display:block;margin:auto;"></div>
+          <div class="construct-card__caption">Rounded wordmark · <span class="img-hover-trigger" data-preview-src="../Images/assets/Seasonal cups/six_cups_seasonal.png" data-preview-alt="Seasonal Cups" data-preview-width="570">Seasonal cups</span> · <span class="img-hover-trigger" data-preview-src="../Images/assets/Seasonal cups/stacked-six-cups-seasonal.png" data-preview-alt="Limited Drops" data-preview-width="570">Limited drops</span></div>
+        </div>
+        <div class="construct-card">
+          <div class="construct-card__demo construct-card__demo--lockup">
+            <span class="word">blenz</span>
+            <span class="desc">beverages</span>
+          </div>
+          <div class="construct-card__caption">Descriptor lockup · Storefronts, formal documents</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 · LOGO USAGE ============ -->
+  <section id="logo-usage" data-title="Logo Usage" class="logo-usage">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__row">
+          <span class="section-head__num">04 — Logo Usage</span>
+          <span class="eyebrow">Do · Don't · No exceptions</span>
+        </div>
+        <h2 class="display-m">Treat the wordmark like a signature. Don't trace it twice.</h2>
+      </div>
+
+      <div class="dos-donts">
+        <div class="usage-tile usage-tile--do">
+          <span class="usage-tile__label">Do</span>
+          <div class="usage-tile__demo">blenz</div>
+          <div class="usage-tile__caption">Set it big. Let it breathe. Keep tracking tight.</div>
+        </div>
+        <div class="usage-tile usage-tile--dont">
+          <span class="usage-tile__label">Don't</span>
+          <div class="usage-tile__demo" style="font-style: italic;">blenz</div>
+          <div class="usage-tile__caption">No italic. The wordmark is upright. Always.</div>
+        </div>
+        <div class="usage-tile usage-tile--do">
+          <span class="usage-tile__label">Do</span>
+          <div class="usage-tile__demo">blenz</div>
+          <div class="usage-tile__caption">The rust wordmark is allowed at hero scale. It's part of the personality.</div>
+        </div>
+        <div class="usage-tile usage-tile--dont">
+          <span class="usage-tile__label">Don't</span>
+          <div class="usage-tile__demo" style="text-transform: uppercase;">BLENZ</div>
+          <div class="usage-tile__caption">Never set the wordmark in uppercase. Lowercase is the brand.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 · COLOUR ============ -->
+  <section id="color" data-title="Colour" class="color-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__row">
+          <span class="section-head__num">05 — Colour</span>
+          <span class="eyebrow">Yellow always wins · Categories supply the rest</span>
+        </div>
+        <h2 class="display-l">Yellow is the brand. <br>Everything else supports.</h2>
+        <p class="lead">A warmer, brighter yellow takes over from honey-Pantone 1215. Navy anchors. Rust accents. Three
+          category colours — matcha, ice, berry — earn their place on cups when the drink calls for them.</p>
+      </div>
+
+      <div class="color-grid">
+        <div class="swatch swatch--xl s-yellow">
+          <div>
+            <div class="swatch__name">blenz Yellow</div>
+            <div class="swatch__role">Hero · Primary · The brand</div>
+          </div>
+          <div class="swatch__values">
+            <span>HEX · #FFC107</span>
+            <span>RGB · 255 193 7</span>
+            <span>CMYK · 0 24 97 0</span>
+            <span>Pantone · 7549 C</span>
+          </div>
+        </div>
+        <div class="swatch swatch--lg s-navy">
+          <div>
+            <div class="swatch__name">Deep Navy</div>
+            <div class="swatch__role">Anchor · Type · Backdrop</div>
+          </div>
+          <div class="swatch__values">
+            <span>HEX · #0A2540</span>
+            <span>RGB · 10 37 64</span>
+            <span>CMYK · 84 42 0 75</span>
+          </div>
+        </div>
+        <div class="swatch swatch--md s-rust">
+          <div>
+            <div class="swatch__name">Rust</div>
+            <div class="swatch__role">Accent · Stickers</div>
+          </div>
+          <div class="swatch__values">
+            <span>HEX · #C2410C</span>
+            <span>RGB · 194 65 12</span>
+          </div>
+        </div>
+        <div class="swatch swatch--md s-matcha">
+          <div>
+            <div class="swatch__name">Matcha</div>
+            <div class="swatch__role">Category · Tea drinks</div>
+          </div>
+          <div class="swatch__values">
+            <span>HEX · #6B8E4E</span>
+            <span>RGB · 107 142 78</span>
+          </div>
+        </div>
+        <div class="swatch swatch--md s-ice">
+          <div>
+            <div class="swatch__name">Ice</div>
+            <div class="swatch__role">Category · Cold drinks</div>
+          </div>
+          <div class="swatch__values">
+            <span>HEX · #A8D5E5</span>
+            <span>RGB · 168 213 229</span>
+          </div>
+        </div>
+        <div class="swatch swatch--sm s-berry">
+          <div>
+            <div class="swatch__name">Berry</div>
+            <div class="swatch__role">Specials · Blue Latte</div>
+          </div>
+          <div class="swatch__values">
+            <span>#C44569</span>
+          </div>
+        </div>
+        <div class="swatch swatch--sm s-cream">
+          <div>
+            <div class="swatch__name">Cream</div>
+            <div class="swatch__role">Soft background</div>
+          </div>
+          <div class="swatch__values">
+            <span>#FFF6E0</span>
+          </div>
+        </div>
+        <div class="swatch swatch--sm s-yellow-pop">
+          <div>
+            <div class="swatch__name">Pop Yellow</div>
+            <div class="swatch__role">Hi-vis · UI accents</div>
+          </div>
+          <div class="swatch__values">
+            <span>#FFD60A</span>
+          </div>
+        </div>
+        <div class="swatch swatch--sm s-espresso">
+          <div>
+            <div class="swatch__name">Espresso</div>
+            <div class="swatch__role">Body type · Dark mode</div>
+          </div>
+          <div class="swatch__values">
+            <span>#1A0F08</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 · CUP CATEGORY SYSTEM (NEW SECTION) ============ -->
+  <section id="cup-system" data-title="Cup System" class="cup-system">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__row">
+          <span class="section-head__num">06 — Cup System</span>
+          <span class="eyebrow">One cup per category · Same wordmark · Different colour</span>
+        </div>
+        <h2 class="display-l">Pick a colour. <br>Pick a drink.</h2>
+        <p class="lead">Every Blenz drink lands in a colour-coded cup. The wordmark is constant. The colour signals
+          what's inside. Customers learn the system in one visit and become walking ads on their second.</p>
+      </div>
+
+      <div class="cup-grid">
+        <article class="cup-card cup-card--yellow">
+          <div>
+            <div class="cup-card__category">Cup 01 · Yellow</div>
+            <h3 class="cup-card__title">Latte and Espresso</h3>
+          </div>
+          <div class="cup-card__contrast-rect" style="background: #F0B400;"></div>
+          <img class="cup-card__bg" src="../Images/assets/yellow-cup.png" alt="Yellow Cup">
+        </article>
+
+        <article class="cup-card cup-card--matcha">
+          <div>
+            <div class="cup-card__category">Cup 02 · Matcha</div>
+            <h3 class="cup-card__title">Matcha and Tea</h3>
+          </div>
+          <div class="cup-card__contrast-rect" style="background: #BBD49B;"></div>
+          <img class="cup-card__bg" src="../Images/assets/matchacold.png" alt="Matcha Cold">
+        </article>
+
+        <article class="cup-card cup-card--ice">
+          <div>
+            <div class="cup-card__category">Cup 03 · Ice</div>
+            <h3 class="cup-card__title">Cold and Iced</h3>
+          </div>
+          <div class="cup-card__contrast-rect" style="background: #97D1E5;"></div>
+          <img class="cup-card__bg" src="../Images/assets/Cold-iced.png" alt="Cold & Iced">
+        </article>
+
+        <article class="cup-card cup-card--berry">
+          <div>
+            <div class="cup-card__category">Cup 04 · Berry</div>
+            <h3 class="cup-card__title">Limited Drops</h3>
+          </div>
+          <div class="cup-card__contrast-rect" style="background: #D04C72;"></div>
+          <img class="cup-card__bg" src="../Images/assets/berry.png" alt="Berry Cup">
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ 07 · PHOTOGRAPHY ============ -->
+  <section id="photography" data-title="Photography" class="photo-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__row">
+          <span class="section-head__num">07 — Photography</span>
+          <span class="eyebrow">Warm · Documentary · BC light</span>
+        </div>
+        <h2 class="display-l">Real drinks. Real <br>hands. Real light.</h2>
+        <p class="lead">No stock. No overhead beige flatlays. Photography looks shot on a film camera by someone who
+          actually drinks the coffee. Golden hour, candid, slightly imperfect.</p>
+      </div>
+
+      <div class="photo-grid">
+        <div class="photo-tile photo-tile--01">
+          <img src="../Images/assets/Section9-img1-v1-chatgpt.png"
+            alt="Hero shot — yellow blenz takeaway cup, golden hour Vancouver light"
+            style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);" />
+        </div>
+        <div class="photo-tile photo-tile--02" style="padding: 0; overflow: hidden; position: relative;">
+          <img src="../Images/assets/Seasonal cups/six_cups_seasonal.png"
+            alt="blenz seasonal cups — limited edition drop"
+            style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </div>
+        <div class="photo-tile photo-tile--05" style="padding: 0; overflow: hidden; position: relative;">
+          <div class="image-carousel" style="width: 100%; height: 100%; border: none; border-radius: 0;">
+            <div class="image-carousel__track">
+              <div class="image-carousel__slide">
+                <video src="../Images/assets/Section9-img5-v1-chatgpt-2.mp4" autoplay loop muted
+                  playsinline
+                  style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);"></video>
+              </div>
+              <div class="image-carousel__slide">
+                <img src="../Images/assets/Section9-img1-v2-chatgpt.png"
+                  alt="Three friends enjoying coffee on a bench"
+                  style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);" />
+              </div>
+              <div class="image-carousel__slide">
+                <img src="../Images/assets/Section9-img1-v2-grok.png"
+                  alt="Three friends smiling with blenz cups"
+                  style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);" />
+              </div>
+            </div>
+            <div class="image-carousel__dots" style="bottom: 16px;">
+              <div class="image-carousel__dot is-active" data-index="0"></div>
+              <div class="image-carousel__dot" data-index="1"></div>
+              <div class="image-carousel__dot" data-index="2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="photo-tile photo-tile--04" style="padding: 0; overflow: hidden; position: relative;">
+          <div class="image-carousel" style="width: 100%; height: 100%; border: none; border-radius: 0;">
+            <div class="image-carousel__track">
+              <div class="image-carousel__slide">
+                <img src="../Images/assets/Section9-img2-v2-chatgpt.png"
+                  alt="Matcha iced latte hand reaching"
+                  style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);" />
+              </div>
+              <div class="image-carousel__slide">
+                <img src="../Images/assets/Section9-img2-v2-grok.jpg" alt="Matcha iced latte on counter"
+                  style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);" />
+              </div>
+              <div class="image-carousel__slide">
+                <img src="../Images/assets/Section9-img2-v2-grok-2.jpg"
+                  alt="Matcha iced latte held outside"
+                  style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);" />
+              </div>
+            </div>
+            <div class="image-carousel__dots" style="bottom: 16px;">
+              <div class="image-carousel__dot is-active" data-index="0"></div>
+              <div class="image-carousel__dot" data-index="1"></div>
+              <div class="image-carousel__dot" data-index="2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="photo-tile photo-tile--dummy">
+          <img src="../Images/assets/Section9-img4-v2-chatgpt.png" alt="Matcha drink outside"
+            style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);" />
+        </div>
+        <div class="photo-tile photo-tile--03" style="padding: 0; overflow: hidden; position: relative;">
+          <video src="../Images/assets/storefront-new-video.mp4" autoplay muted loop playsinline
+            style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 08 · TYPOGRAPHY ============ -->
+  <section id="typography" data-title="Typography" class="typography-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__row">
+          <span class="section-head__num">08 — Typography</span>
+          <span class="eyebrow">Bricolage Grotesque · Hanken · JetBrains Mono</span>
+        </div>
+        <h2 class="display-l">Three voices. <br>One conversation.</h2>
+        <p class="lead">All sans-serif. All contemporary. The display does the talking, the body keeps things grounded,
+          and the mono signals "this is a label, not a sentence."</p>
+      </div>
+
+      <div class="type-spec">
+        <div class="type-spec__meta">
+          <span class="type-spec__role">Display · Headlines</span>
+          <h3 class="type-spec__name">Bricolage Grotesque</h3>
+          <p class="type-spec__details">
+            Weights · 700 / 800<br>
+            Optical size · 36 — 48<br>
+            Tracking · −0.045em hero<br>
+            Always upright · Never italic
+          </p>
+        </div>
+        <div class="type-spec__demo">
+          <div class="type-spec__demo--display">smile<br>after<br>every sip.</div>
+        </div>
+      </div>
+
+      <div class="type-spec">
+        <div class="type-spec__meta">
+          <span class="type-spec__role">Body · Interface</span>
+          <h3 class="type-spec__name">Hanken Grotesk</h3>
+          <p class="type-spec__details">
+            Weights · 400 / 500 / 600 / 800<br>
+            Tracking · 0<br>
+            Line-height · 1.5 body, 1.4 lead<br>
+            For paragraphs, captions, all interface
+          </p>
+        </div>
+        <div class="type-spec__demo">
+          <div class="type-spec__demo--body">Made by hand. Crafted by you. Made for the moment you didn't expect to enjoy.
+          </div>
+        </div>
+      </div>
+
+      <div class="type-spec">
+        <div class="type-spec__meta">
+          <span class="type-spec__role">Mono · Labels &amp; Eyebrows</span>
+          <h3 class="type-spec__name">JetBrains Mono</h3>
+          <p class="type-spec__details">
+            Weight · 500<br>
+            Tracking · 0.16em — 0.20em<br>
+            Always uppercase<br>
+            Three words max · Never paragraphs
+          </p>
+        </div>
+        <div class="type-spec__demo">
+          <div class="type-spec__demo--mono">— Made by hand</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 09 · GRAPHIC SYSTEM ============ -->
+  <section id="graphic" data-title="Graphic System" class="graphic-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__row">
+          <span class="section-head__num">09 — Graphic System</span>
+          <span class="eyebrow">Stripes · Badges · Brackets</span>
+        </div>
+        <h2 class="display-l" style="color: var(--cream);">Four moves. Used <br>everywhere. Always.</h2>
+        <p class="lead" style="color: var(--cream); opacity: 0.85;">A small, memorable kit of graphic devices that makes
+          any Blenz touchpoint instantly readable. Stripes for packaging. Badge for stickers. Bracket copy for brand
+          voice. The seasonal character for warmth.</p>
+      </div>
+
+      <div class="graphic-grid">
+        <div class="graphic-tile tile--stripes">
+          <span class="graphic-tile__label">01 · The Stripe</span>
+          <div class="graphic-tile__title">Yellow + Navy<br>house pattern.</div>
+        </div>
+        <div class="graphic-tile tile--badge">
+          <span class="graphic-tile__label" style="color: var(--blenz-yellow);">02 · The Badge</span>
+          <img src="../Images/B-dot logos/b-dotlogo-white-rust-bg.png" alt="blenz b. badge mark" style="height: 140px; width: auto; display: block; margin: auto;">
+          <span class="graphic-tile__label" style="color: var(--blenz-yellow);">Sticker · App icon · Pin</span>
+        </div>
+        <div class="graphic-tile tile--bracket">
+          <span class="graphic-tile__label">03 · The Bracket</span>
+          <span style="text-transform: none;">( b. since '92 )</span>
+          <span class="graphic-tile__label">Copy device</span>
+        </div>
+        <div class="graphic-tile tile--bracket" style="background: var(--blenz-yellow); color: var(--espresso);">
+          <span class="graphic-tile__label">04 · Seasonal Drop</span>
+          <span
+            style="font-family: var(--font-display); font-weight: 800; font-size: clamp(28px,4vw,44px); letter-spacing: -0.04em; line-height: 1;">Limited.<br>Every
+            season.</span>
+          <span class="graphic-tile__label">BC characters · Cup art</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ 10 · SEASONAL DROPS ============ -->
+  <section id="seasonal" data-title="Seasonal" class="seasonal-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__row">
+          <span class="section-head__num">10 — Seasonal</span>
+          <span class="eyebrow">Limited drops · BC characters · Every season</span>
+        </div>
+        <h2 class="display-l">A new cup every <br>season. Always blenz.</h2>
+        <p class="lead">Seasonal cup characters that celebrate our BC roots. The wordmark stays fixed. The
+          illustration below it changes. One cup becomes the must-have of the season.</p>
+      </div>
+
+      <div class="image-carousel">
+        <div class="image-carousel__track">
+          <div class="image-carousel__slide">
+            <img src="../Images/assets/Seasonal cups/six_cups_seasonal.png"
+              alt="blenz seasonal cups — limited edition drop zero"
+              style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);" />
+            <div class="image-carousel__caption">
+              <span class="image-carousel__caption-tag">Drop 00 · Fall</span>
+              <span class="image-carousel__caption-text">BC wildlife on every cup.<br>Collect them all.</span>
+            </div>
+          </div>
+          <div class="image-carousel__slide">
+            <img src="../Images/assets/Seasonal cups/stacked-six-cups-seasonal.png"
+              alt="blenz seasonal cups — BC character illustration, limited edition"
+              style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);" />
+            <div class="image-carousel__caption">
+              <span class="image-carousel__caption-tag">Drop 01 · Winter</span>
+              <span class="image-carousel__caption-text">BC wildlife on every cup.<br>Collect them all.</span>
+            </div>
+          </div>
+          <div class="image-carousel__slide">
+            <img src="../Images/assets/Seasonal cups/three-cups-seasonal.png"
+              alt="blenz seasonal cups — editorial lifestyle, yellow cups"
+              style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);" />
+            <div class="image-carousel__caption">
+              <span class="image-carousel__caption-tag">Drop 02 · Spring</span>
+              <span class="image-carousel__caption-text">Same blenz. New season.<br>New reason to visit.</span>
+            </div>
+          </div>
+        </div>
+        <div class="image-carousel__dots">
+          <div class="image-carousel__dot is-active" data-index="0"></div>
+          <div class="image-carousel__dot" data-index="1"></div>
+          <div class="image-carousel__dot" data-index="2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11 · VOICE ============ -->
+  <section id="voice" data-title="Voice" class="voice-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__row">
+          <span class="section-head__num">11 — Voice</span>
+        </div>
+        <h2 class="display-l">Specific. Brief. Local. <br>Always present-tense.</h2>
+        <p class="lead">Blenz writes the way a regular speaks. Short sentences. Strong verbs. Real ingredients. Real
+          places. No wellness-speak, no "elevating your daily ritual," no exclamation marks doing the heavy lifting.</p>
+      </div>
+
+      <div class="voice-pair">
+        <div class="voice-card voice-card--this">
+          <span class="voice-card__label">This</span>
+          <p class="voice-card__quote">"Made by hand. Crafted by you. Made for the moment you didn't expect to enjoy."</p>
+        </div>
+        <div class="voice-card voice-card--not">
+          <span class="voice-card__label">Not this</span>
+          <p class="voice-card__quote">"Elevating your daily ritual through premium handcrafted experiences."</p>
+        </div>
+      </div>
+
+      <div class="voice-pair">
+        <div class="voice-card voice-card--this">
+          <span class="voice-card__label">This</span>
+          <p class="voice-card__quote">"Cold brew, slow brewed. Twelve hours, no shortcuts."</p>
+        </div>
+        <div class="voice-card voice-card--not">
+          <span class="voice-card__label">Not this</span>
+          <p class="voice-card__quote">"Discover our artisanal cold brew journey, where time meets craft."</p>
+        </div>
+      </div>
+
+      <div class="voice-pair">
+        <div class="voice-card voice-card--this">
+          <span class="voice-card__label">This</span>
+          <p class="voice-card__quote">"Smile after every sip."</p>
+        </div>
+        <div class="voice-card voice-card--not">
+          <span class="voice-card__label">Not this</span>
+          <p class="voice-card__quote">"Where flavour meets joy in every moment."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 12 · APPLICATIONS ============ -->
+  <section id="applications" data-title="Applications" class="apps-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__row">
+          <span class="section-head__num">12 — Applications</span>
+          <span class="eyebrow">Cup · Bag · Storefront · Menu</span>
+        </div>
+        <h2 class="display-l">The brand <br>you can hold.</h2>
+        <p class="lead">When the wordmark hits paper, fabric, and storefront, this is what it should look like. Bold,
+          unmistakable, photographable from across the room.</p>
+      </div>
+
+      <div class="apps-grid">
+        <div class="app-tile app-tile--cup" style="padding: 0; overflow: hidden; position: relative;">
+          <img src="../Images/assets/section12-img7-grok.png"
+            alt="blenz hot takeaway cup — yellow ground, navy wordmark"
+            style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);" />
+          <span class="app-tile__caption"
+            style="position:absolute;bottom:16px;left:16px;background:rgba(26,15,8,0.7);color:var(--cream);padding:6px 12px;border-radius:var(--radius-pill);">12.1
+            — Hot cup · Primary colourway</span>
+        </div>
+        <div class="app-tile app-tile--bag" style="padding: 0; overflow: hidden; position: relative;">
+          <div class="image-carousel" style="width: 100%; height: 100%; border: none; border-radius: 0;">
+            <div class="image-carousel__track">
+              <div class="image-carousel__slide">
+                <video src="../Images/assets/Sectio12-img08-v2-chatgpt.mp4" autoplay muted playsinline
+                  style="width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.15);"
+                  onmouseover="this.pause()" onmouseout="this.play()">
+                </video>
+              </div>
+              <div class="image-carousel__slide">
+                <img src="../Images/assets/Sectio12-img08-v2-chatgpt-2.png"
+                  alt="blenz takeaway bag — studio"
+                  style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);" />
+              </div>
+            </div>
+            <div class="image-carousel__dots" style="bottom: 16px;">
+              <div class="image-carousel__dot is-active" data-index="0"></div>
+              <div class="image-carousel__dot" data-index="1"></div>
+            </div>
+          </div>
+          <span class="app-tile__caption"
+            style="position:absolute;bottom:16px;left:16px;background:rgba(26,15,8,0.7);color:var(--cream);padding:6px 12px;border-radius:var(--radius-pill);z-index:20;">12.2
+            — Takeaway bag</span>
+        </div>
+        <div class="app-tile app-tile--storefront" style="padding: 0; overflow: hidden; position: relative;">
+          <video src="../Images/assets/storefront-new-video.mp4" autoplay muted loop playsinline
+            style="width:100%;height:100%;object-fit:cover;display:block;transform: scale(1.1);"
+            onmouseover="this.pause()" onmouseout="this.play()">
+          </video>
+          <span class="app-tile__caption"
+            style="position:absolute;bottom:16px;left:16px;background:rgba(26,15,8,0.7);color:var(--cream);padding:6px 12px;border-radius:var(--radius-pill);z-index:20;">12.3
+            — Storefront signage</span>
+        </div>
+        <div class="app-tile app-tile--menu" style="padding: 0; overflow: hidden; position: relative; display: none;">
+          <video src="../Images/assets/Sectio12-img10-v2-chatgpt-menu.mp4" autoplay muted loop playsinline
+            style="width:100%; height:100%; object-fit:cover; display:block; transform: scale(1.15);"
+            onmouseover="this.pause()" onmouseout="this.play()">
+          </video>
+          <span class="app-tile__caption"
+            style="position:absolute; bottom:16px; left:16px; background:rgba(26,15,8,0.7); color:var(--cream); padding:6px 12px; border-radius:var(--radius-pill); z-index:20;">12.4
+            — Menu board</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 13 · MERCH ============ -->
+  <section id="merch" data-title="Merch" class="merch-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__row">
+          <span class="section-head__num">13 — Merch</span>
+          <span class="eyebrow">Two starter items · Built to be loved</span>
+        </div>
+        <h2 class="display-l">Things people <br>actually want.</h2>
+        <p class="lead">Two carefully chosen pieces to start. Both made to live in someone's daily life — not stacked on
+          a counter shelf gathering dust. Sticker-card loyalty replaces the punch card.</p>
+      </div>
+
+      <div class="merch-grid">
+        <article class="merch-card">
+          <div class="merch-card__visual" style="padding:0; overflow:hidden;">
+            <div class="tote-carousel" id="toteCarousel">
+              <div class="tote-carousel__slide active">
+                <img src="../Images/assets/totebag %26 merchandise/totebag2.png" alt="Blenz Everyday Tote - front view">
+              </div>
+              <div class="tote-carousel__slide">
+                <img src="../Images/assets/totebag %26 merchandise/totebag1.png" alt="Blenz Everyday Tote - lifestyle">
+              </div>
+              <div class="tote-carousel__dots">
+                <div class="tote-carousel__dot active"></div>
+                <div class="tote-carousel__dot"></div>
+              </div>
+            </div>
+          </div>
+          <div class="merch-card__meta">
+            <span class="merch-card__num">Item 01</span>
+            <h3 class="merch-card__title">The Everyday Tote</h3>
+            <p style="font-size: 14px; color: var(--espresso-soft);">Heavy 12oz natural canvas. Two-colour screen print.
+              Reinforced 38cm straps. Heritage badge stitched inside seam.</p>
+          </div>
+          <div class="merch-card__details">
+            <div>
+              <div class="merch-detail__label">Material</div>
+              <div class="merch-detail__value">12oz natural cotton</div>
+            </div>
+            <div>
+              <div class="merch-detail__label">Print</div>
+              <div class="merch-detail__value">Navy + Rust, 2-colour</div>
+            </div>
+
+          </div>
+        </article>
+        <article class="merch-card">
+          <div class="merch-card__visual" style="padding:0; overflow:hidden;">
+            <img src="../Images/assets/stickers.png" alt="Blenz Sticker Card"
+              style="width:100%; height:100%; object-fit:contain; display:block;">
+          </div>
+          <div class="merch-card__meta">
+            <span class="merch-card__num">Item 02</span>
+            <h3 class="merch-card__title">The Sticker Card</h3>
+            <p style="font-size: 14px; color: var(--espresso-soft);">Replaces the punch card. New collectible sticker
+              drops every month. Seven stickers earn the eighth drink free. The card itself becomes the keepsake.</p>
+          </div>
+          <div class="merch-card__details">
+            <div>
+              <div class="merch-detail__label">Format</div>
+              <div class="merch-detail__value">85 × 54 mm</div>
+            </div>
+            <div>
+              <div class="merch-detail__label">Stock</div>
+              <div class="merch-detail__value">350gsm uncoated navy</div>
+            </div>
+            <div>
+              <div class="merch-detail__label">Foil</div>
+              <div class="merch-detail__value">Yellow foil block · b mark</div>
+            </div>
+            <div>
+              <div class="merch-detail__label">Reward</div>
+              <div class="merch-detail__value">Collect 7 → 8th free</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 14 · DIGITAL ============ -->
+  <section id="digital" data-title="Digital" class="digital-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__row">
+          <span class="section-head__num">14 — Digital</span>
+          <span class="eyebrow">App · Web · Social</span>
+        </div>
+        <h2 class="display-l">Built for the <br>phone-first world.</h2>
+        <p class="lead">Digital is where Gen Z meets the brand first. The app icon is the b. The web hero is the
+          wordmark and a single drink. Social is the sticker drop, the cup grid, the "what's new" cup colour.</p>
+      </div>
+
+      <div class="digital-grid">
+        <div class="digital-card">
+          <div class="digital-card__device">b</div>
+          <span class="digital-card__caption">App icon · iOS, Android</span>
+        </div>
+        <div class="digital-card">
+          <div class="digital-card__device" style="font-size: 32px;">blenz</div>
+          <span class="digital-card__caption">Web hero · Desktop &amp; mobile</span>
+        </div>
+        <div class="digital-card">
+          <div class="digital-card__device" style="background: var(--rust); color: var(--cream); font-size: 28px;">
+            @blenz</div>
+          <span class="digital-card__caption">Social profile · Instagram, TikTok</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 15 · MOTION ============ -->
+  <section id="motion" data-title="Motion" class="motion-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__row">
+          <span class="section-head__num">15 — Motion</span>
+          <span class="eyebrow">Soft easing · Confident timing</span>
+        </div>
+        <h2 class="display-l">Movement that feels <br>warm, never frantic.</h2>
+        <p class="lead">Motion follows the same logic as the type — confident, unhurried, never showy. Easing is
+          custom-tuned to feel like a slow exhale. Six rules, applied everywhere.</p>
+      </div>
+
+      <div class="motion-list">
+        <div class="motion-rule">
+          <span class="motion-rule__num">M·01</span>
+          <span class="motion-rule__name">Soft Ease</span>
+          <span class="motion-rule__detail">cubic-bezier(0.32, 0.72, 0, 1) — primary easing curve. Used for nav, hover,
+            page transitions.</span>
+        </div>
+        <div class="motion-rule">
+          <span class="motion-rule__num">M·02</span>
+          <span class="motion-rule__name">Character Bounce</span>
+          <span class="motion-rule__detail">220ms ease-out + 80ms settle. Used when seasonal characters animate (sticker
+            reveal, cup drop).</span>
+        </div>
+        <div class="motion-rule">
+          <span class="motion-rule__num">M·03</span>
+          <span class="motion-rule__name">Wordmark Settle</span>
+          <span class="motion-rule__detail">Opacity 0 → 1 with subtle 8px upward drift. 480ms. Used on hero load and
+            section reveals.</span>
+        </div>
+        <div class="motion-rule">
+          <span class="motion-rule__num">M·04</span>
+          <span class="motion-rule__name">Pour Animation</span>
+          <span class="motion-rule__detail">For drink visualisations only. Liquid fills cup vertically, 600ms
+            ease-in-out, slight overshoot.</span>
+        </div>
+        <div class="motion-rule">
+          <span class="motion-rule__num">M·05</span>
+          <span class="motion-rule__name">Sticker Pop</span>
+          <span class="motion-rule__detail">Scale 0.8 → 1.05 → 1.0 with rotation jitter ±2°. Used on loyalty stamp
+            moments.</span>
+        </div>
+        <div class="motion-rule">
+          <span class="motion-rule__num">M·06</span>
+          <span class="motion-rule__name">Stripe Slide</span>
+          <span class="motion-rule__detail">Background-position scroll on stripe pattern, infinite loop, 12s linear.
+            Subtle, never distracting.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__main">
+        <div class="footer__wordmark">blenz</div>
+        <div class="footer__col">
+          <h5>Direction A</h5>
+          <p>Bold rounded grotesque<br>Lowercase wordmark<br>Cup-system colour<br>Seasonal character drops</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© Blenz Coffee · 1992 — 2026</span>
+        <span>Handcrafted in Vancouver, BC</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ============================================
+    // Build navigation from sections with [data-title]
+    // ============================================
+    const sections = Array.from(document.querySelectorAll('section[data-title]'));
+    const mobileMenuList = document.getElementById('mobileMenuList');
+    const sidetocList = document.getElementById('sidetocList');
+    const topnavCurrent = document.getElementById('topnavCurrent');
+    const menuBtn = document.getElementById('menuBtn');
+    const menuLabel = document.getElementById('menuLabel');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    sections.forEach((s, i) => {
+      const id = s.id;
+      const title = s.dataset.title;
+      const num = String(i).padStart(2, '0');
+
+      // Mobile menu item
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.className = 'mobile-menu__link';
+      a.dataset.target = id;
+      a.innerHTML = `<span class="num">${num}</span><span>${title}</span>`;
+      li.appendChild(a);
+      mobileMenuList.appendChild(li);
+
+      // Side TOC item
+      const tli = document.createElement('li');
+      const ta = document.createElement('a');
+      ta.href = '#' + id;
+      ta.className = 'sidetoc__link';
+      ta.dataset.target = id;
+      ta.innerHTML = `<span class="label">${title}</span>`;
+      tli.appendChild(ta);
+      sidetocList.appendChild(tli);
+    });
+
+    // ============================================
+    // Mobile menu toggle
+    // ============================================
+    menuBtn.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('is-open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuLabel.textContent = open ? 'Close' : 'Menu';
+    });
+
+    mobileMenuList.addEventListener('click', (e) => {
+      if (e.target.closest('a')) {
+        mobileMenu.classList.remove('is-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuLabel.textContent = 'Menu';
+      }
+    });
+
+    // ============================================
+    // Active section tracking
+    // ============================================
+    const setActive = (id) => {
+      const section = sections.find(s => s.id === id);
+      if (!section) return;
+      const title = section.dataset.title;
+      topnavCurrent.textContent = '— ' + title;
+      menuLabel.textContent = mobileMenu.classList.contains('is-open') ? 'Close' : title;
+
+      document.querySelectorAll('.mobile-menu__link, .sidetoc__link').forEach(el => {
+        el.classList.toggle('is-active', el.dataset.target === id);
+      });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      let best = null;
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (!best || entry.intersectionRatio > best.intersectionRatio) {
+            best = entry;
+          }
+        }
+      });
+      if (best) setActive(best.target.id);
+    }, {
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: [0, 0.1, 0.25, 0.5, 0.75, 1]
+    });
+
+    sections.forEach(s => observer.observe(s));
+
+    // ============================================
+    // Sidetoc labels: show on scroll, hide on idle
+    // ============================================
+    const sidetoc = document.querySelector('.sidetoc');
+    let scrollTimeout;
+
+    window.addEventListener('scroll', () => {
+      if (sidetoc) {
+        sidetoc.classList.add('is-scrolling');
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          sidetoc.classList.remove('is-scrolling');
+        }, 1500);
+      }
+    }, { passive: true });
+
+    const style = document.createElement('style');
+    style.textContent = `
+  .sidetoc:not(.is-scrolling) .sidetoc__link .label {
+    opacity: 0 !important;
+    pointer-events: none;
+  }
+`;
+    document.head.appendChild(style);
+
+    setActive(sections[0].id);
+
+    // ============================================
+    // Image carousels — auto-advance + touch/swipe
+    // ============================================
+    document.querySelectorAll('.image-carousel').forEach(carousel => {
+      const track = carousel.querySelector('.image-carousel__track');
+      const slides = carousel.querySelectorAll('.image-carousel__slide');
+      const dots = carousel.querySelectorAll('.image-carousel__dot');
+      if (!track || !dots.length) return;
+
+      const total = dots.length;
+      let current = 0;
+      let autoTimer;
+      let isHovered = false;
+
+      // Layout handled by CSS flex: 0 0 100%
+
+      function goTo(idx) {
+        current = (idx + total) % total;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
+
+        slides.forEach((slide, i) => {
+          const v = slide.querySelector('video');
+          if (v) {
+            if (i !== current) {
+              v.pause();
+              v.currentTime = 0;
+            } else {
+              if (!isHovered) v.play().catch(() => { });
+            }
+          }
+        });
+      }
+
+      carousel.addEventListener('mouseenter', () => {
+        isHovered = true;
+        clearTimeout(autoTimer);
+        const activeSlide = slides[current];
+        const v = activeSlide.querySelector('video');
+        if (v) v.pause();
+      });
+
+      carousel.addEventListener('mouseleave', () => {
+        isHovered = false;
+        const activeSlide = slides[current];
+        const v = activeSlide.querySelector('video');
+        if (v) v.play().catch(() => { });
+        startAuto();
+      });
+
+      function startAuto() {
+        if (isHovered) return;
+        clearTimeout(autoTimer);
+
+        slides.forEach(slide => {
+          const v = slide.querySelector('video');
+          if (v) v.onended = null;
+        });
+
+        const activeSlide = slides[current];
+        const video = activeSlide.querySelector('video');
+
+        if (video) {
+          if (video.ended) {
+            goTo(current + 1);
+            startAuto();
+          } else {
+            video.onended = () => {
+              goTo(current + 1);
+              startAuto();
+            };
+          }
+        } else {
+          autoTimer = setTimeout(() => {
+            goTo(current + 1);
+            startAuto();
+          }, 4000);
+        }
+      }
+
+      dots.forEach((d, i) => {
+        d.addEventListener('click', () => { goTo(i); startAuto(); });
+      });
+
+      let touchStartX = 0, touchStartY = 0, isDragging = false;
+      carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        isDragging = true;
+      }, { passive: true });
+      carousel.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const dx = e.touches[0].clientX - touchStartX;
+        const dy = e.touches[0].clientY - touchStartY;
+        if (Math.abs(dx) > Math.abs(dy)) e.preventDefault();
+      }, { passive: false });
+      carousel.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 40) { goTo(dx < 0 ? current + 1 : current - 1); startAuto(); }
+      }, { passive: true });
+
+      let mouseStartX = 0, mouseDown = false;
+      carousel.addEventListener('mousedown', (e) => { mouseStartX = e.clientX; mouseDown = true; });
+      window.addEventListener('mouseup', (e) => {
+        if (!mouseDown) return;
+        mouseDown = false;
+        const dx = e.clientX - mouseStartX;
+        if (Math.abs(dx) > 40) { goTo(dx < 0 ? current + 1 : current - 1); startAuto(); }
+      });
+
+      startAuto();
+    });
+    // ============================================
+    // Hero Video Sequence: 3 Videos Loop
+    // ============================================
+    const heroVideo = document.getElementById('heroVideo');
+    if (heroVideo) {
+      const v1 = "../Images/assets/Section9-img2-v1-chatgpt.mp4";
+      const v2 = "../Images/assets/storefront-new-video.mp4";
+      const v3 = "../Images/assets/Section9-img5-v1-chatgpt-2.mp4";
+      let state = 1;
+
+      function switchTo(src, nextState) {
+        state = nextState;
+        heroVideo.src = src;
+        heroVideo.load();
+        heroVideo.play();
+      }
+
+      heroVideo.addEventListener('timeupdate', () => {
+        // v2 is cut at 4 s then hands off to v3
+        if (state === 2 && heroVideo.currentTime >= 4) {
+          switchTo(v3, 3);
+        }
+      });
+
+      heroVideo.addEventListener('ended', () => {
+        // v1 → v2, v3 → v1 (v2 is cut by timeupdate before it can end naturally)
+        if (state === 1) switchTo(v2, 2);
+        else if (state === 3) switchTo(v1, 1);
+      });
+    }
+
+    // ============================================
+    // Scroll to top button
+    // ============================================
+    (function () {
+      const btn = document.getElementById('scrollTopBtn');
+      if (!btn) return;
+
+      // Show/hide based on >50% scroll
+      window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+        if (scrolled > 0.5) {
+          btn.classList.add('is-visible');
+        } else {
+          btn.classList.remove('is-visible');
+        }
+      }, { passive: true });
+
+      // Launch animation then scroll to top
+      btn.addEventListener('click', () => {
+        btn.classList.add('is-launching');
+        btn.addEventListener('animationend', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          // Reset button after scroll
+          setTimeout(() => {
+            btn.classList.remove('is-launching');
+            btn.classList.remove('is-visible');
+          }, 600);
+        }, { once: true });
+      });
+    })();
+
+    // ---- Liquid-glass image preview overlay ----
+    (function () {
+      const overlay = document.createElement('div');
+      overlay.id = 'img-preview-overlay';
+
+      const previewImg = document.createElement('img');
+      previewImg.style.transition = 'opacity 0.35s ease';
+
+      const placeholder = document.createElement('div');
+      placeholder.className = 'overlay-placeholder';
+      placeholder.innerHTML = `
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span>Coming soon</span>`;
+
+      overlay.appendChild(previewImg);
+      overlay.appendChild(placeholder);
+      document.body.appendChild(overlay);
+
+      let hideTimer = null;
+      let cycleTimer = null;
+      let cycleIndex = 0;
+      let cycleSrcs = [];
+
+      function startCycle(srcs, alt) {
+        cycleIndex = 0;
+        cycleSrcs = srcs;
+        showCycleFrame(alt);
+        cycleTimer = setInterval(() => {
+          cycleIndex = (cycleIndex + 1) % cycleSrcs.length;
+          previewImg.style.opacity = '0';
+          setTimeout(() => {
+            previewImg.src = cycleSrcs[cycleIndex];
+            previewImg.alt = alt;
+            previewImg.style.opacity = '1';
+          }, 175);
+        }, 3000);
+      }
+
+      function showCycleFrame(alt) {
+        previewImg.src = cycleSrcs[cycleIndex];
+        previewImg.alt = alt;
+        previewImg.style.opacity = '1';
+        previewImg.style.display = 'block';
+        placeholder.style.display = 'none';
+      }
+
+      function stopCycle() {
+        clearInterval(cycleTimer);
+        cycleTimer = null;
+        cycleSrcs = [];
+        cycleIndex = 0;
+      }
+
+      document.querySelectorAll('.img-hover-trigger').forEach(trigger => {
+        trigger.addEventListener('mouseenter', () => {
+          clearTimeout(hideTimer);
+          stopCycle();
+
+          const srcsRaw = trigger.dataset.previewSrcs;
+          const src = trigger.dataset.previewSrc;
+          const alt = trigger.dataset.previewAlt || '';
+
+          if (srcsRaw) {
+            const srcs = srcsRaw.split(',').map(s => s.trim()).filter(Boolean);
+            previewImg.style.display = 'block';
+            placeholder.style.display = 'none';
+            startCycle(srcs, alt);
+          } else if (src) {
+            previewImg.src = src;
+            previewImg.alt = alt;
+            previewImg.style.opacity = '1';
+            previewImg.style.display = 'block';
+            placeholder.style.display = 'none';
+          } else {
+            previewImg.style.display = 'none';
+            placeholder.style.display = 'flex';
+          }
+
+          const rect = trigger.getBoundingClientRect();
+          const desiredW = parseInt(trigger.dataset.previewWidth) || 320;
+          const overlayW = Math.min(desiredW, window.innerWidth - 32);
+          const gap = 12;
+          let left = rect.left + rect.width / 2 - overlayW / 2;
+          left = Math.max(16, Math.min(left, window.innerWidth - overlayW - 16));
+
+          overlay.style.width = overlayW + 'px';
+          overlay.style.left = left + 'px';
+          overlay.style.bottom = (window.innerHeight - rect.top + gap) + 'px';
+          overlay.style.top = 'auto';
+          overlay.classList.add('is-visible');
+        });
+
+        trigger.addEventListener('mouseleave', () => {
+          hideTimer = setTimeout(() => {
+            overlay.classList.remove('is-visible');
+            stopCycle();
+          }, 100);
+        });
+      });
+    })();
+
+  </script>
+
+  <!-- ============ SCROLL TO TOP ============ -->
+  <button id="scrollTopBtn" aria-label="Back to top">
+    <svg viewBox="0 0 24 24">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- ============ SPLASH SCREEN ============ -->
+  <div id="splash" aria-hidden="true">
+    <div id="splash-wordmark">blenz</div>
+    <span id="splash-tagline">Smile after every sip.</span>
+  </div>
+
+  <style>
+    /* ---- Splash overlay ---- */
+    #splash {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background-color: #0A2540;
+      transition: background-color 0.3s ease;
+      pointer-events: all;
+      overflow: hidden;
+    }
+
+    #splash-wordmark {
+      will-change: transform, color;
+      color: #FFC107;
+      z-index: 1001;
+    }
+
+    #splash-tagline {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      top: calc(50% + 11vw);
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-weight: 500;
+      font-size: clamp(14px, 1.8vw, 20px);
+      letter-spacing: 0.12em;
+      color: #FFC107;
+      transition: color 0.3s ease, opacity 0.25s ease;
+      opacity: 0;
+      clip-path: inset(0 100% 0 0);
+      white-space: nowrap;
+      z-index: 1002;
+      pointer-events: none;
+    }
+
+    /* Disable scroll during splash screen to prevent desyncing the morph landing position */
+    html.no-scroll, body.no-scroll {
+      overflow: hidden !important;
+      height: 100% !important;
+    }
+  </style>
+
+  <script>
+    /* ============ SPLASH SCREEN LOGIC ============ */
+    (function () {
+      'use strict';
+
+      // 1. Prevent browser scroll restoration and force scroll to top immediately
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      
+      // Force scroll to top right now
+      window.scrollTo(0, 0);
+
+      // Also force scroll to top on complete page load (ensures no race conditions with browser scroll restore)
+      window.addEventListener('load', function() {
+        window.scrollTo(0, 0);
+      });
+
+      const splash    = document.getElementById('splash');
+      const wordmark  = document.getElementById('splash-wordmark');
+      const tagline   = document.getElementById('splash-tagline');
+      const hero      = document.querySelector('.hero__wordmark');
+
+      if (!hero || !splash || !wordmark || !tagline) return;
+
+      // 2. Lock page scrolling while the splash screen is active
+      document.documentElement.classList.add('no-scroll');
+      document.body.classList.add('no-scroll');
+
+      // 3. Immediately hide the hero element so it doesn't double-render or cause overlaps
+      hero.style.opacity = '0';
+      hero.style.visibility = 'hidden';
+
+      // 4. Force copy styles from the hero wordmark to the splash wordmark to make them visual clones
+      const heroRect = hero.getBoundingClientRect();
+      const heroStyle = window.getComputedStyle(hero);
+
+      wordmark.style.position = 'fixed';
+      wordmark.style.top = heroRect.top + 'px';
+      wordmark.style.left = heroRect.left + 'px';
+      wordmark.style.width = heroRect.width + 'px';
+      wordmark.style.height = heroRect.height + 'px';
+      wordmark.style.fontSize = heroStyle.fontSize;
+      wordmark.style.fontFamily = heroStyle.fontFamily;
+      wordmark.style.fontWeight = heroStyle.fontWeight;
+      wordmark.style.lineHeight = heroStyle.lineHeight;
+      wordmark.style.letterSpacing = heroStyle.letterSpacing;
+      wordmark.style.fontVariationSettings = heroStyle.fontVariationSettings;
+      wordmark.style.margin = '0';
+      wordmark.style.padding = '0';
+      wordmark.style.transformOrigin = 'center center';
+      wordmark.style.display = 'inline-block';
+
+      // 5. Calculate translation to center the splash wordmark in the viewport
+      const W = window.innerWidth;
+      const H = window.innerHeight;
+      const centerX = W / 2;
+      const centerY = H / 2;
+      const heroCenterX = heroRect.left + heroRect.width / 2;
+      const heroCenterY = heroRect.top + heroRect.height / 2;
+      const translateX = centerX - heroCenterX;
+      const translateY = centerY - heroCenterY;
+
+      // Calculate the scale factor to make it fill 18% of viewport width (18vw)
+      const targetWidth = W * 0.18;
+      const scaleStart = targetWidth / heroRect.width;
+      const scaleEnd = scaleStart * 1.28; // 28% zoom so motion is clearly felt throughout
+
+      /* --- Colour states --- */
+      const states = [
+        { bg: '#0A2540', text: '#FFC107' }, // navy  → yellow
+        { bg: '#C2410C', text: '#FFF6E0' }, // rust  → cream
+        { bg: '#FFC107', text: '#1A0F08' }, // yellow → espresso
+      ];
+
+      const HOLD_MS  = 420;   // hold each colour
+      const FADE_MS  = 210;   // cross-fade between colours
+      const STEP_MS  = HOLD_MS + FADE_MS; // 630 ms per step
+      const TOTAL_MS = 2000;  // total cycle duration
+
+      /* Apply colour state immediately (no transition) or smoothly */
+      function applyState(i, instant) {
+        const s = states[i];
+        if (instant) {
+          splash.style.transition   = 'none';
+          wordmark.style.transition = 'none';
+          tagline.style.transition  = 'none';
+        } else {
+          splash.style.transition   = `background-color ${FADE_MS}ms ease`;
+          wordmark.style.transition = `color ${FADE_MS}ms ease`;
+          tagline.style.transition  = `color ${FADE_MS}ms ease`;
+          // clip-path reveal uses a CSS animation so it is unaffected by transition changes
+        }
+        splash.style.backgroundColor = s.bg;
+        wordmark.style.color         = s.text;
+        tagline.style.color          = s.text;
+      }
+
+      /* --- Set initial state (no transition) --- */
+      applyState(0, true);
+      wordmark.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scaleStart})`;
+
+      /* Force layout reflow so the initial state is painted before transitions start */
+      void wordmark.offsetHeight;
+
+      /* --- Inject keyframes for zoom and tagline reveal (both are CSS animations so transition
+             changes on color states cannot interrupt them) --- */
+      const splashKf = document.createElement('style');
+      splashKf.id = 'splash-zoom-kf';
+      splashKf.textContent = `
+        @keyframes splash-zoom {
+          from { transform: translate(${translateX}px, ${translateY}px) scale(${scaleStart}); }
+          to   { transform: translate(${translateX}px, ${translateY}px) scale(${scaleEnd}); }
+        }
+        @keyframes tagline-reveal {
+          from { clip-path: inset(0 100% 0 0); }
+          to   { clip-path: inset(0 0%   0 0); }
+        }
+      `;
+      document.head.appendChild(splashKf);
+
+      /* cubic-bezier(0.3, 0, 0.5, 1): starts with clear momentum, eases out gently */
+      wordmark.style.animation = `splash-zoom ${TOTAL_MS}ms cubic-bezier(0.3, 0, 0.5, 1) forwards`;
+
+      /* --- Tagline: left-to-right clip-path reveal at 560ms --- */
+      setTimeout(function () {
+        tagline.style.clipPath = 'inset(0 100% 0 0)'; // ensure hidden before opacity snap
+        tagline.style.opacity  = '1';
+        tagline.style.animation = 'tagline-reveal 680ms cubic-bezier(0.16, 1, 0.3, 1) forwards';
+      }, 560);
+
+      /* --- Colour cycle: state 0 → 1 → 2 --- */
+      setTimeout(function () { applyState(1, false); }, HOLD_MS);
+      setTimeout(function () { applyState(2, false); }, HOLD_MS + STEP_MS);
+
+      /* --- Morph-out at TOTAL_MS (2.5s) --- */
+      setTimeout(function () {
+        /* Step A: Fade tagline out and disable splash events */
+        tagline.style.animation  = 'none';
+        tagline.style.transition = 'opacity 0.2s ease';
+        tagline.style.opacity    = '0';
+        splash.style.pointerEvents = 'none';
+
+        /* Fade the splash background out */
+        splash.style.transition      = 'background-color 300ms ease';
+        splash.style.backgroundColor = 'transparent';
+
+        /* Step B: Stop the zoom animation at its final frame, then morph to the hero position */
+        wordmark.style.animation  = 'none';
+        wordmark.style.transform  = `translate(${translateX}px, ${translateY}px) scale(${scaleEnd})`;
+        void wordmark.offsetWidth; // lock position before starting morph transition
+        wordmark.style.transition = 'color 200ms ease, transform 700ms cubic-bezier(0.76, 0, 0.24, 1)';
+        wordmark.style.color      = '#1A0F08';
+        wordmark.style.transform  = 'translate(0, 0) scale(1)';
+
+        /* Step C: When the morph animation completes, switch back to the original hero logo */
+        setTimeout(function () {
+          hero.style.opacity = '';
+          hero.style.visibility = '';
+          cleanup();
+        }, 700);
+
+      }, TOTAL_MS);
+
+      function cleanup() {
+        document.documentElement.classList.remove('no-scroll');
+        document.body.classList.remove('no-scroll');
+
+        const kf = document.getElementById('splash-zoom-kf');
+        if (kf) kf.remove();
+        if (wordmark && wordmark.parentNode) {
+          wordmark.remove();
+        }
+        if (splash && splash.parentNode) {
+          splash.remove();
+        }
+      }
+
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var carousel = document.getElementById('toteCarousel');
+      if (!carousel) return;
+      var slides = carousel.querySelectorAll('.tote-carousel__slide');
+      var dots = carousel.querySelectorAll('.tote-carousel__dot');
+      var current = 0;
+
+      function goTo(idx) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = idx;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      setInterval(function () {
+        goTo((current + 1) % slides.length);
+      }, 3000);
+    })();
+  </script>
+
+</body>
+
+</html>
