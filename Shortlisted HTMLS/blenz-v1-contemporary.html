@@ -1320,7 +1320,6 @@
 
     .cup-card--matcha .cup-card__bg {
       transform: translateX(-50%) translateY(10%);
-      mix-blend-mode: multiply;
     }
 
     .cup-card--matcha:hover .cup-card__bg {
@@ -1639,6 +1638,16 @@
     .photo-tile--03 {
       grid-column: span 7;
       height: 400px;
+    }
+
+    .photo-tile--menu {
+      grid-column: span 7;
+      height: 480px;
+    }
+
+    .photo-tile--hoodie {
+      grid-column: span 5;
+      height: 480px;
     }
 
     .photo-placeholder {
@@ -2832,6 +2841,28 @@
           <video src="../Images/assets/storefront-new-video.mp4" autoplay muted loop playsinline
             style="width:100%;height:100%;object-fit:cover;display:block;"></video>
         </div>
+        <div class="photo-tile photo-tile--menu" style="padding: 0; overflow: hidden; position: relative;">
+          <div class="image-carousel" style="width:100%;height:100%;border:none;border-radius:0;">
+            <div class="image-carousel__track">
+              <div class="image-carousel__slide">
+                <img src="../Images/assets/menu/menu1.png" alt="blenz menu board — view 1"
+                  style="width:100%;height:100%;object-fit:cover;display:block;" />
+              </div>
+              <div class="image-carousel__slide">
+                <img src="../Images/assets/menu/menu2.png" alt="blenz menu board — view 2"
+                  style="width:100%;height:100%;object-fit:cover;display:block;" />
+              </div>
+            </div>
+            <div class="image-carousel__dots" style="bottom:16px;">
+              <div class="image-carousel__dot is-active" data-index="0"></div>
+              <div class="image-carousel__dot" data-index="1"></div>
+            </div>
+          </div>
+        </div>
+        <div class="photo-tile photo-tile--hoodie" style="padding: 0; overflow: hidden; position: relative;">
+          <img src="../Images/assets/hoodie-merchandise.png" alt="blenz hoodie merchandise"
+            style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </div>
       </div>
     </div>
   </section>
@@ -3066,7 +3097,7 @@
           <div class="image-carousel" style="width: 100%; height: 100%; border: none; border-radius: 0;">
             <div class="image-carousel__track">
               <div class="image-carousel__slide">
-                <video src="../Images/assets/Sectio12-img08-v2-chatgpt.mp4" autoplay muted playsinline
+                <video src="../Images/assets/store-bag-video.mp4" autoplay muted loop playsinline
                   style="width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.15);"
                   onmouseover="this.pause()" onmouseout="this.play()">
                 </video>
