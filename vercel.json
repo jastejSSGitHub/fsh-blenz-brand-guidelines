@@ -1,11 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/Shortlisted%20HTMLS/blenz-v1-contemporary.html",
-      "permanent": false
-    }
-  ],
   "headers": [
     {
       "source": "/Images/(.*)",
