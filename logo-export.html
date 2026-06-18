@@ -826,7 +826,11 @@
         useCORS: true,
         logging: false
       });
-      trigger(canvas.toDataURL('image/png'), filename + '.png');
+      canvas.toBlob(function(blob) {
+        const url = URL.createObjectURL(blob);
+        trigger(url, filename + '.png');
+        setTimeout(() => URL.revokeObjectURL(url), 2000);
+      }, 'image/png');
     }
 
     async function downloadPNGTransparent(renderId, filename) {
@@ -837,7 +841,11 @@
         useCORS: true,
         logging: false
       });
-      trigger(canvas.toDataURL('image/png'), filename + '.png');
+      canvas.toBlob(function(blob) {
+        const url = URL.createObjectURL(blob);
+        trigger(url, filename + '.png');
+        setTimeout(() => URL.revokeObjectURL(url), 2000);
+      }, 'image/png');
     }
 
     // ---- SVG export ----
@@ -908,7 +916,10 @@
   ${textContent}
 </svg>`;
 
-      trigger('data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg), filename + '.svg');
+      const blob = new Blob([svg], { type: 'image/svg+xml;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      trigger(url, filename + '.svg');
+      setTimeout(() => URL.revokeObjectURL(url), 2000);
     }
 
     function trigger(href, filename) {
@@ -983,53 +994,35 @@
       downloadPNGTransparent(renderId, baseName + '-' + transparentMode);
     }
 
-    function dlTranspRoundedSVG(url, baseName) {
-      if (transparentMode === 'white') {
-        new Promise(function(res){var r=new FileReader();r.onload=function(e){res(e.target.result)};r.readAsText(new Blob([atob(ROUNDED_SVG_DATA.split(',')[1])],{type:'image/svg+xml'}))})
-          .then(function(svgText) {
-            var recoloured = svgText
-              .replace(/fill="(?!none)[^"]*"/g, 'fill="#FFFFFF"')
-              .replace(/fill:(?!none)[^;}"]+/g, 'fill:#FFFFFF');
-            var blob = new Blob([recoloured], { type: 'image/svg+xml' });
-            var objectUrl = URL.createObjectURL(blob);
-            trigger(objectUrl, baseName + '-white.svg');
-            setTimeout(function() { URL.revokeObjectURL(objectUrl); }, 1000);
-          });
-      } else {
-        Promise.resolve(new Blob([atob(ROUNDED_SVG_DATA.split(',')[1])], {type:'image/svg+xml'})).then(function(blob)
-          .then(function(blob) {
-            var objectUrl = URL.createObjectURL(blob);
-            trigger(objectUrl, baseName + '-dark.svg');
-            setTimeout(function() { URL.revokeObjectURL(objectUrl); }, 1000);
-          });
-      }
+        function dlTranspRoundedSVG(url, baseName) {
+      var blob = new Blob([atob(ROUNDED_SVG_DATA.split(',')[1])], { type: 'image/svg+xml' });
+      var objectUrl = URL.createObjectURL(blob);
+      trigger(objectUrl, baseName + '-' + transparentMode + '.svg');
+      setTimeout(function() { URL.revokeObjectURL(objectUrl); }, 1000);
     }
 
     function dlTranspRoundedPNG(url, baseName) {
       var scale = 4;
-      // Fetch as blob first so the canvas is never cross-origin tainted
-      Promise.resolve(new Blob([atob(ROUNDED_SVG_DATA.split(',')[1])], {type:'image/svg+xml'})).then(function(blob)
-        .then(function(blob) {
-          var objectUrl = URL.createObjectURL(blob);
-          var srcImg = new Image();
-          srcImg.onload = function() {
-            var W = srcImg.naturalWidth || 600;
-            var H = srcImg.naturalHeight || 300;
-            var canvas = document.createElement('canvas');
-            canvas.width  = W * scale;
-            canvas.height = H * scale;
-            var ctx = canvas.getContext('2d');
-            ctx.drawImage(srcImg, 0, 0, canvas.width, canvas.height);
-            if (transparentMode === 'white') {
-              ctx.globalCompositeOperation = 'source-in';
-              ctx.fillStyle = '#FFFFFF';
-              ctx.fillRect(0, 0, canvas.width, canvas.height);
-            }
-            URL.revokeObjectURL(objectUrl);
-            trigger(canvas.toDataURL('image/png'), baseName + '-' + transparentMode + '.png');
-          };
-          srcImg.src = objectUrl;
-        });
+      var blob = new Blob([atob(ROUNDED_SVG_DATA.split(',')[1])], { type: 'image/svg+xml' });
+      var objectUrl = URL.createObjectURL(blob);
+      var srcImg = new Image();
+      srcImg.onload = function() {
+        var W = srcImg.naturalWidth || 1535;
+        var H = srcImg.naturalHeight || 1024;
+        var canvas = document.createElement('canvas');
+        canvas.width  = W * scale;
+        canvas.height = H * scale;
+        var ctx = canvas.getContext('2d');
+        ctx.drawImage(srcImg, 0, 0, canvas.width, canvas.height);
+        if (transparentMode === 'white') {
+          ctx.globalCompositeOperation = 'source-in';
+          ctx.fillStyle = '#FFFFFF';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+        URL.revokeObjectURL(objectUrl);
+        trigger(canvas.toDataURL('image/png'), baseName + '-' + transparentMode + '.png');
+      };
+      srcImg.src = objectUrl;
     }
   </script>
 
